@@ -9,11 +9,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <main
         sx={{
-          border: "1px solid",
-          borderColor: "text",
           padding: 3,
           borderRadius: 1,
-          maxWidth: 768,
+          maxWidth: 1100,
           mx: "auto"
         }}>
         <Component {...pageProps} />

@@ -8,15 +8,15 @@ export const theme = makeTheme({
 
   colors: {
     text: "#000",
-    background: "#fff",
+    background: "#12192C",
     primary: "#07c",
-    secondary: "#b0b",
+    secondary: "#6688FF",
     modes: {
       dark: {
         text: "#fff",
-        background: "#222",
+        background: "#12192C",
         primary: "#0cf",
-        secondary: "#faf"
+        secondary: "#6688FF"
       }
     }
   },
@@ -31,11 +31,11 @@ export const theme = makeTheme({
       fontFamily: "body",
       color: "text",
       bg: "background",
-      p: 4
+      p: 2
     },
     a: {
       color: "primary",
-      fontWeight: "bold",
+      fontWeight: "lighter",
       textDecoration: "none",
       ":hover": {
         color: "secondary",
@@ -47,6 +47,15 @@ export const theme = makeTheme({
   buttons: {
     primary: {
       cursor: "pointer"
+    }
+  },
+  links: {
+    nav: {
+      fontWeight: "lighter",
+      ":hover": {
+        color: "secondary",
+        fontWeight: "bold"
+      }
     }
   }
 });

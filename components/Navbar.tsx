@@ -1,81 +1,76 @@
 /** @jsxImportSource theme-ui */
+import { themed } from "@theme-ui/mdx";
+import Link from "next/link";
 import { type } from "os";
-import React, { FunctionComponent } from "react";
-import { Box, Button, Flex, NavLink } from "theme-ui";
+import React, { FunctionComponent, useState } from "react";
+import { Box, Button, Flex, NavLink, Themed } from "theme-ui";
 
-let uris: string[] = [
+const uris: string[] = [
   "/assets/icons/twitter.svg",
   "/assets/icons/discord.svg",
   "/assets/icons/tele.svg",
   "/assets/icons/medium.svg"
 ];
 
+const menus: string[] = ["Trailer", "Feature", "Collection", "Roadmap", "Team"];
+
 const Navbar = () => {
   return (
-    <Flex as="nav" sx={{ justifyContent: "space-between" }}>
-      <LeftMenu />
-      <RightMenu />
+    <Box
+      sx={{
+        position: "fixed",
+        width: "100%",
+        background:
+          "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"
+      }}>
+      <Flex
+        as="nav"
+        sx={{
+          padding: "22px",
+          borderRadius: 1,
+          mx: "auto",
+          maxWidth: 1190,
+          justifyContent: "space-between",
+          backgroundColor: "transparent",
+          px: 3
+        }}>
+        <LeftMenu />
+        <RightMenu />
+      </Flex>
+    </Box>
+  );
+};
+
+const LeftMenu = () => {
+  const [active, setActive] = useState(0);
+  return (
+    <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
+      {menus.map((menu, idx) => (
+        <NavLink
+          key={menu}
+          href="#!"
+          p={2}
+          sx={{
+            width: 120,
+            height: 50,
+            fontSize: 18,
+            transition: "font-weight,color 0.5s",
+            fontWeight: active === idx ? "500" : 200,
+            color: active === idx ? "secondary" : "primary",
+            textAlign: "center",
+            // letterSpacing: 2
+            position: "relative"
+          }}>
+          {menu}
+          {active == idx && <Line />}
+        </NavLink>
+      ))}
     </Flex>
   );
 };
 
-const LeftMenu = () => (
-  <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
-    <NavLink
-      href="#!"
-      p={2}
-      sx={{
-        display: "tableCell",
-        verticalAlign: "middle",
-        width: 120
-      }}>
-      Trailer
-    </NavLink>
-    <NavLink
-      href="#!"
-      p={2}
-      sx={{
-        display: "tableCell",
-        verticalAlign: "middle",
-        width: 120
-      }}>
-      Feature
-    </NavLink>
-    <NavLink
-      href="#!"
-      p={2}
-      sx={{
-        display: "tableCell",
-        verticalAlign: "middle",
-        width: 120
-      }}>
-      Collection
-    </NavLink>
-    <NavLink
-      href="#!"
-      p={2}
-      sx={{
-        display: "tableCell",
-        verticalAlign: "middle",
-        width: 120
-      }}>
-      Roadmap
-    </NavLink>
-    <NavLink
-      href="#!"
-      p={2}
-      sx={{
-        display: "tableCell",
-        verticalAlign: "middle",
-        width: 120
-      }}>
-      Team
-    </NavLink>
-  </Flex>
-);
-
 const RightMenu = () => (
-  <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
+  <Flex sx={{ justifyContent: "center", alignItems: "center", pb: 3 }}>
     <Box sx={{ maxHeight: 16, mr: 32 }}>
       <img src="/assets/icons/twitter.svg" alt="next" />
     </Box>
@@ -85,16 +80,17 @@ const RightMenu = () => (
     <Box sx={{ maxHeight: 16, mr: 32 }}>
       <img src="/assets/icons/tele.svg" alt="next" />
     </Box>
-    <Box sx={{ maxHeight: 16, mr: 32 }}>
+    <Box sx={{ maxHeight: 16, mr: 32, pr: 15 }}>
       <img src="/assets/icons/medium.svg" alt="next" />
     </Box>
-    <Button sx={{ width: 178 }}>Connect Wallet</Button>
+    <Button sx={{ width: 178, background: "secondary" }}>Connect Wallet</Button>
   </Flex>
 );
 
-const Icon: React.FC<string> = uri => (
-  <Box sx={{ maxHeight: 16, mr: 32 }}>
-    <img src={uri} alt="next" />
+const Line = () => (
+  <Box sx={{ position: "absolute", bottom: 0 }}>
+    <img src="/assets/line.svg" alt="next" />
   </Box>
 );
+
 export default Navbar;

@@ -9,13 +9,13 @@ export const theme = makeTheme({
   colors: {
     text: "#000",
     background: "#12192C",
-    primary: "#07c",
+    primary: "#fff",
     secondary: "#6688FF",
     modes: {
       dark: {
         text: "#fff",
         background: "#12192C",
-        primary: "#0cf",
+        primary: "#fff",
         secondary: "#6688FF"
       }
     }
@@ -31,7 +31,8 @@ export const theme = makeTheme({
       fontFamily: "body",
       color: "text",
       bg: "background",
-      p: 2
+      background: "url(/assets/bg.png)",
+      backgroundPosition: "top,center"
     },
     a: {
       color: "primary",
@@ -54,7 +55,7 @@ export const theme = makeTheme({
       fontWeight: "lighter",
       ":hover": {
         color: "secondary",
-        fontWeight: "bold"
+        fontWeight: "500"
       }
     }
   }

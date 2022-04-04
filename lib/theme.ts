@@ -25,13 +25,30 @@ export const theme = makeTheme({
     heading: "sans-serif"
   },
   radii: [0, 4],
-
+  text: {
+    heading: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+      letterSpacing: "heading"
+    },
+    display: {
+      fontWeight: "lighter",
+      lineHeight: "1.5",
+      fontSize: 18,
+      letterSpacing: 1
+    },
+    caps: {
+      textTransform: "uppercase",
+      letterSpacing: "caps"
+    }
+  },
   styles: {
     root: {
       fontFamily: "body",
       color: "text",
       bg: "background",
-      background: "url(/assets/bg.png)",
+      backgroundImage: "url(/assets/bg.png)",
       backgroundPosition: "top,center"
     },
     a: {
@@ -42,6 +59,19 @@ export const theme = makeTheme({
         color: "secondary",
         textDecoration: "underline"
       }
+    },
+    section: {
+      paddingTop: 30,
+      paddingBottom: 30,
+      maxWidth: 1190,
+      margin: "auto",
+      mt: 50
+    },
+    img: {
+      backgroundRepeat: "no-repeat",
+      backgroundImage: "none",
+      backgroundSize: "contain",
+      backgroundColor: "transparent"
     }
   },
 
@@ -58,5 +88,8 @@ export const theme = makeTheme({
         fontWeight: "500"
       }
     }
+  },
+  sizes: {
+    container: 1010
   }
 });

@@ -21,7 +21,8 @@ const Navbar = () => {
         position: "fixed",
         width: "100%",
         background:
-          "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"
+          "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)",
+        zIndex: 99
       }}>
       <Flex
         as="nav"

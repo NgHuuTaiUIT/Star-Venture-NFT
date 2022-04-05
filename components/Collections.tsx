@@ -8,11 +8,11 @@ import Title from "./Title";
 type Props = {};
 
 const data = [
-  "/assets/nft-1.png",
-  "/assets/nft-2.png",
-  "/assets/nft-3.png",
-  "/assets/nft-4.png",
-  "/assets/nft-5.png"
+  "/assets/images/nft-1.png",
+  "/assets/images/nft-2.png",
+  "/assets/images/nft-3.png",
+  "/assets/images/nft-4.png",
+  "/assets/images/nft-5.png"
 ];
 
 const Collections = (props: Props) => {
@@ -23,7 +23,7 @@ const Collections = (props: Props) => {
       variant="layout.section"
       sx={{ textAlign: "center", maxWidth: 1190, overflow: "hidden" }}>
       <Box sx={{ my: 30 }}>
-        <Title url="/assets/collection.svg" width={492} />
+        <Title url="/assets/images/collection.svg" width={492} />
       </Box>
       <Box as="p" variant="text.p" sx={{ mb: 72 }}>
         A collection of 8888 Avatar NFTs represents 8888 first galactic citizens
@@ -35,13 +35,13 @@ const Collections = (props: Props) => {
       {size && size.width > 980 ? (
         <>
           <Flex sx={{ justifyContent: "space-between", mt: 74 }}>
-            <CollectionCard url="/assets/nft-1.png" />
-            <CollectionCard url="/assets/nft-2.png" />
-            <CollectionCard url="/assets/nft-3.png" />
+            <CollectionCard url="/assets/images/nft-1.png" />
+            <CollectionCard url="/assets/images/nft-2.png" />
+            <CollectionCard url="/assets/images/nft-3.png" />
           </Flex>
           <Flex sx={{ justifyContent: "space-evenly", mt: 74 }}>
-            <CollectionCard url="/assets/nft-4.png" />
-            <CollectionCard url="/assets/nft-5.png" />
+            <CollectionCard url="/assets/images/nft-4.png" />
+            <CollectionCard url="/assets/images/nft-5.png" />
           </Flex>
         </>
       ) : (

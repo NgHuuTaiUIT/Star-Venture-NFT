@@ -18,7 +18,7 @@ const Story = (props: Props) => {
         px: [36, null, null]
       }}>
       <img
-        src="/assets/logo_star_venture_1.png"
+        src="/assets/images/logo_star_venture_1.png"
         alt="logo"
         sx={{ width: ["100%", null, null, "80%"] }}
       />
@@ -46,7 +46,7 @@ const Story = (props: Props) => {
         </p>
         <Button
           sx={{
-            background: "url(/assets/btn.png)",
+            background: "url(/assets/images/btn.png)",
             width: 392,
             height: 83,
             backgroundSize: "auto",

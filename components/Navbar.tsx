@@ -106,7 +106,7 @@ const RightMenu = () => (
 
 const Line = () => (
   <Box sx={{ position: "absolute", bottom: -12 }}>
-    <img src="/assets/line.svg" alt="next" />
+    <img src="/assets/images/line.svg" alt="next" />
   </Box>
 );
 

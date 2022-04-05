@@ -13,10 +13,11 @@ export const theme = makeTheme({
     background: "#12192C"
   },
   fonts: {
-    body: 'Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "Ubuntu,sans-serif"
+    body: "Ubuntu, sans-serif",
+    heading: "Ubuntu,sans-serif",
+    roadmap: "Pilot Command Regular"
   },
-  fontSizes: [18, 28],
+  // fontSizes: [18, 28],
   fontWeights: {
     body: "normal",
     heading: 500,
@@ -74,6 +75,12 @@ export const theme = makeTheme({
       display: "grid",
       gridTemplateRows: "1fr 1fr"
     },
+    roadmap: {
+      backgroundImage: "url(/assets/images/bg-roadmap.png)",
+      "@media only screen and (max-width: 1200px)": {
+        backgroundImage: "none"
+      }
+    },
     card: {
       minWidth: 290,
 
@@ -109,6 +116,11 @@ export const theme = makeTheme({
       fontSize: 4,
       letterSpacing: "heading",
       color: "heading"
+    },
+    roadmap: {
+      fontFamily: "roadmap",
+      fontSize: [60, null, null, 30],
+      whiteSpace: "pre-line"
     },
     heroPrimary: {
       fontSize: [5, 55],
@@ -219,9 +231,9 @@ export const theme = makeTheme({
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      fontSize: ["18px"],
+      fontSize: ["18px", "32px", "18px"],
       bg: "background",
-      backgroundImage: "url(/assets/bg.png)",
+      backgroundImage: "url(/assets/images/bg.png)",
       backgroundPosition: "top,center",
       backgroundRepeat: "no-repeat",
       margin: 0,
@@ -229,6 +241,12 @@ export const theme = makeTheme({
       // WebkitFontSmoothing: "antialiased",
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"
+      },
+      "@font-face": {
+        fontFamily: "Pilot Command Regular",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        src: `url("/fonts/PilotCommand/PilotCommand-qZWJ0.woff") format("woff")`
       },
       a: {
         textDecoration: "none",

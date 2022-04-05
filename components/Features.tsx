@@ -34,7 +34,7 @@ const Features = (props: Props) => {
   return (
     <Box as="section" variant="layout.section" sx={{ textAlign: "center" }}>
       <Box sx={{ py: 30 }}>
-        <Title url="/assets/features.svg" width={397} />
+        <Title url="/assets/images/features.svg" width={397} />
       </Box>
       <Box variant="layout.features">
         {data.map((item, index) => {
@@ -65,9 +65,9 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
             textAlign: "start",
             gap: 20
           }}>
-          <img src={`/assets/0${idx}.svg`} alt="" />
+          <img src={`/assets/images/0${idx}.svg`} alt="" />
           <Flex sx={{ flexDirection: "column" }}>
-            <img src={`/assets/vector-${direction}.png`} alt="" />
+            <img src={`/assets/images/vector-${direction}.png`} alt="" />
             <Box
               as="p"
               sx={{
@@ -91,12 +91,12 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
             flexDirection: "column"
           }}>
           <img
-            src={`/assets/0${idx}.svg`}
+            src={`/assets/images/0${idx}.svg`}
             alt=""
             sx={{ ml: 50, mb: 10, height: [48, null, null, 32] }}
           />
           <Flex sx={{ flexDirection: "column", width: "100%" }}>
-            <img src={`/assets/vector-left.png`} alt="" />
+            <img src={`/assets/images/vector-left.png`} alt="" />
             <Box
               as="p"
               sx={{

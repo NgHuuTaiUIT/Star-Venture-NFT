@@ -103,7 +103,7 @@ const RoadMapItem: React.FC<{
 const Circle = () => (
   <Box
     sx={{
-      display: ["block", "none"],
+      display: ["none", null, null, "block"],
       position: "absolute",
       bottom: 0,
       margin: "auto",
@@ -118,7 +118,7 @@ const Circle = () => (
 const Net = () => (
   <Box
     sx={{
-      display: ["block", "none"],
+      display: ["none", null, null, "block"],
       position: "absolute",
       bottom: -200,
       margin: "auto",

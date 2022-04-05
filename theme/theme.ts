@@ -85,7 +85,6 @@ export const theme = makeTheme({
       // justifyContent: 'space-between',
     },
     main: {
-      width: "100vw",
       minWidth: ["376px", "576px", "768px", "992px"]
     },
     footer: {

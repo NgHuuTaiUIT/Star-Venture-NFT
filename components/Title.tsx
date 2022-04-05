@@ -15,10 +15,12 @@ const Title = ({
       as="h2"
       sx={{
         backgroundImage: `url(${url})`,
-        width,
+        width: [`calc(100% - 50px)`, null, null, width],
         height,
         margin: "auto",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "center"
       }}
       variant="layout.img"
     />

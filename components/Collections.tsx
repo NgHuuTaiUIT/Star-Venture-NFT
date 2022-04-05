@@ -17,39 +17,35 @@ const data = [
 
 const Collections = (props: Props) => {
   const size: Size = useWindowSize();
-  useEffect(() => {
-    console.log(size);
-  }, [size]);
-
   return (
     <Box
       as="section"
       variant="layout.section"
       sx={{ textAlign: "center", maxWidth: 1190, overflow: "hidden" }}>
-      <Box sx={{ mb: 30 }}>
+      <Box sx={{ my: 30 }}>
         <Title url="/assets/collection.svg" width={492} />
       </Box>
-      <Box as="p" variant="text.display">
+      <Box as="p" variant="text.p" sx={{ mb: 72 }}>
         A collection of 8888 Avatar NFTs represents 8888 first galactic citizens
         of Star Venture <br />
         metaverse. They are the elites of their kind and hold unique bonuses in
         the game.
       </Box>
 
-      {size && size.width > 768 ? (
+      {size && size.width > 980 ? (
         <>
-          <Flex sx={{ justifyContent: "center", mt: 74, gap: "10%" }}>
+          <Flex sx={{ justifyContent: "center", mt: 74 }}>
             <CollectionCard url="/assets/nft-1.png" />
             <CollectionCard url="/assets/nft-2.png" />
             <CollectionCard url="/assets/nft-3.png" />
           </Flex>
-          <Flex sx={{ justifyContent: "center", mt: 74, gap: "10%" }}>
+          <Flex sx={{ justifyContent: "center", mt: 74 }}>
             <CollectionCard url="/assets/nft-4.png" />
             <CollectionCard url="/assets/nft-5.png" />
           </Flex>
         </>
       ) : (
-        <Box sx={{ display: "inline-flex" }}>
+        <Box sx={{ display: "flex", gap: "41px" }}>
           {data.map((vl: string, idx: number) => (
             <CollectionCard url={vl} key={idx} />
           ))}
@@ -65,7 +61,6 @@ const CollectionCard: React.FC<{ url: string }> = ({ url }) => {
       variant="layout.card"
       sx={{
         maxWidth: 350,
-        minWidth: ["63%", 270],
         height: "auto"
       }}>
       <Image src={url} sx={{ width: "100%" }} />

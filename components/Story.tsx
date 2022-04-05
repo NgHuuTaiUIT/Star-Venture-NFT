@@ -1,3 +1,5 @@
+/** @jsxImportSource theme-ui */
+
 import React from "react";
 import { Box, Button } from "theme-ui";
 
@@ -15,7 +17,11 @@ const Story = (props: Props) => {
         pt: 100,
         px: [36, null, null]
       }}>
-      <img src="/assets/logo_star_venture_1.png" alt="logo" width={"100%"} />
+      <img
+        src="/assets/logo_star_venture_1.png"
+        alt="logo"
+        sx={{ width: ["100%", null, null, "80%"] }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -24,9 +30,6 @@ const Story = (props: Props) => {
           alignItems: "center",
           minHeight: 300,
           color: "#fff",
-          fontSize: 18,
-          lineHeight: 2,
-          fontWeight: 300,
           textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
           mt: -100
         }}>

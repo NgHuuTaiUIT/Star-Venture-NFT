@@ -16,7 +16,7 @@ export const theme = makeTheme({
     body: 'Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "Ubuntu,sans-serif"
   },
-  fontSizes: [18],
+  fontSizes: [18, 28],
   fontWeights: {
     body: "normal",
     heading: 500,
@@ -41,22 +41,22 @@ export const theme = makeTheme({
     container: {
       px: ["15px", null, null, "30px"]
     },
+    title: {},
     section: {
-      py: 30,
+      py: 25,
       px: [16, null, null, null],
       maxWidth: "container90",
       margin: "auto",
-      mt: 50,
-      width: ["100%"]
+      my: 50,
+      width: ["100%"],
+      lineHeight: [1.5]
     },
     features: {
-      // width: "100%",
-      // gridTemplateColumns: "1fr",
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
       "@media only screen and (max-width: 1200px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
-        width: "50%",
+        width: "calc(100% - 10px)",
         margin: "auto"
       }
     },
@@ -74,6 +74,15 @@ export const theme = makeTheme({
       display: "grid",
       gridTemplateRows: "1fr 1fr"
     },
+    card: {
+      minWidth: 290,
+      mx: "7%",
+      "@media(max-width: 980px)": {
+        minWidth: "63%",
+        gap: "3%",
+        mx: 0
+      }
+    },
     header: {
       color: "#02073E",
       fontWeight: "normal",
@@ -82,7 +91,6 @@ export const theme = makeTheme({
     toolbar: {
       display: "flex",
       alignItems: "center"
-      // justifyContent: 'space-between',
     },
     main: {
       minWidth: ["376px", "576px", "768px", "992px"]
@@ -208,7 +216,8 @@ export const theme = makeTheme({
     root: {
       fontFamily: "body",
       lineHeight: "body",
-      fontWeight: "body",
+      fontWeight: "lighter",
+      fontSize: ["18px"],
       bg: "background",
       backgroundImage: "url(/assets/bg.png)",
       backgroundPosition: "top,center",

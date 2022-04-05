@@ -5,9 +5,9 @@ import { Box } from "theme-ui";
 const Trailer = ({ url }: { url: string }) => {
   return (
     <Box
-      sx={{ position: "relative", pt: 563 }}
-      as="section"
-      variant="layout.section">
+      variant="layout.section"
+      sx={{ position: "relative", pt: 566, maxWidth: 1010 }}
+      as="section">
       <Box
         sx={{
           position: "absolute",

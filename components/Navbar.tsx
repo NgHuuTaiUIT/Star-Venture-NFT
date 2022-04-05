@@ -27,7 +27,7 @@ const Navbar = () => {
       <Flex
         as="nav"
         sx={{
-          padding: "22px",
+          pt: 14,
           borderRadius: 1,
           mx: "auto",
           maxWidth: 1190,
@@ -45,7 +45,13 @@ const Navbar = () => {
 const LeftMenu = () => {
   const [active, setActive] = useState(0);
   return (
-    <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
+    <Flex
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+        ml: 24,
+        height: "100%"
+      }}>
       {menus.map((menu, idx) => (
         <NavLink
           key={menu}
@@ -71,25 +77,35 @@ const LeftMenu = () => {
 };
 
 const RightMenu = () => (
-  <Flex sx={{ justifyContent: "center", alignItems: "center", pb: 3 }}>
-    <Box sx={{ maxHeight: 16, mr: 32 }}>
-      <img src="/assets/icons/twitter.svg" alt="next" />
-    </Box>
-    <Box sx={{ maxHeight: 16, mr: 32 }}>
-      <img src="/assets/icons/discord.svg" alt="next" />
-    </Box>
-    <Box sx={{ maxHeight: 16, mr: 32 }}>
-      <img src="/assets/icons/tele.svg" alt="next" />
-    </Box>
-    <Box sx={{ maxHeight: 16, mr: 32, pr: 15 }}>
-      <img src="/assets/icons/medium.svg" alt="next" />
-    </Box>
-    <Button sx={{ width: 178, background: "secondary" }}>Connect Wallet</Button>
+  <Flex
+    sx={{
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100%",
+      mt: -1
+    }}>
+    <Flex sx={{ mr: 30 }}>
+      <Box sx={{ maxHeight: 16, mx: 16 }}>
+        <img src="/assets/icons/twitter.svg" alt="next" />
+      </Box>
+      <Box sx={{ maxHeight: 16, mx: 16 }}>
+        <img src="/assets/icons/discord.svg" alt="next" />
+      </Box>
+      <Box sx={{ maxHeight: 16, mx: 16 }}>
+        <img src="/assets/icons/tele.svg" alt="next" />
+      </Box>
+      <Box sx={{ maxHeight: 16, mx: 16, pr: 15 }}>
+        <img src="/assets/icons/medium.svg" alt="next" />
+      </Box>
+    </Flex>
+    <Button sx={{ width: 178, background: "secondary", py: 1, mt: 10, mr: 2 }}>
+      Connect Wallet
+    </Button>
   </Flex>
 );
 
 const Line = () => (
-  <Box sx={{ position: "absolute", bottom: 0 }}>
+  <Box sx={{ position: "absolute", bottom: -12 }}>
     <img src="/assets/line.svg" alt="next" />
   </Box>
 );

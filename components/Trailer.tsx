@@ -7,7 +7,7 @@ const Trailer = ({ url }: { url: string }) => {
     <Box
       sx={{ position: "relative", pt: 563 }}
       as="section"
-      variant="styles.section">
+      variant="layout.section">
       <Box
         sx={{
           position: "absolute",

@@ -8,7 +8,7 @@ const Roadmap = (props: Props) => {
   return (
     <Flex
       as="section"
-      variant="styles.section"
+      variant="layout.section"
       sx={{
         backgroundImage: "url(/assets/bg-roadmap.png)",
         maxWidth: 1920,

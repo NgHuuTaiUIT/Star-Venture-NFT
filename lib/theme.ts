@@ -22,7 +22,7 @@ export const theme = makeTheme({
   },
   fonts: {
     body: 'Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "sans-serif"
+    heading: "Ubuntu,sans-serif"
   },
   radii: [0, 4],
   text: {
@@ -49,7 +49,10 @@ export const theme = makeTheme({
       color: "text",
       bg: "background",
       backgroundImage: "url(/assets/bg.png)",
-      backgroundPosition: "top,center"
+      backgroundPosition: "top,center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+      maxWidth: 1920
     },
     a: {
       color: "primary",
@@ -65,8 +68,10 @@ export const theme = makeTheme({
       paddingBottom: 30,
       maxWidth: 1190,
       margin: "auto",
-      mt: 50
+      mt: 50,
+      width: "100%"
     },
+
     img: {
       backgroundRepeat: "no-repeat",
       backgroundImage: "none",

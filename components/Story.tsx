@@ -7,15 +7,15 @@ const Story = (props: Props) => {
   return (
     <Box
       as="section"
-      variant="styles.section"
+      variant="layout.section"
       sx={{
         margin: "auto",
         textAlign: "center",
-        overflow: "hidden",
         maxWidth: 1140,
-        pt: 100
+        pt: 100,
+        px: [36, null, null]
       }}>
-      <img src="/assets/logo_star_venture_1.png" alt="logo" />
+      <img src="/assets/logo_star_venture_1.png" alt="logo" width={"100%"} />
       <Box
         sx={{
           display: "flex",

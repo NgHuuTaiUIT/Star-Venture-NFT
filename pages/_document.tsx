@@ -16,7 +16,18 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet"
       />
-
+      <link
+        rel="preload"
+        href="/fonts/PilotCommand/PilotCommand-qZWJ0.woff"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/PilotCommand/style.css"
+        as="stylesheet"
+        crossOrigin="true"
+      />
       <body>
         <InitializeColorMode />
         <Main />

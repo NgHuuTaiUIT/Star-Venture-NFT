@@ -17,9 +17,10 @@ const Title = ({
         backgroundImage: `url(${url})`,
         width,
         height,
-        margin: "auto"
+        margin: "auto",
+        backgroundRepeat: "no-repeat"
       }}
-      variant="styles.img"
+      variant="layout.img"
     />
   );
 };

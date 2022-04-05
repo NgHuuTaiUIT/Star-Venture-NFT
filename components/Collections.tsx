@@ -34,12 +34,12 @@ const Collections = (props: Props) => {
 
       {size && size.width > 980 ? (
         <>
-          <Flex sx={{ justifyContent: "center", mt: 74 }}>
+          <Flex sx={{ justifyContent: "space-between", mt: 74 }}>
             <CollectionCard url="/assets/nft-1.png" />
             <CollectionCard url="/assets/nft-2.png" />
             <CollectionCard url="/assets/nft-3.png" />
           </Flex>
-          <Flex sx={{ justifyContent: "center", mt: 74 }}>
+          <Flex sx={{ justifyContent: "space-evenly", mt: 74 }}>
             <CollectionCard url="/assets/nft-4.png" />
             <CollectionCard url="/assets/nft-5.png" />
           </Flex>

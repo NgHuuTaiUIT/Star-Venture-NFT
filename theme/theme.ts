@@ -76,10 +76,12 @@ export const theme = makeTheme({
     },
     card: {
       minWidth: 290,
-      mx: "7%",
+
       "@media(max-width: 980px)": {
+        minWidth: "30%"
+      },
+      "@media(max-width: 680px)": {
         minWidth: "63%",
-        gap: "3%",
         mx: 0
       }
     },

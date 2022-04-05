@@ -7,6 +7,7 @@ const Story = (props: Props) => {
   return (
     <Box
       as="section"
+      variant="styles.section"
       sx={{
         margin: "auto",
         textAlign: "center",

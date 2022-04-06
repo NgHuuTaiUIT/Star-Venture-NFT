@@ -6,12 +6,14 @@ const Title = ({
   width,
   height = 51,
   backgroundPosition = "center",
+  minWidth,
   sx
 }: {
   url: string;
   width?: number | string | any[];
   height?: number | string | any[];
   backgroundPosition?: string;
+  minWidth?: number | string | any[];
   sx?: any;
 }) => {
   return (
@@ -25,6 +27,7 @@ const Title = ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
         backgroundPosition,
+        minWidth,
         ...sx
       }}
       variant="layout.img"

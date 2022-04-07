@@ -1,29 +1,39 @@
 /** @jsxImportSource theme-ui */
 
-import React, { ReactNode } from "react";
-import { Box, Flex, Grid } from "theme-ui";
+import React, { ReactNode, useContext } from "react";
+import { Box, Button, Flex, Grid, Image, Link } from "theme-ui";
+import { ModalContext } from "../context/ModalContext";
+import { ModalContentProps } from "./Modal/Modal";
 import Title from "./Title";
 
 const data = [
   {
     image: "/assets/images/chandung.png",
     name: "Bach Zim",
-    position: "CMO"
+    position: "CMO",
+    content: `Star Venture is a decentralized MMORPG built on “Chain name”. Get onboard into an ever-expanding space journey. Socialize-to-earn in a community-driven universe where battles explode, enterprises rise, governments fall. Be ready for takeoff, captain.
+The path is for you to choose.`
   },
   {
     image: "/assets/images/chandung.png",
     name: "Bach Zim",
-    position: "CMO"
+    position: "CMO",
+    content: `Star Venture is a decentralized MMORPG built on “Chain name”. Get onboard into an ever-expanding space journey. Socialize-to-earn in a community-driven universe where battles explode, enterprises rise, governments fall. Be ready for takeoff, captain.
+The path is for you to choose.`
   },
   {
     image: "/assets/images/chandung.png",
     name: "Bach Zim",
-    position: "CMO"
+    position: "CMO",
+    content: `Star Venture is a decentralized MMORPG built on “Chain name”. Get onboard into an ever-expanding space journey. Socialize-to-earn in a community-driven universe where battles explode, enterprises rise, governments fall. Be ready for takeoff, captain.
+The path is for you to choose.`
   },
   {
     image: "/assets/images/chandung.png",
     name: "Bach Zim",
-    position: "CMO"
+    position: "CMO",
+    content: `Star Venture is a decentralized MMORPG built on “Chain name”. Get onboard into an ever-expanding space journey. Socialize-to-earn in a community-driven universe where battles explode, enterprises rise, governments fall. Be ready for takeoff, captain.
+The path is for you to choose.`
   }
 ];
 
@@ -58,11 +68,24 @@ const Team = () => {
     </Flex>
   );
 };
-const NameCard: React.FC<{ name: string; position: string; image: string }> = ({
-  name,
-  position,
-  image
-}) => {
+const NameCard: React.FC<{
+  name: string;
+  position: string;
+  image: string;
+  content: string;
+}> = ({ name, position, image, content }) => {
+  const { setModalContent, openModal } = useContext(ModalContext);
+
+  const setDataModal = () => {
+    setModalContent({
+      name,
+      position,
+      image,
+      content
+    });
+    openModal();
+  };
+
   return (
     <Box
       sx={{
@@ -81,18 +104,51 @@ const NameCard: React.FC<{ name: string; position: string; image: string }> = ({
           overflow: "hidden",
           padding: "26px 14px 22px 24px",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
+          ":hover": { "& #member-detail": { opacity: "1" } }
         }}>
-        <img
-          src={image}
-          alt=""
-          sx={{
-            ml: "5%",
-            width: [280, null, null, 140],
-            height: "auto",
-            borderRadius: 3
-          }}
-        />
+        <Box sx={{ position: "relative" }}>
+          <Image
+            src={image}
+            alt=""
+            sx={{
+              width: [280, null, null, 140],
+              height: "auto",
+              borderRadius: 3
+            }}
+          />
+          <Flex
+            id="member-detail"
+            sx={{
+              // width: [280, null, null, 140],
+              // height: [280, null, null, 140],
+              opacity: "0",
+              position: "absolute",
+              bg: "secondary",
+              width: "100%",
+              height: "100%",
+              zIndex: 98,
+              top: 0,
+              m: "auto",
+              justifyContent: "center",
+              alignItems: "center",
+              transition: "opacity 0.3s ease"
+            }}>
+            <Link
+              as="a"
+              sx={{
+                color: "primary",
+                fontSize: [14],
+                fontWeight: 500,
+                ":hover": {
+                  textDecoration: "underline"
+                }
+              }}
+              onClick={setDataModal}>
+              VIEW DETAIL
+            </Link>
+          </Flex>
+        </Box>
       </Flex>
       <Name name={name} position={position} />
     </Box>
@@ -100,7 +156,7 @@ const NameCard: React.FC<{ name: string; position: string; image: string }> = ({
 };
 
 const Name = ({ name, position }: { name: string; position: string }) => (
-  <Box sx={{ textAlign: "center" }}>
+  <Box sx={{ textAlign: "center", fontSize: [36, 36, , 18] }}>
     <Box as="p">{name}</Box>
     <Box as="p" sx={{ color: "secondary", fontSize: "smaller" }}>
       {position}

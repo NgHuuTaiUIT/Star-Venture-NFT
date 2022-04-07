@@ -62,6 +62,7 @@ const CollectionCard: React.FC<{ url: string }> = ({ url }) => {
       sx={{
         maxWidth: 350,
         height: "auto"
+        // minWidth: [100, 200, 300, 400, 500]
       }}>
       <Image src={url} sx={{ width: "100%" }} />
     </Card>

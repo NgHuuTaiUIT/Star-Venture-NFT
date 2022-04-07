@@ -1,17 +1,17 @@
 import Head from "next/head";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Collections from "../components/Collections";
 import Features from "../components/Features";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Modal from "../components/Modal/Modal";
 import Roadmap from "../components/Roadmap";
 import Story from "../components/Story";
 import Team from "../components/Team";
 import Trailer from "../components/Trailer";
+import { ModalProvider } from "../context/ModalContext";
 
 export default function Page() {
   return (
-    <>
+    <ModalProvider>
       <Head>
         <title>Next.js Theme UI</title>
       </Head>
@@ -23,6 +23,7 @@ export default function Page() {
       <Collections />
       <Roadmap />
       <Team />
-    </>
+      <Modal />
+    </ModalProvider>
   );
 }

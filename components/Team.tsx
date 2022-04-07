@@ -72,7 +72,7 @@ const NameCard: React.FC<{ name: string; position: string; image: string }> = ({
         sx={{
           maxWidth: "container90",
           color: "transparent",
-          margin: "auto",
+          margin: "0 auto",
           background: "url(/assets/images/Union.svg) no-repeat",
           backgroundPosition: "center",
           backgroundSize: "contain",
@@ -80,7 +80,6 @@ const NameCard: React.FC<{ name: string; position: string; image: string }> = ({
           height: [380, , , 189],
           overflow: "hidden",
           padding: "26px 14px 22px 24px",
-          margin: "0 auto",
           justifyContent: "center",
           alignItems: "center"
         }}>

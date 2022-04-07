@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Box, Button, Flex, Image, NavLink } from "theme-ui";
 import { MenuContext } from "../context/MenuContext";
 import disableScroll from "disable-scroll";
+import { useWindowSize } from "../hooks/useWindowSize";
 const uris: string[] = [
   "/assets/icons/twitter.svg",
   "/assets/icons/discord.svg",
@@ -14,6 +15,7 @@ const menus: string[] = ["Trailer", "Feature", "Collection", "Roadmap", "Team"];
 
 const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
+  const { width } = useWindowSize();
   showMenu ? disableScroll.on() : disableScroll.off();
   return (
     <>
@@ -40,8 +42,7 @@ const Navbar = () => {
       />
       <Box
         sx={{
-          opacity: showMenu ? 1 : 0,
-          visibility: showMenu ? "visible" : "hidden",
+          opacity: width >= 1200 ? 1 : showMenu ? 1 : 0,
           position: "fixed",
           width: "100%",
           height: ["100%", , , "auto"],

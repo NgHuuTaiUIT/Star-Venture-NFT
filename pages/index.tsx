@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { Suspense, useState } from "react";
-import Collections from "../components/Collections";
-import Features from "../components/Features";
+import Collections from "../components/Collection/Collections";
+import Features from "../components/Features/Features";
 import Modal from "../components/Modal/Modal";
-import Roadmap from "../components/Roadmap";
-import Story from "../components/Story";
-import Team from "../components/Team";
-import Trailer from "../components/Trailer";
+import Roadmap from "../components/Roadmap/Roadmap";
+import Story from "../components/Story/Story";
+import Team from "../components/Team/Team";
+import Trailer from "../components/Trailer/Trailer";
 import { ModalProvider } from "../context/ModalContext";
 
 export default function Page() {

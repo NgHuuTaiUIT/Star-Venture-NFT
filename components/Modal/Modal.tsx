@@ -80,7 +80,7 @@ export const ModalContent: React.FC<ModalContentProps> = ({
         my: [100, , 0, 0]
       }}
     />
-    <Box sx={{ fontSize: [42, 22, , 18] }}>
+    <Box sx={{ fontSize: [42, 32, , 18] }}>
       <Heading
         as="h2"
         mb={2}

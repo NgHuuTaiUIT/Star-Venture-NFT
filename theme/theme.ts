@@ -1,3 +1,4 @@
+import { backgroundStyle } from "./../components/Modal/styles";
 import { makeTheme } from "@theme-ui/css/utils";
 
 export const theme = makeTheme({
@@ -6,6 +7,7 @@ export const theme = makeTheme({
     useColorSchemeMediaQuery: true
   },
   breakpoints: ["480px", "980px", "1200px"],
+  // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
   colors: {
     primary: "#fff",
     secondary: "#6688FF",
@@ -18,6 +20,7 @@ export const theme = makeTheme({
     roadmap: "Pilot Command Regular"
   },
   // fontSizes: [18, 28],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: "normal",
     heading: 500,
@@ -42,19 +45,24 @@ export const theme = makeTheme({
     container: {
       px: ["15px", null, null, "30px"]
     },
-    title: {},
+    title: {
+      margin: "auto",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain"
+    },
     section: {
       py: 25,
       px: [16, null, null, null],
       maxWidth: "container90",
       margin: "auto",
-      my: 50,
+      my: ["4rem", , , 50],
       width: ["100%"],
       lineHeight: [1.5]
     },
     features: {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
+      gap: ["1rem", , , 0],
       "@media only screen and (max-width: 1200px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
         width: "calc(100% - 10px)",
@@ -62,16 +70,6 @@ export const theme = makeTheme({
       }
     },
     collections: {
-      // display: "-webkit-inline-box",
-      // overflow: "hidden",
-      // "@media(min-width: 480px)": {
-      //   display: "flex",
-      //   // flexDirection: "row",
-      //   justifyContent: "center",
-      //   mt: 74,
-      //   // gap: 190,
-      //   width: "100%"
-      // }
       display: "grid",
       gridTemplateRows: "1fr 1fr"
     },
@@ -130,6 +128,9 @@ export const theme = makeTheme({
       fontSize: 4,
       letterSpacing: "heading",
       color: "heading"
+    },
+    p: {
+      fontSize: ["1.3rem", , , "1rem"]
     },
     roadmap: {
       fontFamily: "roadmap",
@@ -205,6 +206,13 @@ export const theme = makeTheme({
       borderRadius: 99999
     }
   },
+  backgrounds: {
+    full: {
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center"
+    }
+  },
   // variants for buttons
   buttons: {
     menu: {
@@ -247,9 +255,15 @@ export const theme = makeTheme({
       fontWeight: "lighter",
       fontSize: ["32px", "32px", "32px", "18px"],
       bg: "background",
-      backgroundImage: "url(/assets/images/bg.png)",
+      backgroundImage: [
+        "url(/assets/images/bg-mb.png)",
+        ,
+        ,
+        "url(/assets/images/bg.png)"
+      ],
       backgroundPosition: "top,center",
       backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
       margin: 0,
       height: "100%",
       // WebkitFontSmoothing: "antialiased",

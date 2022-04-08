@@ -4,8 +4,8 @@ import { ThemeProvider } from "theme-ui";
 // import { theme } from "../lib/theme";
 import { theme } from "../theme/theme";
 import type { AppProps } from "next/app";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
 import { MenuProvider } from "../context/MenuContext";
 
 export default function MyApp({ Component, pageProps }: AppProps) {

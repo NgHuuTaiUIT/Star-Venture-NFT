@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React from "react";
-import { Box, Button } from "theme-ui";
+import { Box, Button, Image } from "theme-ui";
 
 type Props = {};
 
@@ -17,7 +17,7 @@ const Story = (props: Props) => {
         pt: 100,
         px: [36, null, null]
       }}>
-      <img
+      <Image
         src="/assets/images/logo_star_venture_1.png"
         alt="logo"
         sx={{ width: ["100%", null, null, "80%"] }}

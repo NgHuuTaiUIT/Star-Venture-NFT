@@ -58,7 +58,7 @@ export const ModalContent: React.FC<ModalContentProps> = ({
   content
 }) => (
   <Card sx={modalContentStyle}>
-    <Image src={image} />
+    <Image src={image} alt="portrait" />
     <Box sx={textModalContentStyle}>
       <Heading as="h2">{name}</Heading>
       <Heading as="h4">{position}</Heading>

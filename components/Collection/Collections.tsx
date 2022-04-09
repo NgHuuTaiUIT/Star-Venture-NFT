@@ -59,7 +59,7 @@ const Collections = (props: Props) => {
 const CollectionCard: React.FC<{ url: string }> = ({ url }) => {
   return (
     <Card sx={collectionCardStyle}>
-      <Image src={url} />
+      <Image src={url} alt="collection card" />
     </Card>
   );
 };

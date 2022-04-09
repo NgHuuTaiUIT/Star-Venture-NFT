@@ -3,7 +3,7 @@ import mitt from "next/dist/shared/lib/mitt";
 import React, { useEffect } from "react";
 import { Box, Card, Flex, Grid, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
-import Carosel from "../Carousel/Carousal";
+import Carousel from "../Carousel/Carousal";
 import Title from "../Title/Title";
 import { collectionCardStyle, collectionStyle } from "./style";
 
@@ -45,11 +45,11 @@ const Collections = (props: Props) => {
         </>
       ) : (
         <Box sx={{ display: "flex", gap: "41px" }}>
-          <Carosel>
+          <Carousel>
             {data.map((vl: string, idx: number) => (
               <CollectionCard url={vl} key={idx} />
             ))}
-          </Carosel>
+          </Carousel>
         </Box>
       )}
     </Box>

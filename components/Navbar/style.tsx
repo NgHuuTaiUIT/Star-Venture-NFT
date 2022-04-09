@@ -88,7 +88,9 @@ export const iconStyle: ThemeUIStyleObject = {
   maxHeight: ["100%", , , 50],
   mx: 16,
   "> img": {
-    width: [80, , , 32]
+    minWidth: [80, , , 20],
+    objectPosition: "center",
+    objectFit: "fill"
   }
   // transform: ["scale(5)", , "scale(3)", "scale(1)"]
 };

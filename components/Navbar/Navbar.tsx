@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useContext, useState } from "react";
-import { Box, Button, Flex, Image, NavLink } from "theme-ui";
+import { Box, Button, Flex, Image, Link, NavLink } from "theme-ui";
 import { MenuContext } from "../../context/MenuContext";
 import disableScroll from "disable-scroll";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -87,18 +87,24 @@ const LeftMenu = () => {
 };
 
 const icons = [
-  "/assets/icons/twitter.svg",
-  "/assets/icons/discord.svg",
-  "/assets/icons/tele.svg",
-  "/assets/icons/medium.svg"
+  {
+    src: "/assets/icons/twitter.svg",
+    url: "https://twitter.com/StarVentureGame"
+  },
+  {
+    src: "/assets/icons/discord.svg",
+    url: "#"
+  },
+  { src: "/assets/icons/tele.svg", url: "https://t.me/StarVentureGlobal" },
+  { src: "/assets/icons/medium.svg", url: "https://t.me/starventure" }
 ];
 
 const RightMenu = () => (
   <Flex sx={wrapRightMenuStyle}>
-    {icons.map(src => (
-      <Box key={src} sx={iconStyle}>
-        <img src={src} alt="next" />
-      </Box>
+    {icons.map(({ src, url }) => (
+      <Link href={url} target="_blank" key={src} sx={iconStyle}>
+        <Image src={src} alt="next" />
+      </Link>
     ))}
   </Flex>
 );

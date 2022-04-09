@@ -31,7 +31,7 @@ const Collections = (props: Props) => {
         the game.
       </Box>
 
-      {size && size.width > 980 ? (
+      {size && size.width > 1200 ? (
         <>
           <Flex sx={{ justifyContent: "space-between", mt: 74 }}>
             <CollectionCard url="/assets/images/nft-1.png" />

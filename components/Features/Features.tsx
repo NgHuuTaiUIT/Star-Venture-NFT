@@ -6,8 +6,6 @@ import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { descriptionStyle, widgetFeaturesStyle } from "./style";
 import Title from "../Title/Title";
 
-type Props = {};
-
 const data = [
   {
     idx: 1,
@@ -15,14 +13,14 @@ const data = [
     text: `Avatar holders can get early boarding to first game version "Boarding"`
   },
   {
-    idx: 3,
+    idx: 2,
     direction: "right",
-    text: `Stake avatars to get $STARV`
+    text: `Avatars with unique rarities hold different in-game bonuses`
   },
   {
-    idx: 2,
+    idx: 3,
     direction: "left",
-    text: `Avatars with unique rarities hold different in-game bonuses`
+    text: `Stake avatars to get $STARV`
   },
   {
     idx: 4,
@@ -31,7 +29,7 @@ const data = [
   }
 ];
 
-const Features = (props: Props) => {
+const Features = () => {
   return (
     <Box as="section" variant="layout.section" sx={{ textAlign: "center" }}>
       <Box sx={{ py: ["2rem", , , 30] }}>

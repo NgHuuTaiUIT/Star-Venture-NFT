@@ -15,6 +15,8 @@ import {
   backgroundStyle,
   closeButtonStyle,
   containerStyle,
+  modalContentStyle,
+  textModalContentStyle,
   textStyle
 } from "./styles";
 
@@ -55,61 +57,14 @@ export const ModalContent: React.FC<ModalContentProps> = ({
   position,
   content
 }) => (
-  <Card
-    sx={{
-      borderRadius: "3",
-      display: "flex",
-      justifyContent: ["start", , , "space-between"],
-      alignItems: ["center", , , "start"],
-      flexDirection: ["column", , , "row"],
-      maxWidth: ["90%", , , "90%"],
-      mx: "auto",
-      my: [200, 150, , 0],
-      gap: [70, 40]
-    }}>
-    <Image
-      src={image}
-      sx={{
-        flex: "0 0 33.33%",
-        height: ["100%", , , "auto"],
-        minWidth: [360, , , 0],
-        objectFit: "cover",
-        borderTopLeftRadius: "3",
-        borderBottomLeftRadius: "3",
-        maxWidth: ["90%", , , "100%"],
-        my: [100, , 0, 0]
-      }}
-    />
-    <Box sx={{ fontSize: [42, 32, , 18] }}>
-      <Heading
-        as="h2"
-        mb={2}
-        sx={{
-          lineHeight: [2, , , 1],
-
-          textAlign: ["center", , , "start"],
-          fontSize: ["1.2em"]
-        }}>
-        {name}
-      </Heading>
-      <Heading
-        as="h4"
-        // mb={3}
-        sx={{
-          textAlign: ["center", , , "start"],
-          fontWeight: "lighter",
-          fontSize: "0.8em",
-          lineHeight: [2, , , 3],
-          mb: [80, , 0, 0]
-        }}>
-        {position}
-      </Heading>
-      {/* <Text mb={3} sx={{ lineHeight: 1.5, letterSpacing: 1.2 }}>
+  <Card sx={modalContentStyle}>
+    <Image src={image} />
+    <Box sx={textModalContentStyle}>
+      <Heading as="h2">{name}</Heading>
+      <Heading as="h4">{position}</Heading>
+      <Text as="span" sx={textStyle}>
         {content}
-      </Text> */}
-      <Box as="p" sx={textStyle}>
-        {content}
-      </Box>
+      </Text>
     </Box>
   </Card>
 );

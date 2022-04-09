@@ -47,6 +47,45 @@ export const closeButtonStyle: ThemeUIStyleObject = {
   zIndex: 100000
 };
 
+export const modalContentStyle: ThemeUIStyleObject = {
+  borderRadius: "3",
+  display: "flex",
+  justifyContent: ["start", , , "space-between"],
+  alignItems: ["center", , , "start"],
+  flexDirection: ["column", , , "row"],
+  maxWidth: ["90%", , , "90%"],
+  mx: "auto",
+  my: [200, 150, , 0],
+  gap: [70, 40],
+  "> img": {
+    flex: "0 0 33.33%",
+    height: ["100%", , , "auto"],
+    minWidth: [360, , , 0],
+    objectFit: "cover",
+    borderTopLeftRadius: "3",
+    borderBottomLeftRadius: "3",
+    maxWidth: ["90%", , , "100%"],
+    my: [100, , 0, 0]
+  }
+};
+
+export const textModalContentStyle: ThemeUIStyleObject = {
+  fontSize: [42, 32, , 18],
+  "> h2": {
+    lineHeight: [2, , , 1],
+    textAlign: ["center", , , "start"],
+    fontSize: ["1.2em"],
+    mb: 2
+  },
+  "> h4": {
+    textAlign: ["center", , , "start"],
+    fontWeight: "lighter",
+    fontSize: "0.8em",
+    lineHeight: [2, , , 3],
+    mb: [80, , 0, 0]
+  }
+};
+
 export const textStyle: ThemeUIStyleObject = {
   letterSpacing: "2px",
   display: "-webkit-box",
@@ -56,7 +95,7 @@ export const textStyle: ThemeUIStyleObject = {
   overflowY: ["auto"],
   wordBreak: "break-word",
   lineHeight: ["2.5rem", "1.5rem", , "1.5rem"],
-  maxHeight: ["14rem"],
+  maxHeight: [, "7.8rem", , , "14rem"],
   mt: [60, , 0, 0],
   whiteSpace: "pre-line"
 };

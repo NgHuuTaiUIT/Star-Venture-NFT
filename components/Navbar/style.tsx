@@ -21,7 +21,7 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   height: ["100%", , , "auto"],
   py: ["20%", , , 0],
   background: [
-    "url(/assets/images/bg-mb.png),linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)",
+    "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-mb.png)",
     ,
     ,
     "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"

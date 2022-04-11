@@ -1,11 +1,11 @@
 /** @jsxImportSource theme-ui */
-import { useContext, useEffect, useState } from "react";
-import { Box, Button, Flex, Image, Link, NavLink } from "theme-ui";
-import { MenuContext } from "../../context/MenuProvider";
 import disableScroll from "disable-scroll";
+import { useContext, useEffect, useState } from "react";
+import { Box, Flex, Image, Link, NavLink } from "theme-ui";
+import { MenuContext } from "../../context/MenuProvider";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
 import {
-  btnConnectStyle,
   btnMenuMobileStyle,
   containerNavbarStyle,
   iconStyle,
@@ -15,7 +15,6 @@ import {
   wrapNavbarStyle,
   wrapRightMenuStyle
 } from "./style";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 const uris: string[] = [
   "/assets/icons/twitter.svg",
   "/assets/icons/discord.svg",
@@ -58,19 +57,7 @@ const Navbar = () => {
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />
           <RightMenu />
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: ["center", , , "start"],
-              flexWrap: "nowrap",
-              alignItems: "center",
-              flex: "0 0 25%",
-              width: ["100%", , "85%"],
-              m: "auto"
-            }}>
-            {/* <Button sx={btnConnectStyle}>Connect Wallet</Button> */}
-            <WalletMultiButton sx={btnConnectStyle}></WalletMultiButton>
-          </Box>
+          <CustomWalletMultiButton />
         </Flex>
       </Box>
     </Box>

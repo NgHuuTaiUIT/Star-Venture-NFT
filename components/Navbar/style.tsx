@@ -95,23 +95,6 @@ export const iconStyle: ThemeUIStyleObject = {
   // transform: ["scale(5)", , "scale(3)", "scale(1)"]
 };
 
-export const btnConnectStyle: ThemeUIStyleObject = {
-  width: ["100%", , , 200],
-  background: "secondary",
-  py: [52, , , 1],
-  mt: [80, , , 0],
-  ml: [0, , , 25],
-  fontFamily: "Ubuntu",
-  fontSize: ["1.8rem", , , "1rem"],
-  fontWeight: "500",
-  borderRadius: 10,
-  alignItems: "center",
-  justifyContent: "center",
-  "> img": {
-    minHeight: ["2rem", , , "1rem"]
-  }
-};
-
 export const lineStyle: ThemeUIStyleObject = {
   position: "absolute",
   bottom: ["-50%", , , 0, 0],

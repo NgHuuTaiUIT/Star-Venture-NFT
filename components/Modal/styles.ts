@@ -12,16 +12,11 @@ export const containerStyle: ThemeUIStyleObject = {
     "url(/assets/images/Popup.svg)"
   ],
   backgroundRepeat: "no-repeat",
-  backgroundSize: ["contain", , , "contain"],
+  backgroundSize: ["contain", , , "cover"],
   backgroundColor: "transparent",
-  // width: ["80%", "60%", , 685],
-  // minHeight: ["65%", , , 419],
-  width: "384px",
-  height: "677px",
-
-  // minWidth: [685],
-  // height: "fit-content",
-  m: "0 auto",
+  minWidth: ["90%,,,50%"],
+  minHeight: "573px",
+  // m: "0 auto",
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)"
@@ -57,51 +52,38 @@ export const modalContentStyle: ThemeUIStyleObject = {
   alignItems: ["center", , , "start"],
   flexDirection: ["column", , , "row"],
   maxWidth: ["80%"],
+  gap: 30,
   m: "auto",
-  // py: ["20%"],
-  // my: [200, 150, , 0],
-  // gap: [70, 40],
   "> img": {
     maxWidth: ["60%", , , "90%"],
-    flex: "0 0 20%",
-    // height: ["100%", , , "auto"],
-    // minWidth: [360, , , 0],
     objectFit: "cover",
     borderTopLeftRadius: 3,
     borderBottomLeftRadius: 3
-    // my: [100, , 0, 0]
   }
 };
 
 export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
-  flex: "0 0 60%",
-  // fontSize: [42, 32, , 18],
-  fontSize: [18],
   "> h2": {
-    lineHeight: [2, , , 1],
-    textAlign: ["center", , , "start"],
-    fontSize: ["1.2em"],
-    mb: 2
+    lineHeight: [1],
+    textAlign: ["center", , , "start"]
   },
   "> h4": {
     textAlign: ["center", , , "start"],
     fontWeight: "lighter",
     fontSize: "0.8em",
-    lineHeight: [2, , , 3],
-    mb: [80, , 0, 0]
+    lineHeight: [3]
   },
   "> span": {
-    letterSpacing: "2px",
+    mt: 10,
+    letterSpacing: "1px",
     display: "-webkit-box",
-    WebkitLineClamp: [12, , , 8],
+    WebkitLineClamp: [10, , , 8],
     "-webkit-box-orient": "vertical",
     overflowX: "hidden",
     overflowY: ["auto"],
     wordBreak: "break-word",
-    // lineHeight: ["2.5rem", "1.5rem", , "1.5rem"],
-    lineHeight: ["0.7rem"],
-    maxHeight: [, "8rem", , , "14rem"],
-    mt: [60, , 0, 0],
+    lineHeight: ["1rem"],
+    maxHeight: ["8rem", , , "14rem"],
     whiteSpace: "pre-line"
   }
 };

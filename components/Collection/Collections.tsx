@@ -20,11 +20,11 @@ const data = [
 const Collections = (props: Props) => {
   const size: Size = useWindowSize();
   return (
-    <Box as="section" sx={collectionStyle}>
-      <Box sx={{ my: ["2rem", , , 30] }}>
-        <Title url="/assets/images/collection.svg" width={492} />
+    <Box as="section" variant="layout.section" sx={collectionStyle}>
+      <Box sx={{ mt: ["3.2rem", , , 30] }}>
+        <Title url="/assets/images/collection.svg" width={["80%", , "42%"]} />
       </Box>
-      <Box as="p" variant="text.p" sx={{ my: ["4rem", , , "2rem"] }}>
+      <Box as="p" variant="text.p" sx={{ my: ["2rem"] }}>
         A collection of 8888 Avatar NFTs represents 8888 first galactic citizens
         of Star Venture <br />
         metaverse. They are the elites of their kind and hold unique bonuses in

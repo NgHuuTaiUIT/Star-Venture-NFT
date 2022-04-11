@@ -3,7 +3,7 @@ import { Box, ThemeUIStyleObject } from "theme-ui";
 
 const Title = ({
   url,
-  width,
+  width = [`calc(100% - 50px)`],
   height = 51,
   backgroundPosition = "center",
   minWidth,
@@ -21,7 +21,7 @@ const Title = ({
       as="h2"
       sx={{
         backgroundImage: `url(${url})`,
-        width: [`calc(100% - 50px)`, null, null, width],
+        width,
         height,
         margin: "auto",
         backgroundRepeat: "no-repeat",

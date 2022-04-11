@@ -56,12 +56,15 @@ const data = [
 const Team = () => {
   return (
     <Flex as="section" sx={containerTeamStyle}>
-      <Box>
+      <Box
+        sx={{
+          mt: [30],
+          mb: [60]
+        }}>
         <Title
           url="/assets/images/team.svg"
-          height={["1.8rem", null, null, 32]}
+          height={["1.5rem", null, null, 32]}
           width={216}
-          minWidth={["20rem", , , 0]}
         />
       </Box>
       <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
@@ -94,7 +97,7 @@ const NameCard: React.FC<{
   return (
     <Box
       sx={{
-        minHeight: [560, null, null, 280]
+        minHeight: [260]
       }}>
       <Flex sx={nameCardBoxStyle}>
         <Box sx={{ position: "relative" }}>
@@ -112,11 +115,11 @@ const NameCard: React.FC<{
 };
 
 const Info = ({ name, position }: { name: string; position: string }) => (
-  <Box sx={InfoStyle}>
+  <Flex sx={InfoStyle}>
     <Box as="p">{name}</Box>
     <Box as="p" sx={{ color: "secondary", fontSize: "smaller" }}>
       {position}
     </Box>
-  </Box>
+  </Flex>
 );
 export default Team;

@@ -32,10 +32,10 @@ const data = [
 const Features = () => {
   return (
     <Box as="section" variant="layout.section" sx={{ textAlign: "center" }}>
-      <Box sx={{ py: ["2rem", , , 30] }}>
+      <Box sx={{ py: [38, , , 80] }}>
         <Title
           url="/assets/images/features.svg"
-          style={{ height: ["1.8rem"] }}
+          style={{ height: ["1.5rem", , "1.8rem"] }}
         />
       </Box>
       <Box variant="layout.features">
@@ -75,13 +75,16 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
         <Flex
           sx={{
             ...widgetFeaturesStyle,
-            pt: 45,
+            pt: "1rem",
             flexDirection: "column"
           }}>
           <Image
             src={`/assets/images/0${idx}.svg`}
             alt=""
-            sx={{ ml: 50, mb: 10, height: ["2.5rem", null, null, 32] }}
+            sx={{
+              ml: "1.2rem",
+              height: ["2rem", null, null, 32]
+            }}
           />
           <Flex sx={{ flexDirection: "column", width: "100%" }}>
             <Image src={`/assets/images/vector-left.png`} alt="" />
@@ -90,7 +93,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
               sx={{
                 ...descriptionStyle,
                 minWidth: "100%",
-                pl: 50
+                pl: 25
               }}>
               {text}
             </Box>

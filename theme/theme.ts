@@ -55,7 +55,7 @@ export const theme = makeTheme({
       px: [16, null, null, null],
       maxWidth: "container90",
       margin: "auto",
-      my: ["4rem", , , 50],
+      my: ["2rem", , , 50],
       width: ["100%"],
       lineHeight: [1.5]
     },
@@ -80,7 +80,7 @@ export const theme = makeTheme({
       }
     },
     card: {
-      minWidth: [580, 580, 580, 290, 290]
+      minWidth: [290, 290, 290, 290, 290]
       // "@media(max-width: 980px)": {
       //   minWidth: "30%"
       // },
@@ -130,11 +130,12 @@ export const theme = makeTheme({
       color: "heading"
     },
     p: {
-      fontSize: ["1.3rem", , , "1rem"]
+      fontSize: ["1rem"]
     },
     roadmap: {
       fontFamily: "roadmap",
-      fontSize: [60, null, null, 30],
+      fontSize: [30],
+      lineHeight: 1,
       whiteSpace: "pre-line"
     },
     heroPrimary: {
@@ -253,20 +254,16 @@ export const theme = makeTheme({
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      fontSize: ["32px", "32px", "32px", "18px"],
-      // fontSize: ["18px"],
+      // fontSize: ["32px", "32px", "32px", "18px"],
+      fontSize: ["18px"],
       bg: "background",
-      backgroundImage: [
-        "url(/assets/images/bg-mb.png)",
-        ,
-        ,
-        "url(/assets/images/bg.png)"
-      ],
+      backgroundImage: ["url(/assets/images/bg.png)"],
       backgroundPosition: "top,center",
       backgroundRepeat: "no-repeat",
       backgroundSize: ["cover"],
       margin: 0,
       height: "100%",
+      overflowX: "hidden",
       // WebkitFontSmoothing: "antialiased",
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"

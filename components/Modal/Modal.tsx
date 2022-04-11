@@ -6,7 +6,6 @@ import {
   closeButtonStyle,
   containerStyle,
   modalContentStyle,
-  textStyle,
   wrapInfoModalContentStyle
 } from "./styles";
 

@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React, { useState } from "react";
-import { Box, Button, Flex } from "theme-ui";
+import { Box, Button, Flex, Image } from "theme-ui";
 import {
   boxStoryStyle,
   buttonStyle,
@@ -15,7 +15,7 @@ const Story = (props: Props) => {
   const [showStory, setShowStory] = useState(false);
   return (
     <Flex as="section" sx={containerStoryStyle}>
-      <img src="/assets/images/logo_star_venture_1.png" alt="logo" />
+      <Image src="/assets/images/logo_star_venture_1.png" alt="logo" />
       <Box sx={boxStoryStyle}>
         <Flex sx={{ overflow: "hidden" }}>
           <Box
@@ -25,10 +25,9 @@ const Story = (props: Props) => {
               transform: `translateX(-${showStory && 100}%)`
             }}>
             Star Venture is a decentralized MMORPG built on “Chain name”. Get
-            onboard into an ever-expanding
-            <br />
-            space journey. Socialize-to-earn in a community-driven universe
-            where battles explode, enterprises
+            onboard into an ever-expanding space journey.
+            <br /> Socialize-to-earn in a community-driven universe where
+            battles explode, enterprises
             <br />
             rise, governments fall. Be ready for takeoff, captain.
             <br />

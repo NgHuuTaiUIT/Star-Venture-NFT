@@ -1,11 +1,11 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const widgetFeaturesStyle: ThemeUIStyleObject = {
-  pt: 40,
+  // pt: 40,
   minHeight: 120,
   alignItems: "start",
   textAlign: "start",
-  gap: 20
+  gap: 10
 };
 
 export const descriptionStyle: ThemeUIStyleObject = {

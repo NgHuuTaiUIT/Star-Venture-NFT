@@ -3,9 +3,9 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const footerStyle: ThemeUIStyleObject = {
   maxWidth: ["calc(100vw - 40px)", , , 500],
   m: "auto",
-  mt: -25,
+  // mt: "100%",
   flexDirection: ["column"],
-  gap: [20, , , 10],
+  gap: [15, , , 10],
   textAlign: "center"
 };
 
@@ -13,7 +13,7 @@ export const titleStyle: ThemeUIStyleObject = {
   fontFamily: "roadmap",
   letterSpacing: 1.5,
   fontWeight: 500,
-  fontSize: [56, , , 28]
+  fontSize: [28]
 };
 
 export const lineStyle: ThemeUIStyleObject = {

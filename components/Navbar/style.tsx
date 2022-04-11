@@ -3,7 +3,7 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const btnMenuMobileStyle: ThemeUIStyleObject = {
   display: ["block", , , "none"],
   position: "fixed",
-  right: "10%",
+  right: "6%",
   top: "4%",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
@@ -11,7 +11,7 @@ export const btnMenuMobileStyle: ThemeUIStyleObject = {
   height: [40],
   width: [40],
   cursor: "pointer",
-  transform: "scale(2)",
+  // transform: "scale(1)",
   zIndex: 9999
 };
 
@@ -19,7 +19,6 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   position: "fixed",
   width: "100%",
   height: ["100%", , , "auto"],
-  // py: ["20%", , , 0],
   background: [
     "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-mb.png)",
     ,
@@ -42,6 +41,7 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
 
 export const wrapNavbarStyle: ThemeUIStyleObject = {
   height: ["80%", , , "auto"],
+  width: "80%",
   flexDirection: ["column", "column", , "row"],
   pt: 14,
   borderRadius: 1,
@@ -63,7 +63,7 @@ export const wrapLeftMenuStyle: ThemeUIStyleObject = {
 };
 
 export const wrapRightMenuStyle: ThemeUIStyleObject = {
-  justifyContent: ["space-evenly"],
+  justifyContent: ["center"],
   alignItems: "center",
   height: "100%",
   width: "100%",
@@ -76,7 +76,7 @@ export const linkStyle: ThemeUIStyleObject = {
   display: "inline-block",
   width: ["100%", , , 120],
   height: 50,
-  fontSize: ["1.8rem", , , "1rem"],
+  fontSize: ["1.35rem", , , "1rem"],
   transition: "font-weight,color 0.5s",
   textAlign: "center",
   // letterSpacing: 2
@@ -88,7 +88,7 @@ export const iconStyle: ThemeUIStyleObject = {
   maxHeight: ["100%", , , 50],
   mx: 16,
   "> img": {
-    minWidth: [80, , , 20],
+    minWidth: [40, , , 20],
     objectPosition: "center",
     objectFit: "fill"
   }
@@ -97,12 +97,12 @@ export const iconStyle: ThemeUIStyleObject = {
 
 export const lineStyle: ThemeUIStyleObject = {
   position: "absolute",
-  bottom: ["-50%", , , 0, 0],
+  bottom: ["-5%"],
   left: "50%",
   transform: "translateX(-50%)",
   backgroundImage: "url(/assets/images/line.svg)",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  height: [5, , , 2],
+  height: [2],
   width: ["15rem", , , "100%"]
 };

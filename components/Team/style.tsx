@@ -3,13 +3,11 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const containerTeamStyle: ThemeUIStyleObject = {
   variant: "layout.section",
   flexDirection: ["column"],
-  alignItems: "center",
-  mt: 85
+  alignItems: "center"
 };
 
 export const gridTeamStyle: ThemeUIStyleObject = {
-  gap: [130, , , 130],
-  mt: 65
+  gap: ["1rem", , , 130]
 };
 
 export const nameCardBoxStyle: ThemeUIStyleObject = {
@@ -19,27 +17,22 @@ export const nameCardBoxStyle: ThemeUIStyleObject = {
   background: "url(/assets/images/Union.svg) no-repeat",
   backgroundPosition: "center",
   backgroundSize: "contain",
-  minWidth: [360, , , 179],
-  minHeight: [380, , , 189],
+  minWidth: [179],
+  minHeight: [189],
   overflow: "hidden",
-  // p: "26px 14px 22px 24px",
-  p: ["76px 28px 66px 56px", , , "26px 14px 22px 24px"],
-  // px: "1rem",
-  // py: "2rem",
+  p: "26px 14px 22px 24px",
   justifyContent: "center",
   alignItems: "center",
   ":hover": { "& #member-detail": { opacity: "1" } }
 };
 
 export const imageStyle: ThemeUIStyleObject = {
-  width: ["10rem", null, null, 140],
+  width: [140, null, null, 140],
   height: "auto",
   borderRadius: 3
 };
 
 export const nameCardBoxHoverStyle: ThemeUIStyleObject = {
-  // width: [280, null, null, 140],
-  // height: [280, null, null, 140],
   opacity: "0",
   position: "absolute",
   bg: "secondary",
@@ -63,6 +56,9 @@ export const btnStyle: ThemeUIStyleObject = {
 };
 
 export const InfoStyle: ThemeUIStyleObject = {
+  flexDirection: "column",
+  gap: 10,
   textAlign: "center",
-  fontSize: ["1.5rem", , , 18]
+  fontSize: ["1rem", , , 18],
+  lineHeight: 1
 };

@@ -46,12 +46,12 @@ const Roadmap = () => {
   return (
     <Box as="section" sx={containerStyle}>
       <Flex as="section" sx={wrapStyle}>
-        <Box sx={{ mt: 0 }}>
-          <Box sx={{ my: ["2.5rem", , , 51] }}>
+        <Box sx={{ mt: [10, , 60] }}>
+          <Box sx={{ mb: ["2.2rem", , , 75] }}>
             <Title
               url="/assets/images/roadmap.svg"
-              width={379}
-              style={{ height: ["1.8rem"] }}
+              width={"100%"}
+              style={{ height: ["1.5rem", , "1.8rem"] }}
             />
           </Box>
           <Flex sx={wrapRoadmapItemStyle}>
@@ -74,17 +74,18 @@ const RoadMapItem: React.FC<{
 }> = ({ idxPhrase, title, content }) => {
   return (
     <Box sx={widgetRoadmapItemStyle}>
-      <Box sx={{ mb: [30, 30, null, 0], ml: -25 }}>
+      <Box sx={{ ml: -25 }}>
         <Title
           url={`/assets/images/phrase-${idxPhrase}.svg`}
           backgroundPosition="start"
-          height={[35, 35, null, 16]}
+          height={[16]}
         />
       </Box>
       <Box as="h2" sx={titleStyle}>
         {title}
       </Box>
       <br />
+
       <Box as="p">
         <span sx={{ color: "secondary" }}>▷ </span> {content}
       </Box>

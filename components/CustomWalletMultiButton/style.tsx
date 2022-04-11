@@ -6,7 +6,7 @@ export const wrapButton: ThemeUIStyleObject = {
   flexWrap: "nowrap",
   alignItems: "center",
   flex: "0 0 25%",
-  width: ["100%", , "85%"],
+  width: ["100%", , , "85%"],
   m: "auto"
 };
 

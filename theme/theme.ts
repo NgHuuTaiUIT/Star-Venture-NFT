@@ -6,7 +6,7 @@ export const theme = makeTheme({
     initialColorModeName: "light",
     useColorSchemeMediaQuery: true
   },
-  breakpoints: ["480px", "980px", "1200px"],
+  breakpoints: ["480px", "768px", "1024px"],
   // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
   colors: {
     primary: "#fff",
@@ -254,6 +254,7 @@ export const theme = makeTheme({
       lineHeight: "body",
       fontWeight: "lighter",
       fontSize: ["32px", "32px", "32px", "18px"],
+      // fontSize: ["18px"],
       bg: "background",
       backgroundImage: [
         "url(/assets/images/bg-mb.png)",

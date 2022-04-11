@@ -1,23 +1,13 @@
-import styled from "@emotion/styled";
-import { type } from "os";
-import React, { ReactNode, useContext, useRef } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Heading,
-  Image,
-  Text,
-  ThemeUICSSProperties
-} from "theme-ui";
+import React, { ReactNode, useContext } from "react";
+import { Box, Button, Card, Heading, Image, Text } from "theme-ui";
 import { ModalContext } from "../../context/ModalProvider";
 import {
   backgroundStyle,
   closeButtonStyle,
   containerStyle,
   modalContentStyle,
-  textModalContentStyle,
-  textStyle
+  textStyle,
+  wrapInfoModalContentStyle
 } from "./styles";
 
 type ModalProps = {
@@ -59,12 +49,10 @@ export const ModalContent: React.FC<ModalContentProps> = ({
 }) => (
   <Card sx={modalContentStyle}>
     <Image src={image} alt="portrait" />
-    <Box sx={textModalContentStyle}>
+    <Box sx={wrapInfoModalContentStyle}>
       <Heading as="h2">{name}</Heading>
       <Heading as="h4">{position}</Heading>
-      <Text as="span" sx={textStyle}>
-        {content}
-      </Text>
+      <Text as="span">{content}</Text>
     </Box>
   </Card>
 );

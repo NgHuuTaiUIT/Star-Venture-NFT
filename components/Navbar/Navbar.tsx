@@ -47,19 +47,19 @@ const Navbar = () => {
         }}
         onClick={openMenu}
       />
-      <Box
+      <Flex
         sx={{
+          ...containerNavbarStyle,
           opacity: width >= 1200 ? 1 : showMenu ? 1 : 0,
           visibility:
-            width >= 1200 ? "visible" : showMenu ? "visible" : "hidden",
-          ...containerNavbarStyle
+            width >= 1200 ? "visible" : showMenu ? "visible" : "hidden"
         }}>
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />
           <RightMenu />
           <CustomWalletMultiButton />
         </Flex>
-      </Box>
+      </Flex>
     </Box>
   );
 };

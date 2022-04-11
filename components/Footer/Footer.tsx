@@ -14,7 +14,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <Flex sx={footerStyle}>
+    <Flex as="footer" sx={footerStyle}>
       <Box as="h2" sx={titleStyle}>
         star venture
       </Box>

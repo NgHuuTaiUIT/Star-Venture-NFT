@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Box, Button, Flex, Image, Link, NavLink } from "theme-ui";
-import { MenuContext } from "../../context/MenuContext";
+import { MenuContext } from "../../context/MenuProvider";
 import disableScroll from "disable-scroll";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import {
@@ -15,6 +15,7 @@ import {
   wrapNavbarStyle,
   wrapRightMenuStyle
 } from "./style";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 const uris: string[] = [
   "/assets/icons/twitter.svg",
   "/assets/icons/discord.svg",
@@ -27,9 +28,16 @@ const menus: string[] = ["Trailer", "Feature", "Collection", "Roadmap", "Team"];
 const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
   const { width } = useWindowSize();
-  showMenu ? disableScroll.on() : disableScroll.off();
+  useEffect(() => {
+    if (width < 1200) {
+      showMenu ? disableScroll.on() : disableScroll.off();
+    } else {
+      disableScroll.off();
+      closeMenu();
+    }
+  }, [width]);
   return (
-    <>
+    <Box as="header">
       <Box
         as="a"
         sx={{
@@ -52,15 +60,20 @@ const Navbar = () => {
           <RightMenu />
           <Box
             sx={{
+              display: "flex",
+              justifyContent: ["center", , , "start"],
+              flexWrap: "nowrap",
+              alignItems: "center",
               flex: "0 0 25%",
               width: ["100%", , "85%"],
               m: "auto"
             }}>
-            <Button sx={btnConnectStyle}>Connect Wallet</Button>
+            {/* <Button sx={btnConnectStyle}>Connect Wallet</Button> */}
+            <WalletMultiButton sx={btnConnectStyle}></WalletMultiButton>
           </Box>
         </Flex>
       </Box>
-    </>
+    </Box>
   );
 };
 

@@ -10,7 +10,7 @@ import {
   Text,
   ThemeUICSSProperties
 } from "theme-ui";
-import { ModalContext } from "../../context/ModalContext";
+import { ModalContext } from "../../context/ModalProvider";
 import {
   backgroundStyle,
   closeButtonStyle,

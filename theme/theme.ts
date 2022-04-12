@@ -211,7 +211,8 @@ export const theme = makeTheme({
     full: {
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
-      backgroundPosition: "center"
+      backgroundPosition: "center",
+      backgroundColor: "transparent"
     }
   },
   // variants for buttons

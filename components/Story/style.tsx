@@ -9,10 +9,14 @@ export const containerStoryStyle: ThemeUIStyleObject = {
   margin: "auto",
   textAlign: "center",
   maxWidth: "100%",
-  pt: ["45%", , "6%"],
-  // px: [36, null, null],
+  pt: ["calc(40% + 9rem)", , "calc(30% + 9rem)"],
   background: "url(/assets/images/bg-story.png) no-repeat cover",
-  "> img": { width: ["100%", , "60%"], mt: [0] }
+  "> img": {
+    width: ["100%", , "60%"],
+    mt: [0],
+    position: "absolute",
+    top: ["9.5rem"]
+  }
 };
 
 export const boxStoryStyle: ThemeUIStyleObject = {
@@ -24,18 +28,19 @@ export const boxStoryStyle: ThemeUIStyleObject = {
   color: "#fff",
   textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
   mt: [0, , -80],
-  gap: ["4rem", , , 0],
+  gap: ["3rem", , , 0],
   maxWidth: ["90%", , "60%"]
 };
 
 export const buttonStyle: ThemeUIStyleObject = {
-  background: "url(/assets/images/btn.png)",
   variant: "backgrounds.full",
+  backgroundImage: "url(/assets/images/btn.png)",
   width: ["90%", , , 392],
   height: [100],
   color: "white",
   fontSize: ["1rem", , , 20],
   transition: "color 0.3s linear",
+  py: 10,
   ":hover": {
     color: "#428EFF"
   }
@@ -44,5 +49,5 @@ export const buttonStyle: ThemeUIStyleObject = {
 export const textStoryStyle: ThemeUIStyleObject = {
   flex: "0 0 100%",
   transition: "all 0.3s",
-  lineHeight: [1.6, , , 2]
+  lineHeight: [1.7, , , 2]
 };

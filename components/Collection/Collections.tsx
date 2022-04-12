@@ -24,7 +24,7 @@ const Collections = (props: Props) => {
       <Box sx={{ mt: ["3.2rem", , , 30] }}>
         <Title
           url="/assets/images/collection.svg"
-          width={["100%", , "42%"]}
+          width={["calc(100vw - 50px)", , "42%"]}
           height={[100, , , 51]}
         />
       </Box>

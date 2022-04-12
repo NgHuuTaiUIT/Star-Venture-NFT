@@ -18,10 +18,12 @@ export const btnConnectStyle: ThemeUIStyleObject = {
   fontFamily: "Ubuntu",
   fontSize: ["1.2rem", , , "1rem"],
   fontWeight: "400",
-  borderRadius: 2,
+  borderRadius: 10,
   alignItems: "center",
   justifyContent: "center",
+  p: [0],
   "> img": {
     minHeight: ["1rem"]
-  }
+  },
+  "> button": {}
 };

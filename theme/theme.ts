@@ -63,7 +63,7 @@ export const theme = makeTheme({
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
       gap: ["1rem", , , 0],
-      "@media only screen and (max-width: 1200px)": {
+      "@media only screen and (max-width: 1000px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
         width: "calc(100% - 10px)",
         margin: "auto"

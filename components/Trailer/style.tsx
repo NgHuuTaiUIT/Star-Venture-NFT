@@ -10,5 +10,6 @@ export const wrapTrailerStyle: ThemeUIStyleObject = {
   position: "absolute",
   inset: 0,
   maxWidth: "container",
-  margin: "auto"
+  margin: "auto",
+  mt: [-12]
 };

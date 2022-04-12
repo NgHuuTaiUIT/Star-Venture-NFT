@@ -12,10 +12,10 @@ export const containerStyle: ThemeUIStyleObject = {
     "url(/assets/images/Popup.svg)"
   ],
   backgroundRepeat: "no-repeat",
-  backgroundSize: ["contain", , , "cover"],
+  backgroundSize: ["contain", , , "contain"],
   backgroundColor: "transparent",
-  minWidth: ["90%,,,50%"],
-  minHeight: "573px",
+  width: ["90%", , "685px"],
+  height: ["80%", , "419px"],
   // m: "0 auto",
   top: "50%",
   left: "50%",
@@ -48,14 +48,16 @@ export const closeButtonStyle: ThemeUIStyleObject = {
 export const modalContentStyle: ThemeUIStyleObject = {
   borderRadius: "3",
   display: "flex",
-  justifyContent: ["center", , , "space-between"],
+  justifyContent: ["center", , , "start"],
   alignItems: ["center", , , "start"],
   flexDirection: ["column", , , "row"],
-  maxWidth: ["80%"],
+  maxWidth: ["100%", , "90%"],
+  height: ["100%"],
   gap: 30,
   m: "auto",
+  mt: ["30%", , "10%"],
   "> img": {
-    maxWidth: ["60%", , , "90%"],
+    maxWidth: ["60%", , "30%"],
     objectFit: "cover",
     borderTopLeftRadius: 3,
     borderBottomLeftRadius: 3
@@ -63,6 +65,8 @@ export const modalContentStyle: ThemeUIStyleObject = {
 };
 
 export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
+  maxWidth: ["85%", , "80%"],
+  height: "80%",
   "> h2": {
     lineHeight: [1],
     textAlign: ["center", , , "start"]
@@ -77,7 +81,7 @@ export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
     mt: 10,
     letterSpacing: "1px",
     display: "-webkit-box",
-    WebkitLineClamp: [10, , , 8],
+    WebkitLineClamp: [10, , , 12],
     "-webkit-box-orient": "vertical",
     overflowX: "hidden",
     overflowY: ["auto"],

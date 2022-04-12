@@ -257,8 +257,12 @@ export const theme = makeTheme({
       // fontSize: ["32px", "32px", "32px", "18px"],
       fontSize: ["18px"],
       bg: "background",
-      backgroundImage: ["url(/assets/images/bg.png)"],
-      backgroundPosition: "top,center",
+      backgroundImage: [
+        "url(/assets/images/bg-mb.png)",
+        ,
+        "url(/assets/images/bg.png)"
+      ],
+      backgroundPosition: ["top,center"],
       backgroundRepeat: "no-repeat",
       backgroundSize: ["cover"],
       margin: 0,

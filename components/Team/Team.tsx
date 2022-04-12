@@ -63,8 +63,10 @@ const Team = () => {
         }}>
         <Title
           url="/assets/images/team.svg"
-          height={["1.5rem", null, null, 32]}
-          width={216}
+          style={{
+            height: ["1.8rem", , , "1.8rem"],
+            width: ["calc(100vw - 30px)", , , 216]
+          }}
         />
       </Box>
       <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>

@@ -44,5 +44,5 @@ export const buttonStyle: ThemeUIStyleObject = {
 export const textStoryStyle: ThemeUIStyleObject = {
   flex: "0 0 100%",
   transition: "all 0.3s",
-  lineHeight: 1.6
+  lineHeight: [1.6, , , 2]
 };

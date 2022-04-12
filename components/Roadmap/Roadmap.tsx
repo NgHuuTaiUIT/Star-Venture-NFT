@@ -51,7 +51,7 @@ const Roadmap = () => {
             <Title
               url="/assets/images/roadmap.svg"
               width={"100%"}
-              style={{ height: ["1.5rem", , "1.8rem"] }}
+              style={{ height: ["1.8rem", , "1.8rem"] }}
             />
           </Box>
           <Flex sx={wrapRoadmapItemStyle}>

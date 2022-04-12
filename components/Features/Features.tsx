@@ -35,7 +35,7 @@ const Features = () => {
       <Box sx={{ py: [38, , , 80] }}>
         <Title
           url="/assets/images/features.svg"
-          style={{ height: ["1.5rem", , "1.8rem"] }}
+          style={{ height: ["1.8rem", , "1.8rem"], width: ["100%"] }}
         />
       </Box>
       <Box variant="layout.features">

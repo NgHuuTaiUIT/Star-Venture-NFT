@@ -22,7 +22,11 @@ const Collections = (props: Props) => {
   return (
     <Box as="section" variant="layout.section" sx={collectionStyle}>
       <Box sx={{ mt: ["3.2rem", , , 30] }}>
-        <Title url="/assets/images/collection.svg" width={["80%", , "42%"]} />
+        <Title
+          url="/assets/images/collection.svg"
+          width={["100%", , "42%"]}
+          height={[100, , , 51]}
+        />
       </Box>
       <Box as="p" variant="text.p" sx={{ my: ["2rem"] }}>
         A collection of 8888 Avatar NFTs represents 8888 first galactic citizens

@@ -1,21 +1,12 @@
-import styled from "@emotion/styled";
-import { type } from "os";
-import React, { ReactNode, useContext, useRef } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Heading,
-  Image,
-  Text,
-  ThemeUICSSProperties
-} from "theme-ui";
-import { ModalContext } from "../../context/ModalContext";
+import React, { ReactNode, useContext } from "react";
+import { Box, Button, Card, Heading, Image, Text } from "theme-ui";
+import { ModalContext } from "../../context/ModalProvider";
 import {
   backgroundStyle,
   closeButtonStyle,
   containerStyle,
-  textStyle
+  modalContentStyle,
+  wrapInfoModalContentStyle
 } from "./styles";
 
 type ModalProps = {
@@ -55,61 +46,12 @@ export const ModalContent: React.FC<ModalContentProps> = ({
   position,
   content
 }) => (
-  <Card
-    sx={{
-      borderRadius: "3",
-      display: "flex",
-      justifyContent: ["start", , , "space-between"],
-      alignItems: ["center", , , "start"],
-      flexDirection: ["column", , , "row"],
-      maxWidth: ["90%", , , "90%"],
-      mx: "auto",
-      my: [200, 150, , 0],
-      gap: [70, 40]
-    }}>
-    <Image
-      src={image}
-      sx={{
-        flex: "0 0 33.33%",
-        height: ["100%", , , "auto"],
-        minWidth: [360, , , 0],
-        objectFit: "cover",
-        borderTopLeftRadius: "3",
-        borderBottomLeftRadius: "3",
-        maxWidth: ["90%", , , "100%"],
-        my: [100, , 0, 0]
-      }}
-    />
-    <Box sx={{ fontSize: [42, 22, , 18] }}>
-      <Heading
-        as="h2"
-        mb={2}
-        sx={{
-          lineHeight: [2, , , 1],
-
-          textAlign: ["center", , , "start"],
-          fontSize: ["1.2em"]
-        }}>
-        {name}
-      </Heading>
-      <Heading
-        as="h4"
-        // mb={3}
-        sx={{
-          textAlign: ["center", , , "start"],
-          fontWeight: "lighter",
-          fontSize: "0.8em",
-          lineHeight: [2, , , 3],
-          mb: [80, , 0, 0]
-        }}>
-        {position}
-      </Heading>
-      {/* <Text mb={3} sx={{ lineHeight: 1.5, letterSpacing: 1.2 }}>
-        {content}
-      </Text> */}
-      <Box as="p" sx={textStyle}>
-        {content}
-      </Box>
+  <Card sx={modalContentStyle}>
+    <Image src={image} alt="portrait" />
+    <Box sx={wrapInfoModalContentStyle}>
+      <Heading as="h2">{name}</Heading>
+      <Heading as="h4">{position}</Heading>
+      <Text as="span">{content}</Text>
     </Box>
   </Card>
 );

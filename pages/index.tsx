@@ -1,17 +1,20 @@
+import {
+  WalletDisconnectButton,
+  WalletMultiButton
+} from "@solana/wallet-adapter-react-ui";
 import Head from "next/head";
-import { Suspense, useState } from "react";
-import Collections from "../components/Collections";
-import Features from "../components/Features";
+import { Suspense } from "react";
+import Collections from "../components/Collection/Collections";
+import Features from "../components/Features/Features";
 import Modal from "../components/Modal/Modal";
-import Roadmap from "../components/Roadmap";
-import Story from "../components/Story";
-import Team from "../components/Team";
-import Trailer from "../components/Trailer";
-import { ModalProvider } from "../context/ModalContext";
+import Roadmap from "../components/Roadmap/Roadmap";
+import Story from "../components/Story/Story";
+import Team from "../components/Team/Team";
+import Trailer from "../components/Trailer/Trailer";
 
 export default function Page() {
   return (
-    <ModalProvider>
+    <>
       <Head>
         <title>Next.js Theme UI</title>
       </Head>
@@ -24,6 +27,6 @@ export default function Page() {
       <Roadmap />
       <Team />
       <Modal />
-    </ModalProvider>
+    </>
   );
 }

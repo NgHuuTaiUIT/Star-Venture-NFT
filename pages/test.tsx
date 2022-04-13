@@ -16,8 +16,7 @@ export default function Page() {
   };
   return (
     <div>
-      <Button onClick={openModal}>dsadas</Button>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { backgroundStyle } from "./../components/Modal/styles";
 import { makeTheme } from "@theme-ui/css/utils";
 
 export const theme = makeTheme({
@@ -5,7 +6,8 @@ export const theme = makeTheme({
     initialColorModeName: "light",
     useColorSchemeMediaQuery: true
   },
-  breakpoints: ["480px", "980px", "1200px"],
+  breakpoints: ["480px", "768px", "1024px"],
+  // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
   colors: {
     primary: "#fff",
     secondary: "#6688FF",
@@ -18,6 +20,7 @@ export const theme = makeTheme({
     roadmap: "Pilot Command Regular"
   },
   // fontSizes: [18, 28],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: "normal",
     heading: 500,
@@ -32,46 +35,44 @@ export const theme = makeTheme({
     caps: "0.2em",
     heading: "-0.5px"
   },
-  // space: [0, 4, 8, 16, 32, 64],
+  space: [0, 4, 8, 16, 32, 64],
   sizes: {
     container90: ["1190px"],
     container40: ["1140px"]
   },
+  // sizes: [14, 16, 20, 24, 32, 48, 64],
   // variants can use custom, user-defined names
   layout: {
     container: {
       px: ["15px", null, null, "30px"]
     },
-    title: {},
-    section: {
-      py: 25,
-      px: [16, null, null, null],
-      maxWidth: "container90",
+    title: {
       margin: "auto",
-      my: 50,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain"
+    },
+    section: {
+      maxWidth: "100vw",
+      margin: "auto",
+      mb: ["4rem", , 50],
       width: ["100%"],
-      lineHeight: [1.5]
+      lineHeight: [1.5],
+      "> * ": {
+        maxWidth: "1190px !important",
+        mx: "auto !important"
+      }
     },
     features: {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
-      "@media only screen and (max-width: 1200px)": {
+      gap: ["2rem", , , 0],
+      "@media only screen and (max-width: 1000px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
-        width: "calc(100% - 10px)",
-        margin: "auto"
+        width: "calc(100% - 1rem)",
+        margin: "2.8rem auto"
       }
     },
     collections: {
-      // display: "-webkit-inline-box",
-      // overflow: "hidden",
-      // "@media(min-width: 480px)": {
-      //   display: "flex",
-      //   // flexDirection: "row",
-      //   justifyContent: "center",
-      //   mt: 74,
-      //   // gap: 190,
-      //   width: "100%"
-      // }
       display: "grid",
       gridTemplateRows: "1fr 1fr"
     },
@@ -82,7 +83,7 @@ export const theme = makeTheme({
       }
     },
     card: {
-      minWidth: [580, 580, 580, 290, 290]
+      minWidth: [290, 290, 290, 290, 290]
       // "@media(max-width: 980px)": {
       //   minWidth: "30%"
       // },
@@ -131,9 +132,13 @@ export const theme = makeTheme({
       letterSpacing: "heading",
       color: "heading"
     },
+    p: {
+      fontSize: ["1rem"]
+    },
     roadmap: {
       fontFamily: "roadmap",
-      fontSize: [60, null, null, 30],
+      fontSize: [30],
+      lineHeight: 1,
       whiteSpace: "pre-line"
     },
     heroPrimary: {
@@ -205,6 +210,14 @@ export const theme = makeTheme({
       borderRadius: 99999
     }
   },
+  backgrounds: {
+    full: {
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      backgroundColor: "transparent"
+    }
+  },
   // variants for buttons
   buttons: {
     menu: {
@@ -242,16 +255,22 @@ export const theme = makeTheme({
   styles: {
     // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
+      position: "relative",
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      fontSize: ["32px", "32px", "32px", "18px"],
-      bg: "background",
-      backgroundImage: "url(/assets/images/bg.png)",
-      backgroundPosition: "top,center",
+      userSelect: "none",
+      backgroundColor: "#12192C;",
+      maxWidth: "1920px",
+      width: "100%",
+      margin: "0 auto",
+      fontSize: ["18px"],
+      backgroundImage: ["url(/assets/images/bg.png)"],
+      // backgroundPosition: ["top,center"],
       backgroundRepeat: "no-repeat",
-      margin: 0,
+      backgroundPosition: ",30%",
       height: "100%",
+      overflowX: "hidden",
       // WebkitFontSmoothing: "antialiased",
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"

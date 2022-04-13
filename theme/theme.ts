@@ -35,11 +35,12 @@ export const theme = makeTheme({
     caps: "0.2em",
     heading: "-0.5px"
   },
-  // space: [0, 4, 8, 16, 32, 64],
+  space: [0, 4, 8, 16, 32, 64],
   sizes: {
     container90: ["1190px"],
     container40: ["1140px"]
   },
+  // sizes: [14, 16, 20, 24, 32, 48, 64],
   // variants can use custom, user-defined names
   layout: {
     container: {
@@ -51,22 +52,24 @@ export const theme = makeTheme({
       backgroundSize: "contain"
     },
     section: {
-      py: 25,
-      px: [16, null, null, null],
-      maxWidth: "container90",
+      maxWidth: "100vw",
       margin: "auto",
-      my: ["2rem", , , 50],
+      mb: ["4rem", , 50],
       width: ["100%"],
-      lineHeight: [1.5]
+      lineHeight: [1.5],
+      "> * ": {
+        maxWidth: "1190px !important",
+        mx: "auto !important"
+      }
     },
     features: {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
-      gap: ["1rem", , , 0],
+      gap: ["2rem", , , 0],
       "@media only screen and (max-width: 1000px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
-        width: "calc(100% - 10px)",
-        margin: "auto"
+        width: "calc(100% - 1rem)",
+        margin: "2.8rem auto"
       }
     },
     collections: {
@@ -252,21 +255,20 @@ export const theme = makeTheme({
   styles: {
     // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
+      position: "relative",
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      // fontSize: ["32px", "32px", "32px", "18px"],
+      userSelect: "none",
+      backgroundColor: "#12192C;",
+      maxWidth: "1920px",
+      width: "100%",
+      margin: "0 auto",
       fontSize: ["18px"],
-      bg: "background",
-      backgroundImage: [
-        "url(/assets/images/bg-mb.png)",
-        ,
-        "url(/assets/images/bg.png)"
-      ],
-      backgroundPosition: ["top,center"],
+      backgroundImage: ["url(/assets/images/bg.png)"],
+      // backgroundPosition: ["top,center"],
       backgroundRepeat: "no-repeat",
-      backgroundSize: ["cover"],
-      margin: 0,
+      backgroundPosition: ",30%",
       height: "100%",
       overflowX: "hidden",
       // WebkitFontSmoothing: "antialiased",

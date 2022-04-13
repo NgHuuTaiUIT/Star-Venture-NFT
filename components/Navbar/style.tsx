@@ -1,22 +1,21 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const btnMenuMobileStyle: ThemeUIStyleObject = {
-  display: ["block", , , "none"],
-  position: "fixed",
-  right: "6%",
-  top: "4%",
+  // transform: "scale(1)",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   color: "transparent",
-  height: [40],
-  width: [40],
   cursor: "pointer",
-  // transform: "scale(1)",
+  display: ["block", , , "none"],
+  height: [36],
+  position: "fixed",
+  right: 30,
+  top: 30,
+  width: [36],
   zIndex: 9999
 };
 
 export const containerNavbarStyle: ThemeUIStyleObject = {
-  position: "fixed",
   width: "100%",
   height: ["100%", , , "auto"],
   background: [
@@ -28,38 +27,29 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   variant: "backgrounds.full",
   backgroundSize: "cover",
   zIndex: 999
-  // "::after": {
-  //   content: `'""'`,
-  //   variant: "backgrounds.full",
-  //   backgroundImage: "url(/assets/images/bg-mb.png)",
-  //   position: "absolute",
-  //   inset: 0,
-  //   width: "100%",
-  //   backgroundSize: "cover"
-  // }
 };
 
 export const wrapNavbarStyle: ThemeUIStyleObject = {
-  height: ["80%", , , "auto"],
-  width: "80%",
-  flexDirection: ["column", "column", , "row"],
-  pt: 14,
-  borderRadius: 1,
-  m: "auto",
-  maxWidth: "80%",
-  justifyContent: ["center", , , "space-between"],
   alignItems: "center",
   backgroundColor: "transparent",
-  px: 3
+  borderRadius: 1,
+  flexDirection: ["column", "column", , "row"],
+  height: ["80%", , , "auto"],
+  justifyContent: ["center", , , "space-between"],
+  m: "auto",
+  maxWidth: "80%",
+  pt: 14,
+  px: 3,
+  width: "80%"
 };
 
 export const wrapLeftMenuStyle: ThemeUIStyleObject = {
-  flexDirection: ["column", "column", , "row"],
-  justifyContent: ["space-between", , , "center"],
   alignItems: "center",
-  ml: 24,
+  flex: "0 0 60%",
+  flexDirection: ["column", "column", , "row"],
   height: "100%",
-  flex: "0 0 60%"
+  justifyContent: ["space-between", , , "center"],
+  ml: 24
 };
 
 export const wrapRightMenuStyle: ThemeUIStyleObject = {
@@ -74,14 +64,12 @@ export const wrapRightMenuStyle: ThemeUIStyleObject = {
 
 export const linkStyle: ThemeUIStyleObject = {
   display: "inline-block",
-  width: ["100%", , , 120],
-  height: 50,
   fontSize: ["1.35rem", , , "1rem"],
-  transition: "font-weight,color 0.5s",
+  height: 50,
+  position: "relative",
   textAlign: "center",
-  // letterSpacing: 2
-  position: "relative"
-  // mt: [80]
+  transition: "font-weight,color 0.5s",
+  width: ["100%", , , 120]
 };
 
 export const iconStyle: ThemeUIStyleObject = {
@@ -96,13 +84,13 @@ export const iconStyle: ThemeUIStyleObject = {
 };
 
 export const lineStyle: ThemeUIStyleObject = {
-  position: "absolute",
-  bottom: ["-5%"],
-  left: "50%",
-  transform: "translateX(-50%)",
   backgroundImage: "url(/assets/images/line.svg)",
-  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  bottom: ["-5%"],
   height: [2],
+  left: "50%",
+  position: "absolute",
+  transform: "translateX(-50%)",
   width: ["15rem", , , "100%"]
 };

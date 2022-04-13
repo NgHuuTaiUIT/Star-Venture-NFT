@@ -1,7 +1,6 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const containerStoryStyle: ThemeUIStyleObject = {
-  variant: "layout.section",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",

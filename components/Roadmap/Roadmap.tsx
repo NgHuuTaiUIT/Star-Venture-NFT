@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Flex, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
+import Section from "../Section/Section";
 import Title from "../Title/Title";
 import {
   circleStyle,
@@ -19,7 +20,7 @@ const data = [
     idxPhrase: 1,
     title: "creation",
     content:
-      "Our artists and game designers have been working closely to deliver quality artwork that comes with different bonuses and rarities. This is gratitude to our early supporters."
+      " Our artists and game designers have been working closely to deliver quality artwork that comes with different bonuses and rarities. This is gratitude to our early supporters."
   },
   {
     idxPhrase: 2,
@@ -44,25 +45,61 @@ const data = [
 const Roadmap = () => {
   const size: Size = useWindowSize();
   return (
-    <Box as="section" sx={containerStyle}>
-      <Flex as="section" sx={wrapStyle}>
-        <Box sx={{ mt: [10, , 60] }}>
-          <Box sx={{ mb: ["2.2rem", , , 75] }}>
-            <Title
-              url="/assets/images/roadmap.svg"
-              width={"100%"}
-              style={{ height: ["1.8rem", , "1.8rem"] }}
-            />
+    <Section optLg={[1, 1, 0, 1]}>
+      <Box sx={containerStyle}>
+        <Flex sx={wrapStyle}>
+          <Box sx={{ mt: ["1rem", , 60] }}>
+            <Box sx={{ mb: ["1.3rem", , , 75] }}>
+              <Title title="Roadmap" letterSpacing={10} />
+            </Box>
+            <Flex sx={wrapRoadmapItemStyle}>
+              {data.map((vl, idx) => (
+                <RoadMapItem {...vl} key={idx} />
+              ))}
+            </Flex>
           </Box>
-          <Flex sx={wrapRoadmapItemStyle}>
-            {data.map((vl, idx) => (
-              <RoadMapItem {...vl} key={idx} />
-            ))}
-          </Flex>
-        </Box>
-      </Flex>
-      <Circle />
-      <Net />
+        </Flex>
+        <Circle />
+        <Net />
+      </Box>
+    </Section>
+  );
+};
+
+const Phrase = ({
+  phrase,
+  letterSpacing = 1
+}: {
+  phrase: string;
+  letterSpacing?: any;
+}) => {
+  return (
+    <Box sx={{ textTransform: "uppercase", m: "auto" }}>
+      <svg width="100%" height="30" textAnchor="start">
+        <defs>
+          <linearGradient
+            id="phrase"
+            x1="0"
+            x2="0"
+            y1="0"
+            y2="100%"
+            gradientUnits="userSpaceOnUse">
+            <stop stopColor="#A8BBFF" offset="0%" />
+            <stop stopColor="rgba(0, 18, 183, 0.88)" offset="118%" />
+          </linearGradient>
+        </defs>
+        <text fill="transparent" stroke="url(#phrase)">
+          <tspan
+            x="0%"
+            y="80%"
+            fontFamily="Pilot Command Regular"
+            fontSize="24"
+            fontWeight="400"
+            letterSpacing={letterSpacing}>
+            {phrase}
+          </tspan>
+        </text>
+      </svg>
     </Box>
   );
 };
@@ -74,20 +111,16 @@ const RoadMapItem: React.FC<{
 }> = ({ idxPhrase, title, content }) => {
   return (
     <Box sx={widgetRoadmapItemStyle}>
-      <Box sx={{ ml: -25 }}>
-        <Title
-          url={`/assets/images/phrase-${idxPhrase}.svg`}
-          backgroundPosition="start"
-          height={[16]}
-        />
+      <Box>
+        <Phrase phrase={`Phrase ${idxPhrase}`} />
       </Box>
       <Box as="h2" sx={titleStyle}>
         {title}
       </Box>
       <br />
-
       <Box as="p">
-        <span sx={{ color: "secondary" }}>▷ </span> {content}
+        <span sx={{ color: "secondary" }}>▷ </span>
+        {content}
       </Box>
     </Box>
   );

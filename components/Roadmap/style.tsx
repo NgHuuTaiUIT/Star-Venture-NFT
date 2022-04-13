@@ -2,33 +2,32 @@ import { ThemeUIStyleObject } from "theme-ui";
 
 export const containerStyle: ThemeUIStyleObject = {
   variant: "layout.roadmap",
-  position: "relative"
+  position: "relative",
+  minWidth: "100vw"
 };
 
 export const wrapStyle: ThemeUIStyleObject = {
-  variant: "layout.section",
-  // maxWidth: 1920,
-  maxWidth: "95%",
+  maxWidth: "container90",
   minHeight: 819,
-  flexDirection: "column"
+  flexDirection: "column",
+  m: "0 auto"
 };
 
 export const wrapRoadmapItemStyle: ThemeUIStyleObject = {
   flexDirection: ["column", "column", "column", "row"],
-  maxWidth: [null, null, 1190],
+  maxWidth: ["85%", null, 1190],
   margin: "auto",
   justifyContent: "space-between"
 };
 
 export const widgetRoadmapItemStyle: ThemeUIStyleObject = {
-  my: [25],
+  my: [22],
   mx: [10],
   maxWidth: [null, null, null, 250]
 };
 
 export const titleStyle: ThemeUIStyleObject = {
   variant: "text.roadmap",
-  mt: 10,
   minWidth: [null, null, null, 300]
 };
 

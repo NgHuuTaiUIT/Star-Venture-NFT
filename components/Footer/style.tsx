@@ -19,10 +19,12 @@ export const titleStyle: ThemeUIStyleObject = {
 export const lineStyle: ThemeUIStyleObject = {
   background: "#464D94",
   height: 2,
+  mt: -10,
   minWidth: ["100%", , , "80%"]
 };
 
 export const iconWrapStyle: ThemeUIStyleObject = {
+  maxWidth: "97%",
   justifyContent: "space-evenly",
   alignItems: "center",
   height: "100%"

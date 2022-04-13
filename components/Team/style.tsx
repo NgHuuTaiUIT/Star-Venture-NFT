@@ -1,12 +1,12 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const containerTeamStyle: ThemeUIStyleObject = {
-  variant: "layout.section",
   flexDirection: ["column"],
   alignItems: "center"
 };
 
 export const gridTeamStyle: ThemeUIStyleObject = {
+  mt: "2rem",
   gap: ["1rem", , , 130]
 };
 
@@ -20,7 +20,7 @@ export const nameCardBoxStyle: ThemeUIStyleObject = {
   minWidth: [179],
   minHeight: [189],
   overflow: "hidden",
-  p: "26px 14px 22px 24px",
+  p: "30px 14px 22px 24px",
   justifyContent: "center",
   alignItems: "center",
   ":hover": { "& #member-detail": { opacity: "1" } }

@@ -3,6 +3,7 @@
 import React, { useContext } from "react";
 import { Box, Flex, Grid, Image, Link } from "theme-ui";
 import { ModalContext } from "../../context/ModalProvider";
+import Section from "../Section/Section";
 import Title from "../Title/Title";
 import {
   btnStyle,
@@ -55,26 +56,21 @@ const data = [
 
 const Team = () => {
   return (
-    <Flex as="section" sx={containerTeamStyle}>
-      <Box
-        sx={{
-          mt: [30],
-          mb: [60]
-        }}>
-        <Title
-          url="/assets/images/team.svg"
-          style={{
-            height: ["1.8rem", , , "1.8rem"],
-            width: ["calc(100vw - 30px)", , , 216]
-          }}
-        />
-      </Box>
-      <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
-        {data.map(vl => (
-          <NameCard {...vl} key={vl.name} />
-        ))}
-      </Grid>
-    </Flex>
+    <Section>
+      <Flex as="section" sx={containerTeamStyle}>
+        <Box
+          sx={{
+            mt: 30
+          }}>
+          <Title title="Team" letterSpacing={10} />
+        </Box>
+        <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
+          {data.map(vl => (
+            <NameCard {...vl} key={vl.name} />
+          ))}
+        </Grid>
+      </Flex>
+    </Section>
   );
 };
 

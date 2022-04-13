@@ -5,6 +5,7 @@ import { Box, Flex, Grid, Image, Text } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { descriptionStyle, widgetFeaturesStyle } from "./style";
 import Title from "../Title/Title";
+import Section from "../Section/Section";
 
 const data = [
   {
@@ -35,19 +36,18 @@ const data = [
 
 const Features = () => {
   return (
-    <Box as="section" variant="layout.section" sx={{ textAlign: "center" }}>
-      <Box sx={{ py: [38, , , 80] }}>
-        <Title
-          url="/assets/images/features.svg"
-          style={{ height: ["1.8rem", , "1.8rem"], width: ["100%"] }}
-        />
+    <Section>
+      <Box sx={{ textAlign: "center" }}>
+        <Box>
+          <Title title="Features" letterSpacing={10} />
+        </Box>
+        <Box variant="layout.features">
+          {data.map((item, index) => {
+            return <FeatureItem key={index} {...item} />;
+          })}
+        </Box>
       </Box>
-      <Box variant="layout.features">
-        {data.map((item, index) => {
-          return <FeatureItem key={index} {...item} />;
-        })}
-      </Box>
-    </Box>
+    </Section>
   );
 };
 
@@ -102,15 +102,15 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
         <Flex
           sx={{
             ...widgetFeaturesStyle,
-            pt: "1rem",
+            // pt: "2.8rem",
             flexDirection: "column"
           }}>
           <Image
             src={`/assets/images/0${idx}.svg`}
             alt=""
             sx={{
-              ml: "1.2rem",
-              height: ["2rem", null, null, 32]
+              ml: "1.8rem",
+              height: ["1.8rem", null, null, 32]
             }}
           />
           <Flex sx={{ flexDirection: "column", width: "100%" }}>
@@ -120,7 +120,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
               sx={{
                 ...descriptionStyle,
                 minWidth: "100%",
-                pl: 25
+                ml: "1.2rem"
               }}>
               {text}
             </Box>

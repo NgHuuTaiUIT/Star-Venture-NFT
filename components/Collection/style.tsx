@@ -4,6 +4,7 @@ export const collectionCardStyle: ThemeUIStyleObject = {
   variant: "layout.card",
   height: "auto",
   maxWidth: "100%",
+  mx: 8,
   "> img": {
     width: ["100%"]
   }

@@ -6,7 +6,7 @@ export const containerTeamStyle: ThemeUIStyleObject = {
 };
 
 export const gridTeamStyle: ThemeUIStyleObject = {
-  mt: "2rem",
+  mt: ["2rem"],
   gap: ["1rem", , , 130]
 };
 

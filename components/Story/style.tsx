@@ -8,13 +8,13 @@ export const containerStoryStyle: ThemeUIStyleObject = {
   margin: "auto",
   textAlign: "center",
   maxWidth: "100%",
-  pt: ["calc(40% + 9rem)", , "calc(30% + 9rem)"],
+  pt: ["calc(40% + 9rem)", , "calc(20% + 1.5rem)"],
   background: "url(/assets/images/bg-story.png) no-repeat cover",
   "> img": {
-    width: ["100%", , "60%"],
+    width: ["100%", , "45%"],
     mt: [0],
     position: "absolute",
-    top: ["9.5rem"]
+    top: ["9.5rem", , "10%"]
   }
 };
 
@@ -28,7 +28,7 @@ export const boxStoryStyle: ThemeUIStyleObject = {
   textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
   mt: [0, , -80],
   gap: ["3rem", , , 0],
-  maxWidth: ["90%", , "60%"]
+  maxWidth: ["90%", , "70%"]
 };
 
 export const buttonStyle: ThemeUIStyleObject = {
@@ -48,5 +48,5 @@ export const buttonStyle: ThemeUIStyleObject = {
 export const textStoryStyle: ThemeUIStyleObject = {
   flex: "0 0 100%",
   transition: "all 0.3s",
-  lineHeight: [1.7, , , 2]
+  lineHeight: [1.7, , , 1.8]
 };

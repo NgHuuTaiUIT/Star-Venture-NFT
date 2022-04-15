@@ -54,7 +54,7 @@ export const theme = makeTheme({
     section: {
       maxWidth: "100vw",
       margin: "auto",
-      mb: ["4rem", , 50],
+      mb: ["4rem", , "5rem"],
       width: ["100%"],
       lineHeight: [1.5],
       "> * ": {
@@ -65,7 +65,7 @@ export const theme = makeTheme({
     features: {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
-      gap: ["2rem", , , 0],
+      gap: ["2rem"],
       "@media only screen and (max-width: 1000px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
         width: "calc(100% - 1rem)",
@@ -84,13 +84,6 @@ export const theme = makeTheme({
     },
     card: {
       minWidth: [290, 290, 290, 290, 290]
-      // "@media(max-width: 980px)": {
-      //   minWidth: "30%"
-      // },
-      // "@media only screen and (max-width: 768px)": {
-      //   minWidth: "63%",
-      //   mx: 0
-      // }
     },
     header: {
       color: "#02073E",
@@ -266,12 +259,11 @@ export const theme = makeTheme({
       margin: "0 auto",
       fontSize: ["18px"],
       backgroundImage: ["url(/assets/images/bg.png)"],
-      // backgroundPosition: ["top,center"],
       backgroundRepeat: "no-repeat",
-      backgroundPosition: ",30%",
+      backgroundPositionX: "30%",
+      backgroundPositionY: "top",
       height: "100%",
       overflowX: "hidden",
-      // WebkitFontSmoothing: "antialiased",
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"
       },

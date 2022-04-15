@@ -24,7 +24,11 @@ const Collections = (props: Props) => {
     <Section>
       <Box sx={collectionStyle}>
         <Box sx={{ mt: ["4.3rem", , , 30] }}>
-          <Title title="Collection" />
+          <Title
+            title="Collection"
+            fontSize={[36, 48]}
+            letterSpacing={[1, 10]}
+          />
         </Box>
         <Box
           as="p"

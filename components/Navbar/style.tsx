@@ -19,13 +19,13 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   width: "100%",
   height: ["100%", , , "auto"],
   background: [
-    "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-mb.png)",
+    "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-modal-menu.png)",
     ,
     ,
     "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"
   ],
   variant: "backgrounds.full",
-  backgroundSize: "cover",
+  backgroundPositionY: "-100px",
   zIndex: 999
 };
 
@@ -35,12 +35,13 @@ export const wrapNavbarStyle: ThemeUIStyleObject = {
   borderRadius: 1,
   flexDirection: ["column", "column", , "row"],
   height: ["80%", , , "auto"],
-  justifyContent: ["center", , , "space-between"],
+  justifyContent: ["center", , "start"],
   m: "auto",
   maxWidth: "80%",
-  pt: 14,
-  px: 3,
-  width: "80%"
+  pt: ["20%", , 14],
+  pl: [3, , 3.5],
+  pr: [3, , 3.5],
+  width: ["80%", , "60%"]
 };
 
 export const wrapLeftMenuStyle: ThemeUIStyleObject = {
@@ -48,12 +49,13 @@ export const wrapLeftMenuStyle: ThemeUIStyleObject = {
   flex: "0 0 60%",
   flexDirection: ["column", "column", , "row"],
   height: "100%",
-  justifyContent: ["space-between", , , "center"],
-  ml: 24
+  justifyContent: ["space-between", , "start"],
+  ml: [24, , 0]
 };
 
 export const wrapRightMenuStyle: ThemeUIStyleObject = {
-  justifyContent: ["center"],
+  flex: "0 0 18%",
+  justifyContent: ["center", , "left"],
   alignItems: "center",
   height: "100%",
   width: "100%",
@@ -74,7 +76,7 @@ export const linkStyle: ThemeUIStyleObject = {
 
 export const iconStyle: ThemeUIStyleObject = {
   maxHeight: ["100%", , , 50],
-  mx: 16,
+  mx: [16],
   "> img": {
     minWidth: [40, , , 20],
     objectPosition: "center",

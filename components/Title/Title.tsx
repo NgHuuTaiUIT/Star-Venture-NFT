@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, ThemeUIStyleObject } from "theme-ui";
+import { Size, useWindowSize } from "../../hooks/useWindowSize";
 
 // const Title = ({
 //   url,
@@ -37,11 +38,17 @@ import { Box, ThemeUIStyleObject } from "theme-ui";
 
 const Title = ({
   title,
-  letterSpacing = 1
+  letterSpacing = [1],
+  fontSize = [36]
 }: {
   title: string;
   letterSpacing?: any;
+  fontSize?: any;
 }) => {
+  const size: Size = useWindowSize();
+  const currFontsize = size.width >= 768 ? fontSize[1] : fontSize[0];
+  const currLetterSpacing =
+    size.width >= 768 ? letterSpacing[1] : letterSpacing[0];
   return (
     <Box sx={{ textTransform: "uppercase", ml: 10 }}>
       <svg width="100%" height="51" textAnchor="middle">
@@ -62,9 +69,9 @@ const Title = ({
             x="50%"
             dy="80%"
             fontFamily="Pilot Command Regular"
-            fontSize="36"
-            fontWeight="400"
-            letterSpacing={letterSpacing}>
+            fontSize={currFontsize}
+            letterSpacing={currLetterSpacing}
+            fontWeight="400">
             {title}
           </tspan>
         </text>

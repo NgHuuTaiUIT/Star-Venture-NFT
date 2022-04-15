@@ -27,13 +27,10 @@ const Story = (props: Props) => {
                 transform: `translateX(-${showStory && 100}%)`
               }}>
               Star Venture is a decentralized MMORPG built on “Chain name”. Get
-              onboard into an ever-expanding space journey.
-              <br /> Socialize-to-earn in a community-driven universe where
-              battles explode, enterprises
-              <br />
-              rise, governments fall. Be ready for takeoff, captain.
-              <br />
-              The path is for you to choose.
+              onboard into an ever-expanding space journey. Socialize-to-earn in
+              a community-driven universe where battles explode, enterprises
+              rise, governments fall. Be ready for takeoff, captain. The path is
+              for you to choose.
             </Box>
             {showStory && (
               <Box

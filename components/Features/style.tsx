@@ -8,6 +8,5 @@ export const widgetFeaturesStyle: ThemeUIStyleObject = {
 
 export const descriptionStyle: ThemeUIStyleObject = {
   variant: "text.p",
-  maxWidth: 420,
-  px: 10
+  maxWidth: 420
 };

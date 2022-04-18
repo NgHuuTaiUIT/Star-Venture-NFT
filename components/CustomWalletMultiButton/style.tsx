@@ -13,7 +13,7 @@ export const wrapButton: ThemeUIStyleObject = {
 export const btnConnectStyle: ThemeUIStyleObject = {
   width: ["100%"],
   background: "secondary",
-  mt: [40, , , 0],
+  mt: [40, , 0, 0],
   ml: [0, , , 25],
   fontFamily: "Ubuntu",
   fontSize: ["1.2rem", , , "1rem"],

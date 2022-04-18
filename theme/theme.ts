@@ -6,7 +6,7 @@ export const theme = makeTheme({
     initialColorModeName: "light",
     useColorSchemeMediaQuery: true
   },
-  breakpoints: ["480px", "768px", "1024px"],
+  breakpoints: ["480px", "768px", "1024px", "1368px", "1584px"],
   // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
   colors: {
     primary: "#fff",
@@ -54,11 +54,11 @@ export const theme = makeTheme({
     section: {
       maxWidth: "100vw",
       margin: "auto",
-      mb: ["4rem", , "5rem"],
+      mb: ["4rem"],
       width: ["100%"],
       lineHeight: [1.5],
       "> * ": {
-        maxWidth: "1190px !important",
+        // maxWidth: "1190px !important",
         mx: "auto !important"
       }
     },
@@ -95,7 +95,7 @@ export const theme = makeTheme({
       alignItems: "center"
     },
     main: {
-      minWidth: ["376px", "576px", "768px", "992px"]
+      minWidth: ["376px", "480px", "768px", "992px"]
     },
     footer: {
       backgroundColor: "background_secondary"

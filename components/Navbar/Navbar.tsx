@@ -57,8 +57,7 @@ const Navbar = () => {
       <Flex
         sx={{
           ...containerNavbarStyle,
-          display: width >= 980 ? "block" : showMenu ? "block" : "none",
-          height: ["100vh", "auto"]
+          display: width >= 1024 ? "block" : showMenu ? "block" : "none"
         }}>
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />

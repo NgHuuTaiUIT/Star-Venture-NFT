@@ -21,8 +21,8 @@ const Footer = (props: Props) => {
           star venture
         </Box>
         <Box sx={lineStyle} />
-        <p sx={{ m: "16px 25px 0px" }}>White paper</p>
-        <h4 sx={{ m: "3px" }}>Follow us on social media</h4>
+        <p sx={{ m: "1.7rem 2rem 0px" }}>White paper</p>
+        <h4 sx={{ m: "5px", mb: "0.8rem" }}>Follow us on social media</h4>
         <Icons />
         <p sx={{ color: "secondary", fontSize: "smaller", mb: 50 }}>
           ©2021 Star Venture, All Rights Reserved

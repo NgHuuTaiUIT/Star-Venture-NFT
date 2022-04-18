@@ -3,23 +3,26 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const containerStyle: ThemeUIStyleObject = {
   position: "fixed",
   display: "flex",
-  justifyContent: ["start", , , "center"],
-  alignItems: ["start", , , "center"],
+  justifyContent: ["start", , "center"],
+  alignItems: ["start", , "center"],
   backgroundImage: [
     "url(/assets/images/bg_popup_mb.svg)",
     ,
-    ,
+    "url(/assets/images/Popup.svg)",
+
     "url(/assets/images/Popup.svg)"
   ],
   backgroundRepeat: "no-repeat",
-  backgroundSize: ["contain", , , "contain"],
+  backgroundSize: ["contain"],
   backgroundColor: "transparent",
-  width: ["90%", , "685px"],
-  height: ["80%", , "419px"],
+  // width: ["90%", , "685px"],
+  // height: ["80%", , "419px"],
   // m: "0 auto",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%,-50%)"
+  transform: "translate(-50%,-50%)",
+  minHeight: ["30rem", , "22rem"],
+  width: ["18rem", , "37rem"]
 };
 
 export const backgroundStyle: ThemeUIStyleObject = {
@@ -48,11 +51,11 @@ export const closeButtonStyle: ThemeUIStyleObject = {
 export const modalContentStyle: ThemeUIStyleObject = {
   borderRadius: "3",
   display: "flex",
-  justifyContent: ["center", , , "start"],
-  alignItems: ["center", , , "start"],
-  flexDirection: ["column", , , "row"],
+  justifyContent: ["center", , "start"],
+  alignItems: ["center", , "start"],
+  flexDirection: ["column", , "row"],
   maxWidth: ["100%", , "90%"],
-  height: ["100%"],
+  height: ["70%"],
   gap: 30,
   m: "auto",
   mt: ["30%", , "10%"],
@@ -65,14 +68,14 @@ export const modalContentStyle: ThemeUIStyleObject = {
 };
 
 export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
-  maxWidth: ["85%", , "80%"],
+  maxWidth: ["85%"],
   height: "80%",
   "> h2": {
     lineHeight: [1],
-    textAlign: ["center", , , "start"]
+    textAlign: ["center", , "start"]
   },
   "> h4": {
-    textAlign: ["center", , , "start"],
+    textAlign: ["center", , "start"],
     fontWeight: "lighter",
     fontSize: "0.8em",
     lineHeight: [3]
@@ -81,13 +84,14 @@ export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
     mt: 10,
     letterSpacing: "1px",
     display: "-webkit-box",
-    WebkitLineClamp: [10, , , 12],
+    WebkitLineClamp: [6, , , 12],
     "-webkit-box-orient": "vertical",
     overflowX: "hidden",
     overflowY: ["auto"],
     wordBreak: "break-word",
     lineHeight: ["1rem"],
-    maxHeight: ["8rem", , , "14rem"],
+    minHeight: [0, , "12rem"],
+    maxHeight: ["6rem", , "14rem"],
     whiteSpace: "pre-line"
   }
 };

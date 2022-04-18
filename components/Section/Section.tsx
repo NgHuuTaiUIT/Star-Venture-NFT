@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { Box } from "theme-ui";
+import { Box, ThemeUICSSObject } from "theme-ui";
 
 enum OptionLinearGradient {
   lgX = "lgX",
@@ -12,6 +12,7 @@ enum OptionLinearGradient {
 type SectionProps = {
   children: any;
   optLg?: Number[];
+  styles?: ThemeUICSSObject;
   // :"lgX"|"lgY"|"lgTop"|"lgBottom"|"lgFull"|"";
 };
 
@@ -36,14 +37,16 @@ const setBackgroundLinear = (optLg: any) => {
 
 const Section: FC<SectionProps> = ({
   children,
-  optLg
+  optLg,
+  styles
 }: SectionProps): JSX.Element => {
   return (
     <Box
       as="section"
       variant="layout.section"
       sx={{
-        background: setBackgroundLinear(optLg)
+        background: setBackgroundLinear(optLg),
+        ...styles
       }}>
       {children}
     </Box>

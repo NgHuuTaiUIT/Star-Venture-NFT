@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Flex, Link } from "theme-ui";
 import Section from "../Section/Section";
 import {
+  footerContainer,
   footerStyle,
   iconStyle,
   iconWrapStyle,
@@ -15,8 +16,8 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <Section optLg={[0, 0, 1, 0]}>
-      <Flex as="footer" sx={footerStyle}>
+    <Section optLg={[0, 0, 1, 0]} as={"footer"} styles={footerContainer}>
+      <Flex sx={footerStyle}>
         <Box as="h2" sx={titleStyle}>
           star venture
         </Box>

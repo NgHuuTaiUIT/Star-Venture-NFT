@@ -7,19 +7,22 @@ export const theme = makeTheme({
     useColorSchemeMediaQuery: true
   },
   breakpoints: ["480px", "768px", "1024px", "1368px", "1584px"],
-  // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
   colors: {
     primary: "#fff",
     secondary: "#6688FF",
     text: "#fff",
-    background: "#12192C"
+    background: "#12192C",
+    border: "9AB0FF",
+    svGradient:
+      "linear-gradient(180deg, #A8BBFF 0%, rgba(0, 18, 183, 0.88) 118.89%)",
+    svGradientLight:
+      " background: linear-gradient(175.7deg, rgba(15, 28, 45, 0) -6.97%, rgba(87, 72, 255, 0.616) 85.19%, rgba(41, 83, 232, 0.7) 95.42%)"
   },
   fonts: {
     body: "Ubuntu, sans-serif",
     heading: "Ubuntu,sans-serif",
     roadmap: "Pilot Command Regular"
   },
-  // fontSizes: [18, 28],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: "normal",
@@ -40,8 +43,6 @@ export const theme = makeTheme({
     container90: ["1190px"],
     container40: ["1140px"]
   },
-  // sizes: [14, 16, 20, 24, 32, 48, 64],
-  // variants can use custom, user-defined names
   layout: {
     container: {
       px: ["15px", null, null, "30px"]
@@ -58,7 +59,6 @@ export const theme = makeTheme({
       width: ["100%"],
       lineHeight: [1.5],
       "> * ": {
-        // maxWidth: "1190px !important",
         mx: "auto !important"
       }
     },

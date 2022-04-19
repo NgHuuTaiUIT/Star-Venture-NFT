@@ -2,55 +2,23 @@ import React from "react";
 import { Box, ThemeUIStyleObject } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 
-// const Title = ({
-//   url,
-//   width = [`calc(100% - 50px)`],
-//   height = 51,
-//   backgroundPosition = "center",
-//   minWidth,
-//   style
-// }: {
-//   url: string;
-//   width?: number | string | any[];
-//   height?: number | string | any[];
-//   backgroundPosition?: string;
-//   minWidth?: number | string | any[];
-//   style?: ThemeUIStyleObject;
-// }) => {
-//   return (
-//     <Box
-//       as="h2"
-//       sx={{
-//         backgroundImage: `url(${url})`,
-//         width,
-//         height,
-//         margin: "auto",
-//         backgroundRepeat: "no-repeat",
-//         backgroundSize: "contain",
-//         backgroundPosition,
-//         minWidth,
-//         ...style
-//       }}
-//       variant="layout.img"
-//     />
-//   );
-// };
-
 const Title = ({
   title,
   letterSpacing = [1],
-  fontSize = [36]
+  fontSize = [36],
+  style
 }: {
   title: string;
   letterSpacing?: any;
   fontSize?: any;
+  style?: ThemeUIStyleObject;
 }) => {
   const size: Size = useWindowSize();
   const currFontsize = size.width >= 768 ? fontSize[1] : fontSize[0];
   const currLetterSpacing =
     size.width >= 768 ? letterSpacing[1] : letterSpacing[0];
   return (
-    <Box sx={{ textTransform: "uppercase", ml: 10 }}>
+    <Box sx={{ textTransform: "uppercase", ml: 10, ...style }}>
       <svg width="100%" height="51" textAnchor="middle">
         <defs>
           <linearGradient

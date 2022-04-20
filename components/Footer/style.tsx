@@ -1,8 +1,6 @@
 import { ThemeUICSSObject, ThemeUIStyleObject } from "theme-ui";
 
 export const footerContainer: ThemeUICSSObject = {
-  position: "absolute",
-  bottom: "0",
   width: "100%",
   minHeight: "3rem"
 };

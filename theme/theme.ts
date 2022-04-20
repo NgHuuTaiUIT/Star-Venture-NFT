@@ -1,6 +1,5 @@
 import { backgroundStyle } from "./../components/Modal/styles";
 import { makeTheme } from "@theme-ui/css/utils";
-
 export const theme = makeTheme({
   config: {
     initialColorModeName: "light",
@@ -12,7 +11,7 @@ export const theme = makeTheme({
     secondary: "#6688FF",
     text: "#fff",
     background: "#12192C",
-    border: "9AB0FF",
+    borderColor: "#9AB0FF",
     svGradient:
       "linear-gradient(180deg, #A8BBFF 0%, rgba(0, 18, 183, 0.88) 118.89%)",
     svGradientLight:
@@ -264,27 +263,33 @@ export const theme = makeTheme({
       backgroundPositionY: "top",
       height: "100%",
       overflowX: "hidden",
+
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"
       },
+
       "@font-face": {
         fontFamily: "Pilot Command Regular",
         fontStyle: "normal",
         fontWeight: "normal",
         src: `url("/fonts/PilotCommand/PilotCommand-qZWJ0.woff") format("woff")`
       },
+
       a: {
         textDecoration: "none",
         color: "inherit"
       },
+
       button: {
         cursor: "pointer"
       }
     },
+
     a: {
       cursor: "pointer",
       textDecoration: "none"
     },
+
     button: {
       cursor: "pointer"
     },

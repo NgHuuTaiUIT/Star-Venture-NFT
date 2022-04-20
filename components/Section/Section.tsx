@@ -6,7 +6,7 @@ type SectionProps = {
   children: any;
   optLg?: Number[];
   styles?: ThemeUICSSObject;
-  as?: string;
+  as?: React.ElementType;
 };
 
 const setBackgroundLinear = (optLg: any) => {

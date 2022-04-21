@@ -7,6 +7,7 @@ type SectionProps = {
   optLg?: Number[];
   styles?: ThemeUICSSObject;
   as?: React.ElementType;
+  ref?: any;
 };
 
 const setBackgroundLinear = (optLg: any) => {
@@ -32,10 +33,12 @@ const Section: FC<SectionProps> = ({
   children,
   optLg,
   styles,
-  as = "section"
+  as = "section",
+  ref
 }: SectionProps): JSX.Element => {
   return (
     <Box
+      ref={ref}
       as={as}
       variant="layout.section"
       sx={{

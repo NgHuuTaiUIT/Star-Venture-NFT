@@ -42,31 +42,33 @@ const data = [
   }
 ];
 
-const Roadmap = () => {
+const Roadmap = ({}, ref: any) => {
   const size: Size = useWindowSize();
   return (
-    <Section optLg={[1, 1, 1, 1]} styles={{ mt: ["4rem", , "5rem"] }}>
-      <Box sx={containerStyle}>
-        <Flex sx={wrapStyle}>
-          <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
-            <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
-              <Title
-                title="Roadmap"
-                letterSpacing={[10, 10]}
-                fontSize={[36, 48]}
-              />
+    <section ref={ref}>
+      <Section optLg={[1, 1, 1, 1]} styles={{ mt: ["4rem", , "5rem"] }}>
+        <Box sx={containerStyle}>
+          <Flex sx={wrapStyle}>
+            <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
+              <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
+                <Title
+                  title="Roadmap"
+                  letterSpacing={[10, 10]}
+                  fontSize={[36, 48]}
+                />
+              </Box>
+              <Flex sx={wrapRoadmapItemStyle}>
+                {data.map((vl, idx) => (
+                  <RoadMapItem {...vl} key={idx} />
+                ))}
+              </Flex>
             </Box>
-            <Flex sx={wrapRoadmapItemStyle}>
-              {data.map((vl, idx) => (
-                <RoadMapItem {...vl} key={idx} />
-              ))}
-            </Flex>
-          </Box>
-        </Flex>
-        <Circle />
-        <Net />
-      </Box>
-    </Section>
+          </Flex>
+          <Circle />
+          <Net />
+        </Box>
+      </Section>
+    </section>
   );
 };
 
@@ -141,4 +143,4 @@ const Net = () => (
   </Box>
 );
 
-export default Roadmap;
+export default React.forwardRef(Roadmap);

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { LegacyRef, RefObject } from "react";
 import ReactPlayer from "react-player/lazy";
 import { Box } from "theme-ui";
 import { containerTrailerStyle, wrapTrailerStyle } from "./style";
 
-const Trailer = ({ url }: { url: string }) => {
+const Trailer = ({ url }: { url: string }, ref: any) => {
   return (
-    <Box sx={containerTrailerStyle} as="section">
-      <Box sx={wrapTrailerStyle}>
-        <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+    <section ref={ref}>
+      <Box sx={containerTrailerStyle} as="section">
+        <Box sx={wrapTrailerStyle}>
+          <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+        </Box>
       </Box>
-    </Box>
+    </section>
   );
 };
 
-export default Trailer;
+export default React.forwardRef(Trailer);

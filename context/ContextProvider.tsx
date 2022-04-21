@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 import { AutoConnectProvider } from "./AutoConnectProvider";
 import { MenuProvider } from "./MenuProvider";
 import { ModalProvider } from "./ModalProvider";
+import { ScrollToSectionProvider } from "./ScrollToSectionProvider";
 import { WalletContextProvider } from "./WalletContextProvider";
 
 export const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -9,7 +10,9 @@ export const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
     <AutoConnectProvider>
       <WalletContextProvider>
         <MenuProvider>
-          <ModalProvider>{children}</ModalProvider>
+          <ScrollToSectionProvider>
+            <ModalProvider>{children}</ModalProvider>
+          </ScrollToSectionProvider>
         </MenuProvider>
       </WalletContextProvider>
     </AutoConnectProvider>

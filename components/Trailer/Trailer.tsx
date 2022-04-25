@@ -3,9 +3,15 @@ import ReactPlayer from "react-player/lazy";
 import { Box } from "theme-ui";
 import { containerTrailerStyle, wrapTrailerStyle } from "./style";
 
-const Trailer = ({ url }: { url: string }, ref: any) => {
+const Trailer = ({
+  url,
+  compRef
+}: {
+  url: string;
+  compRef: React.RefObject<HTMLElement>;
+}) => {
   return (
-    <section ref={ref}>
+    <section ref={compRef}>
       <Box sx={containerTrailerStyle} as="section">
         <Box sx={wrapTrailerStyle}>
           <ReactPlayer url={url} width="100%" height="100%" controls={true} />
@@ -15,4 +21,4 @@ const Trailer = ({ url }: { url: string }, ref: any) => {
   );
 };
 
-export default React.forwardRef(Trailer);
+export default Trailer;

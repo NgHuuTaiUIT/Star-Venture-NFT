@@ -42,10 +42,10 @@ const data = [
   }
 ];
 
-const Roadmap = ({}, ref: any) => {
+const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
   return (
-    <section ref={ref}>
+    <section ref={compRef}>
       <Section optLg={[1, 1, 1, 1]} styles={{ mt: ["4rem", , "5rem"] }}>
         <Box sx={containerStyle}>
           <Flex sx={wrapStyle}>
@@ -143,4 +143,4 @@ const Net = () => (
   </Box>
 );
 
-export default React.forwardRef(Roadmap);
+export default Roadmap;

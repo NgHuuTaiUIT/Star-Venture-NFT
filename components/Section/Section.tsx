@@ -3,11 +3,11 @@ import { Box, ThemeUICSSObject } from "theme-ui";
 
 //lg is linear-gradient
 type SectionProps = {
-  children: any;
+  children: ReactNode;
   optLg?: Number[];
   styles?: ThemeUICSSObject;
   as?: React.ElementType;
-  ref?: any;
+  ref?: React.Ref<any> | undefined;
 };
 
 const setBackgroundLinear = (optLg: any) => {

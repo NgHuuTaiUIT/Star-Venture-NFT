@@ -54,9 +54,9 @@ const data = [
   }
 ];
 
-const Team = ({}, ref: any) => {
+const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   return (
-    <section ref={ref}>
+    <section ref={compRef}>
       <Section styles={{ mt: "5rem" }}>
         <Flex as="section" sx={containerTeamStyle}>
           <Box
@@ -122,4 +122,4 @@ const Info = ({ name, position }: { name: string; position: string }) => (
     </Box>
   </Flex>
 );
-export default React.forwardRef(Team);
+export default Team;

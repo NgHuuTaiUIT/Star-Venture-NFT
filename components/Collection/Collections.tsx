@@ -8,8 +8,6 @@ import Section from "../Section/Section";
 import Title from "../Title/Title";
 import { collectionCardStyle, collectionStyle } from "./style";
 
-type Props = {};
-
 const data = [
   "/assets/images/nft-1.png",
   "/assets/images/nft-2.png",
@@ -18,10 +16,14 @@ const data = [
   "/assets/images/nft-5.png"
 ];
 
-const Collections = (props: Props, ref: any) => {
+const Collections = ({
+  compRef
+}: {
+  compRef: React.RefObject<HTMLElement>;
+}) => {
   const size: Size = useWindowSize();
   return (
-    <section ref={ref}>
+    <section ref={compRef}>
       <Section styles={{ mt: ["4rem", , "5rem"] }}>
         <Box sx={collectionStyle}>
           <Box sx={{ mt: ["4rem", , , 30] }}>
@@ -78,4 +80,4 @@ const CollectionCard: React.FC<{ url: string }> = ({ url }) => {
     </Card>
   );
 };
-export default React.forwardRef(Collections);
+export default Collections;

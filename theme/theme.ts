@@ -260,7 +260,7 @@ export const theme = makeTheme({
       backgroundImage: ["url(/assets/images/bg.png)"],
       backgroundRepeat: "no-repeat",
       backgroundPositionX: "30%",
-      backgroundPositionY: "top",
+      backgroundPositionY: "4%",
       height: "100%",
       overflowX: "hidden",
 

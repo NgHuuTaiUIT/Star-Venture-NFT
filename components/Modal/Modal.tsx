@@ -8,6 +8,7 @@ import {
   modalContentStyle,
   wrapInfoModalContentStyle
 } from "./styles";
+import { useSpring, animated as a, config } from "react-spring";
 
 type ModalProps = {
   showModal: boolean;
@@ -19,16 +20,25 @@ type ModalProps = {
 const Modal = () => {
   const { showModal, modalContent, openModal, closeModal } =
     useContext(ModalContext);
+  const modalSpringProps = useSpring({
+    from: { opacity: 0, marginTop: -100 },
+    to: { opacity: 1, marginTop: 0 },
+    delay: 500,
+    config: config.molasses
+  });
+
   return (
     <>
-      {showModal ? (
-        <Box as="section" sx={backgroundStyle} onClick={openModal}>
-          <Box sx={containerStyle}>
-            {modalContent && <ModalContent {...modalContent} />}
-            <Button onClick={() => closeModal} sx={closeButtonStyle}></Button>
+      {showModal && (
+        <a.div style={modalSpringProps}>
+          <Box as="section" sx={backgroundStyle} onClick={openModal}>
+            <Box sx={containerStyle}>
+              {modalContent && <ModalContent {...modalContent} />}
+              <Button onClick={() => closeModal} sx={closeButtonStyle}></Button>
+            </Box>
           </Box>
-        </Box>
-      ) : null}
+        </a.div>
+      )}
     </>
   );
 };

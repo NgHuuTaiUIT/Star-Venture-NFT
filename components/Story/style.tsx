@@ -13,7 +13,7 @@ export const containerStoryStyle: ThemeUIStyleObject = {
 
   "> img": {
     width: ["100%", , "47rem"],
-    height: ["194px"],
+    height: ["194px", , "367px"],
     mt: [0],
     position: "absolute",
     top: ["112px", , "5rem"]

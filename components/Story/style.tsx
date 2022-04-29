@@ -8,14 +8,15 @@ export const containerStoryStyle: ThemeUIStyleObject = {
   margin: "auto",
   textAlign: "center",
   maxWidth: "100%",
-  pt: ["calc(40% + 9rem)", , "13.7rem"],
+  pt: ["calc(40% + 7rem)", , "13.7rem"],
   background: "url(/assets/images/bg-story.png) no-repeat cover",
 
   "> img": {
     width: ["100%", , "47rem"],
+    height: ["194px"],
     mt: [0],
     position: "absolute",
-    top: ["9.5rem", , "5rem"]
+    top: ["112px", , "5rem"]
   }
 };
 

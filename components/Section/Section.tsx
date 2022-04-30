@@ -1,18 +1,12 @@
 import React, { FC, ReactNode } from "react";
-import { Box } from "theme-ui";
-
-enum OptionLinearGradient {
-  lgX = "lgX",
-  lgY = "lgY",
-  lgTop = "lgTop",
-  lgFull = "lgFull"
-}
+import { Box, ThemeUICSSObject } from "theme-ui";
 
 //lg is linear-gradient
 type SectionProps = {
   children: any;
   optLg?: Number[];
-  // :"lgX"|"lgY"|"lgTop"|"lgBottom"|"lgFull"|"";
+  styles?: ThemeUICSSObject;
+  as?: React.ElementType;
 };
 
 const setBackgroundLinear = (optLg: any) => {
@@ -36,14 +30,17 @@ const setBackgroundLinear = (optLg: any) => {
 
 const Section: FC<SectionProps> = ({
   children,
-  optLg
+  optLg,
+  styles,
+  as = "section"
 }: SectionProps): JSX.Element => {
   return (
     <Box
-      as="section"
+      as={as}
       variant="layout.section"
       sx={{
-        background: setBackgroundLinear(optLg)
+        background: setBackgroundLinear(optLg),
+        ...styles
       }}>
       {children}
     </Box>

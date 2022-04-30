@@ -21,9 +21,9 @@ const data = [
 const Collections = (props: Props) => {
   const size: Size = useWindowSize();
   return (
-    <Section>
+    <Section styles={{ mt: ["4rem", , "5rem"] }}>
       <Box sx={collectionStyle}>
-        <Box sx={{ mt: ["4.3rem", , , 30] }}>
+        <Box sx={{ mt: ["4rem", , , 30] }}>
           <Title
             title="Collection"
             fontSize={[36, 48]}
@@ -33,7 +33,12 @@ const Collections = (props: Props) => {
         <Box
           as="p"
           variant="text.p"
-          sx={{ my: ["2.2rem"], maxWidth: ["81%"], mx: "auto" }}>
+          sx={{
+            my: ["2rem", , "1.7rem"],
+            maxWidth: ["81%"],
+            mx: "auto",
+            minHeight: "3rem"
+          }}>
           Each LoE NFT is a piece of art that tells an immersive and meaningful
           story of its own.
         </Box>

@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Flex, Link } from "theme-ui";
 import Section from "../Section/Section";
 import {
+  footerContainer,
   footerStyle,
   iconStyle,
   iconWrapStyle,
@@ -15,14 +16,14 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <Section optLg={[0, 0, 1, 0]}>
-      <Flex as="footer" sx={footerStyle}>
+    <Section optLg={[0, 0, 1, 0]} as={"footer"} styles={footerContainer}>
+      <Flex sx={footerStyle}>
         <Box as="h2" sx={titleStyle}>
           star venture
         </Box>
         <Box sx={lineStyle} />
-        <p sx={{ m: "16px 25px 0px" }}>White paper</p>
-        <h4 sx={{ m: "3px" }}>Follow us on social media</h4>
+        <p sx={{ m: "1.7rem 2rem 0px" }}>White paper</p>
+        <h4 sx={{ m: "5px", mb: "0.8rem" }}>Follow us on social media</h4>
         <Icons />
         <p sx={{ color: "secondary", fontSize: "smaller", mb: 50 }}>
           ©2021 Star Venture, All Rights Reserved

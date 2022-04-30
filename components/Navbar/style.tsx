@@ -16,8 +16,9 @@ export const btnMenuMobileStyle: ThemeUIStyleObject = {
 };
 
 export const containerNavbarStyle: ThemeUIStyleObject = {
+  margin: "auto",
   width: "100%",
-  height: ["100%", , , "auto"],
+  height: ["100vh", "100vh", , "auto"],
   background: [
     "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-modal-menu.png)",
     ,
@@ -25,7 +26,8 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
     "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"
   ],
   variant: "backgrounds.full",
-  backgroundPositionY: "-100px",
+  backgroundSize: ["cover"],
+  backgroundPositionY: "bottom",
   zIndex: 999
 };
 
@@ -34,14 +36,14 @@ export const wrapNavbarStyle: ThemeUIStyleObject = {
   backgroundColor: "transparent",
   borderRadius: 1,
   flexDirection: ["column", "column", , "row"],
-  height: ["80%", , , "auto"],
-  justifyContent: ["center", , "start"],
+  height: ["80%", , , "100%"],
+  justifyContent: ["center", , , "start"],
   m: "auto",
-  maxWidth: "80%",
-  pt: ["20%", , 14],
-  pl: [3, , 3.5],
-  pr: [3, , 3.5],
-  width: ["80%", , "60%"]
+  maxWidth: ["80%", , "100%", "80%"],
+  pt: ["20%", , , 14],
+  pl: [3, , , 3.5],
+  pr: [3, , , 3.5],
+  width: ["80%", , , "80%", "60%"]
 };
 
 export const wrapLeftMenuStyle: ThemeUIStyleObject = {
@@ -49,13 +51,13 @@ export const wrapLeftMenuStyle: ThemeUIStyleObject = {
   flex: "0 0 60%",
   flexDirection: ["column", "column", , "row"],
   height: "100%",
-  justifyContent: ["space-between", , "start"],
+  justifyContent: ["space-between", , , "start"],
   ml: [24, , 0]
 };
 
 export const wrapRightMenuStyle: ThemeUIStyleObject = {
   flex: "0 0 18%",
-  justifyContent: ["center", , "left"],
+  justifyContent: ["center", , , "left"],
   alignItems: "center",
   height: "100%",
   width: "100%",
@@ -66,7 +68,7 @@ export const wrapRightMenuStyle: ThemeUIStyleObject = {
 
 export const linkStyle: ThemeUIStyleObject = {
   display: "inline-block",
-  fontSize: ["1.35rem", , , "1rem"],
+  fontSize: ["1.35rem", "1.35rem", , "1rem"],
   height: 50,
   position: "relative",
   textAlign: "center",

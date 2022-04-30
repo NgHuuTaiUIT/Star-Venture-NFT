@@ -12,6 +12,6 @@ export const collectionCardStyle: ThemeUIStyleObject = {
 
 export const collectionStyle: ThemeUIStyleObject = {
   textAlign: "center",
-  maxWidth: 1190,
+  maxWidth: "1230px",
   overflow: "hidden"
 };

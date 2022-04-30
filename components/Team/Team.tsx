@@ -56,7 +56,7 @@ const data = [
 
 const Team = () => {
   return (
-    <Section>
+    <Section styles={{ mt: "5rem" }}>
       <Flex as="section" sx={containerTeamStyle}>
         <Box
           sx={{

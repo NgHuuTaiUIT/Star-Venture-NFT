@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import React from "react";
 import { start } from "repl";
-import { Box, Flex, Grid, Image, Text } from "theme-ui";
+import { Box, Flex, Grid, Image, Text, ThemeUICSSObject } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { descriptionStyle, widgetFeaturesStyle } from "./style";
 import Title from "../Title/Title";
@@ -36,7 +36,7 @@ const data = [
 
 const Features = () => {
   return (
-    <Section>
+    <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
       <Box sx={{ textAlign: "center" }}>
         <Box sx={{ mb: ["3.5rem"] }}>
           <Title
@@ -45,9 +45,17 @@ const Features = () => {
             fontSize={[36, 48]}
           />
         </Box>
-        <Box variant="layout.features">
+        <Box
+          variant="layout.features"
+          sx={{ maxWidth: "container90", mx: "auto" }}>
           {data.map((item, index) => {
-            return <FeatureItem key={index} {...item} />;
+            return (
+              <FeatureItem
+                key={index}
+                {...item}
+                style={index % 2 !== 0 ? { justifyContent: "flex-end" } : null}
+              />
+            );
           })}
         </Box>
       </Box>
@@ -74,13 +82,15 @@ type FeatureItemProps = {
   direction: string;
   text: string;
   triangles?: string;
+  style?: ThemeUICSSObject | null;
 };
 
 const FeatureItem: React.FC<FeatureItemProps> = ({
   idx,
   direction,
   text,
-  triangles = ""
+  triangles = "",
+  style
 }) => {
   const size: Size = useWindowSize();
   return (
@@ -90,7 +100,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           sx={{
             flexDirection: direction === "right" && "row-reverse",
             ...widgetFeaturesStyle,
-            px: [0, , "2rem"]
+            px: [0, , "1rem"],
+            ...style
           }}>
           <Image src={`/assets/images/0${idx}.svg`} alt="" />
           <Flex sx={{ flexDirection: "column", flexWrap: "nowrap" }}>
@@ -98,7 +109,12 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
               <Triangles triangles={triangles} />
               <Image src={`/assets/images/vector-${direction}.png`} alt="" />
             </Box>
-            <Box as="p" sx={descriptionStyle}>
+            <Box
+              as="p"
+              sx={{
+                ...descriptionStyle,
+                pl: idx % 2 !== 0 ? "1.5rem" : "0rem"
+              }}>
               {text}
             </Box>
           </Flex>

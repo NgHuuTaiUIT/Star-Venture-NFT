@@ -1,25 +1,27 @@
 import { backgroundStyle } from "./../components/Modal/styles";
 import { makeTheme } from "@theme-ui/css/utils";
-
 export const theme = makeTheme({
   config: {
     initialColorModeName: "light",
     useColorSchemeMediaQuery: true
   },
-  breakpoints: ["480px", "768px", "1024px"],
-  // breakpoints: ["40em", "52em", "64em", "76em", "88em"],
+  breakpoints: ["480px", "768px", "1024px", "1368px", "1584px"],
   colors: {
     primary: "#fff",
     secondary: "#6688FF",
     text: "#fff",
-    background: "#12192C"
+    background: "#12192C",
+    borderColor: "#9AB0FF",
+    svGradient:
+      "linear-gradient(180deg, #A8BBFF 0%, rgba(0, 18, 183, 0.88) 118.89%)",
+    svGradientLight:
+      " background: linear-gradient(175.7deg, rgba(15, 28, 45, 0) -6.97%, rgba(87, 72, 255, 0.616) 85.19%, rgba(41, 83, 232, 0.7) 95.42%)"
   },
   fonts: {
     body: "Ubuntu, sans-serif",
     heading: "Ubuntu,sans-serif",
     roadmap: "Pilot Command Regular"
   },
-  // fontSizes: [18, 28],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: "normal",
@@ -40,8 +42,6 @@ export const theme = makeTheme({
     container90: ["1190px"],
     container40: ["1140px"]
   },
-  // sizes: [14, 16, 20, 24, 32, 48, 64],
-  // variants can use custom, user-defined names
   layout: {
     container: {
       px: ["15px", null, null, "30px"]
@@ -54,11 +54,10 @@ export const theme = makeTheme({
     section: {
       maxWidth: "100vw",
       margin: "auto",
-      mb: ["4rem", , "5rem"],
+      mb: ["4rem"],
       width: ["100%"],
       lineHeight: [1.5],
       "> * ": {
-        maxWidth: "1190px !important",
         mx: "auto !important"
       }
     },
@@ -95,7 +94,7 @@ export const theme = makeTheme({
       alignItems: "center"
     },
     main: {
-      minWidth: ["376px", "576px", "768px", "992px"]
+      minWidth: ["376px", "480px", "768px", "992px"]
     },
     footer: {
       backgroundColor: "background_secondary"
@@ -264,27 +263,33 @@ export const theme = makeTheme({
       backgroundPositionY: "top",
       height: "100%",
       overflowX: "hidden",
+
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"
       },
+
       "@font-face": {
         fontFamily: "Pilot Command Regular",
         fontStyle: "normal",
         fontWeight: "normal",
         src: `url("/fonts/PilotCommand/PilotCommand-qZWJ0.woff") format("woff")`
       },
+
       a: {
         textDecoration: "none",
         color: "inherit"
       },
+
       button: {
         cursor: "pointer"
       }
     },
+
     a: {
       cursor: "pointer",
       textDecoration: "none"
     },
+
     button: {
       cursor: "pointer"
     },

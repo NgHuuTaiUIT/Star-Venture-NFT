@@ -60,9 +60,9 @@ const Team = () => {
       <Flex as="section" sx={containerTeamStyle}>
         <Box
           sx={{
-            mt: 30
+            mt: [30, , 10]
           }}>
-          <Title title="Team" letterSpacing={10} />
+          <Title title="Team" letterSpacing={[10, 10]} fontSize={[36, 48]} />
         </Box>
         <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
           {data.map(vl => (

@@ -15,28 +15,29 @@ export const wrapStyle: ThemeUIStyleObject = {
 
 export const wrapRoadmapItemStyle: ThemeUIStyleObject = {
   flexDirection: ["column", "column", "column", "row"],
-  maxWidth: ["85%", null, 1190],
+  maxWidth: ["85%", , "100%"],
   margin: "auto",
-  justifyContent: "space-between"
+  justifyContent: ["space-between", , "start"]
 };
 
 export const widgetRoadmapItemStyle: ThemeUIStyleObject = {
   my: [22],
   mx: [10],
-  maxWidth: [null, null, null, 250]
+  maxWidth: [null, null, null, 250],
+  mr: [0, , "2.8rem"]
 };
 
 export const titleStyle: ThemeUIStyleObject = {
-  variant: "text.roadmap",
-  minWidth: [null, null, null, 300]
+  variant: "text.roadmap"
+  // minWidth: [null, null, null, 300]
 };
 
 export const circleStyle: ThemeUIStyleObject = {
   display: ["none", null, null, "block"],
   position: "absolute",
-  bottom: "10%",
+  bottom: ["10%", , "12%"],
   margin: "auto",
-  left: "50%",
+  left: ["50%", , "48.5%"],
   transform: "translateX(-50%)",
   zIndex: 1
 };

@@ -45,12 +45,16 @@ const data = [
 const Roadmap = () => {
   const size: Size = useWindowSize();
   return (
-    <Section optLg={[1, 1, 0, 1]}>
+    <Section optLg={[1, 1, 1, 1]}>
       <Box sx={containerStyle}>
         <Flex sx={wrapStyle}>
-          <Box sx={{ mt: ["1rem", , 60] }}>
-            <Box sx={{ mb: ["1.3rem", , , 75] }}>
-              <Title title="Roadmap" letterSpacing={10} />
+          <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
+            <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
+              <Title
+                title="Roadmap"
+                letterSpacing={[10, 10]}
+                fontSize={[36, 48]}
+              />
             </Box>
             <Flex sx={wrapRoadmapItemStyle}>
               {data.map((vl, idx) => (

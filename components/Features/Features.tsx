@@ -38,8 +38,12 @@ const Features = () => {
   return (
     <Section>
       <Box sx={{ textAlign: "center" }}>
-        <Box>
-          <Title title="Features" letterSpacing={10} />
+        <Box sx={{ mb: ["3.5rem"] }}>
+          <Title
+            title="Features"
+            letterSpacing={[10, 10]}
+            fontSize={[36, 48]}
+          />
         </Box>
         <Box variant="layout.features">
           {data.map((item, index) => {
@@ -85,7 +89,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
         <Flex
           sx={{
             flexDirection: direction === "right" && "row-reverse",
-            ...widgetFeaturesStyle
+            ...widgetFeaturesStyle,
+            px: [0, , "2rem"]
           }}>
           <Image src={`/assets/images/0${idx}.svg`} alt="" />
           <Flex sx={{ flexDirection: "column", flexWrap: "nowrap" }}>
@@ -119,7 +124,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
               as="p"
               sx={{
                 ...descriptionStyle,
-                minWidth: "100%",
+                maxWidth: "100%",
                 ml: "1.2rem"
               }}>
               {text}

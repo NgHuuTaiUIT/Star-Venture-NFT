@@ -24,8 +24,9 @@ export const lineStyle: ThemeUIStyleObject = {
 };
 
 export const iconWrapStyle: ThemeUIStyleObject = {
-  maxWidth: "97%",
-  justifyContent: "space-evenly",
+  maxWidth: ["97%"],
+  justifyContent: ["space-evenly", , "center"],
+  gap: [null, , "1.5rem"],
   alignItems: "center",
   height: "100%"
 };

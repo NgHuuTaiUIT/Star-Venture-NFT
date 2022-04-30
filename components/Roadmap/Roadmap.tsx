@@ -46,7 +46,7 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
   return (
     <section ref={compRef}>
-      <Section optLg={[1, 1, 1, 1]} styles={{ mt: ["4rem", , "5rem"] }}>
+      <Section styles={{ mt: ["4rem", , "5rem"] }}>
         <Box sx={containerStyle}>
           <Flex sx={wrapStyle}>
             <Box sx={{ mt: ["1rem", , "4.3rem"] }}>

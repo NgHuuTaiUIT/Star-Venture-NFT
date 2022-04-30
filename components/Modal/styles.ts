@@ -1,5 +1,8 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
+const TOP_HEIGHT = 112;
+const HEIGHT = 677;
+
 export const containerStyle: ThemeUIStyleObject = {
   position: "fixed",
   display: "flex",
@@ -21,8 +24,9 @@ export const containerStyle: ThemeUIStyleObject = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)",
-  minHeight: ["30rem", , "22rem"],
-  width: ["18rem", , "37rem"]
+  minHeight: ["30rem", , 419],
+  width: ["95%", , 685],
+  maxWidth: [384, , 685]
 };
 
 export const backgroundStyle: ThemeUIStyleObject = {
@@ -55,12 +59,15 @@ export const modalContentStyle: ThemeUIStyleObject = {
   alignItems: ["center", , "start"],
   flexDirection: ["column", , "row"],
   maxWidth: ["100%", , "90%"],
-  height: ["70%"],
+  height: [HEIGHT - TOP_HEIGHT, , "70%"],
   gap: 30,
   m: "auto",
-  mt: ["30%", , "10%"],
+  mt: [96, , "10%"],
+  pb: [67, , 0],
+
   "> img": {
-    maxWidth: ["60%", , "30%"],
+    minWidth: [180],
+    width: 180,
     objectFit: "cover",
     borderTopLeftRadius: 3,
     borderBottomLeftRadius: 3
@@ -69,7 +76,7 @@ export const modalContentStyle: ThemeUIStyleObject = {
 
 export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
   maxWidth: ["85%"],
-  height: "80%",
+  maxHeight: ["100%", , 290],
   "> h2": {
     lineHeight: [1],
     textAlign: ["center", , "start"]
@@ -81,17 +88,16 @@ export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
     lineHeight: [3]
   },
   "> span": {
+    overflow: "auto",
     mt: 10,
     letterSpacing: "1px",
     display: "-webkit-box",
-    WebkitLineClamp: [6, , , 12],
+    // WebkitLineClamp: [6, , , 12],
     "-webkit-box-orient": "vertical",
-    overflowX: "hidden",
-    overflowY: ["auto"],
     wordBreak: "break-word",
-    lineHeight: ["1rem"],
+    lineHeight: ["27px"],
     minHeight: [0, , "12rem"],
-    maxHeight: ["6rem", , "14rem"],
-    whiteSpace: "pre-line"
+    maxHeight: [216, , "12rem"]
+    // whiteSpace: "pre-line"
   }
 };

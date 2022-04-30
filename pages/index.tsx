@@ -3,7 +3,14 @@ import {
   WalletMultiButton
 } from "@solana/wallet-adapter-react-ui";
 import Head from "next/head";
-import { MutableRefObject, Suspense, useContext, useRef } from "react";
+import {
+  MutableRefObject,
+  Suspense,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 import Collections from "../components/Collection/Collections";
 import Features from "../components/Features/Features";
 import Modal from "../components/Modal/Modal";
@@ -13,6 +20,7 @@ import Story from "../components/Story/Story";
 import Team from "../components/Team/Team";
 import Trailer from "../components/Trailer/Trailer";
 import { ScrollToSectionContext } from "../context/ScrollToSectionProvider";
+import { useSpring, animated as a } from "react-spring";
 
 export default function Page() {
   const {

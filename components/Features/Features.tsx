@@ -6,7 +6,17 @@ import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { descriptionStyle, widgetFeaturesStyle } from "./style";
 import Title from "../Title/Title";
 import Section from "../Section/Section";
+import { useSpring, animated as a, config } from "react-spring";
 
+import {
+  MutableRefObject,
+  Suspense,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
+import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 const data = [
   {
     idx: 1,
@@ -35,6 +45,24 @@ const data = [
 ];
 
 const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
+  const { showFeature } = useContext(ScrollToSectionContext);
+
+  const featureItemLeftProps = useSpring({
+    overflow: "hidden",
+    opacity: showFeature ? 1 : 0,
+    transform: showFeature ? "translateX(0%)" : "translateX(-100%)",
+    config: config.molasses,
+    delay: 200
+  });
+
+  const featureItemRightProps = useSpring({
+    overflow: "hidden",
+    opacity: showFeature ? 1 : 0,
+    transform: showFeature ? "translateX(0%)" : "translateX(100%)",
+    config: config.molasses,
+    delay: 200
+  });
+
   return (
     <section ref={compRef}>
       <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
@@ -48,16 +76,23 @@ const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           </Box>
           <Box
             variant="layout.features"
-            sx={{ maxWidth: "container90", mx: "auto" }}>
+            sx={{ maxWidth: "container90", mx: "auto", overflow: "hidden" }}>
             {data.map((item, index) => {
               return (
-                <FeatureItem
+                <a.div
                   key={index}
-                  {...item}
                   style={
-                    index % 2 !== 0 ? { justifyContent: "flex-end" } : null
-                  }
-                />
+                    index % 2 == 0
+                      ? { ...featureItemLeftProps }
+                      : { ...featureItemRightProps }
+                  }>
+                  <FeatureItem
+                    {...item}
+                    style={
+                      index % 2 !== 0 ? { justifyContent: "flex-end" } : null
+                    }
+                  />
+                </a.div>
               );
             })}
           </Box>

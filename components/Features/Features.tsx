@@ -80,13 +80,13 @@ const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             {data.map((item, index) => {
               return (
                 <a.div
+                  key={index}
                   style={
                     index % 2 == 0
                       ? { ...featureItemLeftProps }
                       : { ...featureItemRightProps }
                   }>
                   <FeatureItem
-                    key={index}
                     {...item}
                     style={
                       index % 2 !== 0 ? { justifyContent: "flex-end" } : null

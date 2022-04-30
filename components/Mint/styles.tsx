@@ -1,35 +1,33 @@
-import { ThemeUICSSObject } from "theme-ui";
+import { ThemeUICSSObject, ThemeUIStyleObject } from "theme-ui";
 
 export const modalContainerStyle: ThemeUICSSObject = {
   position: "relative",
-  // top: "50%",
-  // left: "50%",
-  // margin: "auto",
-  // transform: "translate(-50%,-50%)",
   textAlign: "center",
-  backgroundImage: "url(/assets/images/XMLID_16_.svg)",
+  backgroundImage: [
+    "url(/assets/images/bg_popup_mb.svg)",
+    ,
+    "url(/assets/images/XMLID_16_.svg)"
+  ],
+
   backgroundRepeat: "no-repeat",
-  minHeight: "452px",
-  width: "764px",
-  px: "6rem",
-  pt: 78,
+  backgroundSize: "contain",
+  minHeight: ["650px", , "452px"],
+  width: ["100%", , "764px"],
+  px: ["1rem", , "3rem", "6rem"],
+  pt: [100, , "30px", 78],
   pb: 50
 };
 
 export const privateDaysContainerStyle: ThemeUICSSObject = {
-  // position: "absolute",
-  // top: "60%",
-  // left: "0",
-  // margin: "auto",
-  // ml: -117,
-  // transform: "translate(-50%,-50%)",
   backgroundImage: "url(/assets/images/bg-private-day.svg)",
   backgroundRepeat: "no-repeat",
-  minHeight: "340px",
-  maxWidth: "234px",
+  minHeight: "307px",
+  maxWidth: ["234px", , 200, "234px"],
   width: "auto",
-  zIndex: 99,
-  textAlign: "center"
+  zIndex: 1,
+  textAlign: "center",
+  backgroundSize: "contain",
+  mt: [0, , -50, 0]
 };
 
 export const numberWrapperStyle: ThemeUICSSObject = {
@@ -62,4 +60,16 @@ export const progressWrapperStyle: ThemeUICSSObject = {
       background: "svGradient"
     }
   }
+};
+
+export const titleStyle: ThemeUIStyleObject = {
+  fontFamily: "roadmap",
+  letterSpacing: 10,
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "36px",
+  lineHeight: "38px",
+  textAlign: "center",
+  textTransform: "uppercase",
+  my: "36px"
 };

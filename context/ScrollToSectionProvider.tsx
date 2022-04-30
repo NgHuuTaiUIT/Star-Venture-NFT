@@ -1,8 +1,20 @@
-import { createContext, MutableRefObject, useRef, useState } from "react";
+import {
+  createContext,
+  MutableRefObject,
+  ReactNode,
+  RefObject,
+  useRef,
+  useState
+} from "react";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export const ScrollToSectionContext = createContext<any>({});
 
-export const ScrollToSectionProvider = ({ children }: { children: any }) => {
+export const ScrollToSectionProvider = ({
+  children
+}: {
+  children: ReactNode;
+}) => {
   const trailerOnClickRef = useRef<HTMLElement>(null);
   const featureOnClickRef = useRef<HTMLElement>(null);
   const collectionOnClickRef = useRef<HTMLElement>(null);
@@ -11,12 +23,12 @@ export const ScrollToSectionProvider = ({ children }: { children: any }) => {
 
   const [sectionActive, setSectionActive] = useState(0);
 
+  const size = useWindowSize();
   const scrollEffect = (targetRef: MutableRefObject<HTMLElement>) => {
-    console.log(targetRef);
     targetRef &&
       targetRef?.current?.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: size.width >= 1024 ? "center" : "start"
       });
   };
 

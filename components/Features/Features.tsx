@@ -34,9 +34,9 @@ const data = [
   }
 ];
 
-const Features = ({}, ref: any) => {
+const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   return (
-    <section ref={ref}>
+    <section ref={compRef}>
       <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: ["3.5rem"] }}>
@@ -155,4 +155,4 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
     </>
   );
 };
-export default React.forwardRef(Features);
+export default Features;

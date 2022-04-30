@@ -1,7 +1,9 @@
 /** @jsxImportSource theme-ui */
 
+import Image from "next/image";
 import React, { ReactNode } from "react";
 import { Box, Flex, Progress, Text } from "theme-ui";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
 import Title from "../Title/Title";
 import Modal from "./Modal";
@@ -21,7 +23,12 @@ const PrivateDayTime: React.FC<Props> = () => {
         title="private"
         letterSpacing={[1]}
         fontSize={[40, 30]}
-        style={{ width: "234px", ml: 0, mt: 30, textTransform: "none" }}
+        style={{
+          width: "100%",
+          ml: 0,
+          mt: [30, , -10, 30],
+          textTransform: "none"
+        }}
       />
       <Title
         title="sale"
@@ -29,9 +36,9 @@ const PrivateDayTime: React.FC<Props> = () => {
         fontSize={[40, 30]}
         style={{
           textTransform: "none",
-          width: "234px",
+          width: "100%",
           ml: 0,
-          mt: -30
+          mt: [-20, , -30, -20]
         }}
       />
       <Box sx={numberWrapperStyle}>
@@ -53,7 +60,13 @@ const PrivateDayTime: React.FC<Props> = () => {
   );
 };
 
-const ProgressBar = ({ value, max }: { value: any; max: any }) => {
+const ProgressBar = ({
+  value,
+  max
+}: {
+  value: string | number | readonly string[] | undefined;
+  max: string | number | undefined;
+}) => {
   return (
     <Box
       sx={{
@@ -71,35 +84,60 @@ const ProgressBar = ({ value, max }: { value: any; max: any }) => {
 };
 
 const PrivateDay: React.FC<Props> = () => {
+  const size = useWindowSize();
   return (
-    <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
+    <Flex
+      sx={{
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: ["column", , "row"],
+        maxWidth: [375, , "100%"],
+        mx: ["auto", , "unset"]
+      }}>
       <PrivateDayTime />
       <Modal>
         <Flex
           sx={{
             flexDirection: "column",
             justifyContent: "space-around",
-            gap: "2rem"
+            gap: ["1rem", , "0.5rem", "1.5rem"]
           }}>
           <Title
-            title="Make your own"
+            title={size.width >= 768 ? "Make your own" : "Make your"}
             fontSize={[36, 36]}
             letterSpacing={[1, 1]}
           />
-          <Text
-            sx={{
-              fontFamily: "Ubuntu",
-              fontSize: "18px",
-              fontWeight: "300",
-              lineHeight: "27px",
-              letterSpacing: "0px"
-            }}>
-            Price: 0.008 ETH • Mint/wallet: 2
-          </Text>
+          {size.width < 768 && (
+            <Title
+              title="own"
+              fontSize={[36, 36]}
+              letterSpacing={[1, 1]}
+              style={{ mt: "-2rem" }}
+            />
+          )}
+          <Box>
+            <Text
+              sx={{
+                fontFamily: "Ubuntu",
+                fontSize: "18px",
+                fontWeight: "300",
+                lineHeight: "27px",
+                letterSpacing: "0px"
+              }}>
+              Price: 0.008 ETH • Mint/wallet: 2
+            </Text>
+            <br />
+            <Image
+              src="/assets/images/green-star.svg"
+              height={20}
+              width={49}
+              alt=""
+            />
+          </Box>
           <Box>
             <Flex sx={{ justifyContent: "space-between", mb: "1rem" }}>
               <span sx={{ textAlign: "left" }}>Total NFTs</span>
-              <span sx={{ textAlign: "right" }}>Total NFTs</span>
+              <span sx={{ textAlign: "right" }}>Minted 256/8.888</span>
             </Flex>
             <ProgressBar max={1} value={1 / 3} />
           </Box>

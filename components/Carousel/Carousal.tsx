@@ -9,7 +9,7 @@ import React, {
 import { Container, ContainerRelativo } from "./style";
 
 interface CaroselParams {
-  children: any;
+  children: React.ReactNode;
   max_width?: number;
 }
 

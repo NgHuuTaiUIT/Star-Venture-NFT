@@ -32,13 +32,13 @@ export default function Page() {
       <Suspense fallback={"Loadding..."}>
         <Trailer
           url="https://www.youtube.com/embed/2x7bn0hG70k?autoplay=1&mute=1&loop=1&playlist=2x7bn0hG70k"
-          ref={trailerOnClickRef}
+          compRef={trailerOnClickRef}
         />
       </Suspense>
-      <Features ref={featureOnClickRef} />
-      <Collections ref={collectionOnClickRef} />
-      <Roadmap ref={roadmapOnClickRef} />
-      <Team ref={teamOnClickRef} />
+      <Features compRef={featureOnClickRef} />
+      <Collections compRef={collectionOnClickRef} />
+      <Roadmap compRef={roadmapOnClickRef} />
+      <Team compRef={teamOnClickRef} />
       <Modal />
     </>
   );

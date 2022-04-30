@@ -34,32 +34,36 @@ const data = [
   }
 ];
 
-const Features = () => {
+const Features = ({}, ref: any) => {
   return (
-    <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
-      <Box sx={{ textAlign: "center" }}>
-        <Box sx={{ mb: ["3.5rem"] }}>
-          <Title
-            title="Features"
-            letterSpacing={[10, 10]}
-            fontSize={[36, 48]}
-          />
+    <section ref={ref}>
+      <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
+        <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ mb: ["3.5rem"] }}>
+            <Title
+              title="Features"
+              letterSpacing={[10, 10]}
+              fontSize={[36, 48]}
+            />
+          </Box>
+          <Box
+            variant="layout.features"
+            sx={{ maxWidth: "container90", mx: "auto" }}>
+            {data.map((item, index) => {
+              return (
+                <FeatureItem
+                  key={index}
+                  {...item}
+                  style={
+                    index % 2 !== 0 ? { justifyContent: "flex-end" } : null
+                  }
+                />
+              );
+            })}
+          </Box>
         </Box>
-        <Box
-          variant="layout.features"
-          sx={{ maxWidth: "container90", mx: "auto" }}>
-          {data.map((item, index) => {
-            return (
-              <FeatureItem
-                key={index}
-                {...item}
-                style={index % 2 !== 0 ? { justifyContent: "flex-end" } : null}
-              />
-            );
-          })}
-        </Box>
-      </Box>
-    </Section>
+      </Section>
+    </section>
   );
 };
 
@@ -151,4 +155,4 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
     </>
   );
 };
-export default Features;
+export default React.forwardRef(Features);

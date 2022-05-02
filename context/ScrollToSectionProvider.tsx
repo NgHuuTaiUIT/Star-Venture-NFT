@@ -44,11 +44,6 @@ export const ScrollToSectionProvider = ({
 
   const HEIGHT_HEADER = 90 + 65;
 
-  console.log("feature", { ...featureOnClickRef?.current });
-  console.log("roadmap", roadmapOnClickRef?.current);
-  console.log("team", teamOnClickRef?.current);
-  console.log("collection", collectionOnClickRef?.current);
-
   useEffect(() => {
     const handleScroll = () => {
       const getBoundingClientRectRef = (ref: RefObject<any>) => {

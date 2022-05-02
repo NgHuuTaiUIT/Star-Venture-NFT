@@ -1,10 +1,13 @@
 /** @jsxImportSource theme-ui */
 
-import React from "react";
+import { Canvas } from "@react-three/fiber";
+import React, { Suspense } from "react";
 import { Box, Flex, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
+const Net = React.lazy(() => import("./Net")); // Lazy-loaded
+
 import {
   circleStyle,
   containerStyle,
@@ -65,7 +68,13 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             </Box>
           </Flex>
           <Circle />
-          <Net />
+          <Suspense fallback={"...."}>
+            <Box sx={netStyle}>
+              <Canvas id="app" style={{ width: "100vw" }}>
+                <Net />
+              </Canvas>
+            </Box>
+          </Suspense>
         </Box>
       </Section>
     </section>
@@ -132,15 +141,31 @@ const RoadMapItem: React.FC<{
   );
 };
 const Circle = () => (
-  <Box sx={circleStyle}>
-    <img src="/assets/images/circles.svg" alt="" />
-  </Box>
+  <>
+    <Box sx={circleStyle}>
+      <img src="/assets/images/circles.svg" alt="" />
+    </Box>
+  </>
 );
 
-const Net = () => (
-  <Box sx={netStyle}>
-    <img src="/assets/images/net.svg" alt="" />
-  </Box>
-);
+// const Net = () => {
+//   const size: Size = useWindowSize();
+
+//   return (
+//     <Box sx={netStyle}>
+//       <Canvas
+//         id="app"
+//         style={{
+//           position: "fixed",
+//           top: "0",
+//           left: "0",
+//           width: "100vw",
+//           height: "100vh"
+//         }}>
+//         <Net />
+//       </Canvas>
+//     </Box>
+//   );
+// };
 
 export default Roadmap;

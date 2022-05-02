@@ -45,8 +45,15 @@ export const circleStyle: ThemeUIStyleObject = {
 export const netStyle: ThemeUIStyleObject = {
   display: ["none", null, null, "block"],
   position: "absolute",
-  bottom: -140,
+  bottom: -250,
   margin: "auto",
   left: "50%",
-  transform: "translateX(-50%)"
+  transform: "translateX(-50%)",
+  height: "100%",
+  width: "100%"
+};
+
+export const svgStyle: ThemeUIStyleObject = {
+  width: 0,
+  height: 0
 };

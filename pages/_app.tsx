@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
 import { ThemeProvider } from "theme-ui";
 
-import { theme } from "../lib/theme";
+// import { theme } from "../lib/theme";
+import { theme } from "../theme/theme";
 import type { AppProps } from "next/app";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -9,12 +10,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <main
         sx={{
-          border: "1px solid",
-          borderColor: "text",
-          padding: 3,
-          borderRadius: 1,
-          maxWidth: 768,
-          mx: "auto"
+          variant: "layout.main"
         }}>
         <Component {...pageProps} />
       </main>

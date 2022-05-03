@@ -7,6 +7,8 @@ import { Box, Flex, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
+import { useSpring, animated as a, config, easings } from "react-spring";
+
 const Net = React.lazy(() => import("./Net")); // Lazy-loaded
 
 import {
@@ -50,7 +52,14 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
   return (
     <section ref={compRef}>
-      <Section styles={{ mt: ["4rem", , "5rem"] }}>
+      <Section
+        styles={{
+          mt: ["4rem", , "5rem"],
+          background:
+            "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 100%),linear-gradient(90deg, rgba(18, 25, 44, 0) 6.01%,  #12192C 94%);",
+          position: "relative",
+          zIndex: 1
+        }}>
         <Box sx={containerStyle}>
           <Flex sx={wrapStyle}>
             <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
@@ -158,32 +167,59 @@ const RoadMapItem: React.FC<{
     </Box>
   );
 };
-const Circle = () => (
-  <>
-    <Box sx={circleStyle}>
-      <img src="/assets/images/circles.svg" alt="" />
-    </Box>
-  </>
-);
-
-// const Net = () => {
-//   const size: Size = useWindowSize();
-
-//   return (
-//     <Box sx={netStyle}>
-//       <Canvas
-//         id="app"
-//         style={{
-//           position: "fixed",
-//           top: "0",
-//           left: "0",
-//           width: "100vw",
-//           height: "100vh"
-//         }}>
-//         <Net />
-//       </Canvas>
-//     </Box>
-//   );
-// };
+const Circle = () => {
+  const styles = useSpring({
+    loop: { reverse: true },
+    from: {
+      transform: "translateX(0%)"
+    },
+    to: { transform: "translateX(-50%)" },
+    config: { ...config.molasses, duration: 20000 }
+  });
+  return (
+    <>
+      <Box
+        sx={{
+          left: "0%",
+          width: "100%",
+          height: 250,
+          position: "absolute",
+          bottom: "10%",
+          zIndex: 1
+        }}>
+        <Box
+          sx={{
+            ...circleStyle,
+            background:
+              "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 20%),linear-gradient(90deg, rgba(18, 25, 44, 0) 70%,  #12192C 100%)",
+            width: "100%",
+            height: "100%",
+            bottom: 0,
+            zIndex: 2
+          }}
+        />
+        <Box
+          sx={{
+            ...circleStyle,
+            height: "100%",
+            width: "90%",
+            overflow: "hidden"
+          }}>
+          <a.div
+            style={styles}
+            sx={{
+              backgroundImage: "url(/assets/images/circles.svg)",
+              height: "100%",
+              width: "200%",
+              maxHeight: 220,
+              position: "absolute",
+              bottom: 0,
+              zIndex: 1
+            }}></a.div>
+        </Box>
+      </Box>
+    </>
+  );
+};
 
 export default Roadmap;

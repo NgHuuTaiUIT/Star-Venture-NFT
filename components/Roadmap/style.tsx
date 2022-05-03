@@ -3,7 +3,8 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const containerStyle: ThemeUIStyleObject = {
   variant: "layout.roadmap",
   position: "relative",
-  maxWidth: "95%"
+  maxWidth: "95%",
+  overflow: "hidden"
 };
 
 export const wrapStyle: ThemeUIStyleObject = {
@@ -37,7 +38,7 @@ export const circleStyle: ThemeUIStyleObject = {
   position: "absolute",
   bottom: ["10%", , "12%"],
   margin: "auto",
-  left: ["50%", , "48.5%"],
+  left: ["50%", , "50%"],
   transform: "translateX(-50%)",
   zIndex: 1
 };

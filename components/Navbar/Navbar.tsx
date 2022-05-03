@@ -1,11 +1,11 @@
 /** @jsxImportSource theme-ui */
-import { useContext, useState } from "react";
-import { Box, Button, Flex, Image, NavLink } from "theme-ui";
-import { MenuContext } from "../../context/MenuContext";
 import disableScroll from "disable-scroll";
+import { useContext, useEffect, useState } from "react";
+import { Box, Flex, Image, Link, NavLink } from "theme-ui";
+import { MenuContext } from "../../context/MenuProvider";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
 import {
-  btnConnectStyle,
   btnMenuMobileStyle,
   containerNavbarStyle,
   iconStyle,
@@ -27,9 +27,16 @@ const menus: string[] = ["Trailer", "Feature", "Collection", "Roadmap", "Team"];
 const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
   const { width } = useWindowSize();
-  showMenu ? disableScroll.on() : disableScroll.off();
+  useEffect(() => {
+    if (width < 1200) {
+      showMenu ? disableScroll.on() : disableScroll.off();
+    } else {
+      disableScroll.off();
+      closeMenu();
+    }
+  }, [width]);
   return (
-    <>
+    <Box as="header">
       <Box
         as="a"
         sx={{
@@ -50,17 +57,10 @@ const Navbar = () => {
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />
           <RightMenu />
-          <Box
-            sx={{
-              flex: "0 0 25%",
-              width: ["100%", , "85%"],
-              m: "auto"
-            }}>
-            <Button sx={btnConnectStyle}>Connect Wallet</Button>
-          </Box>
+          <CustomWalletMultiButton />
         </Flex>
       </Box>
-    </>
+    </Box>
   );
 };
 
@@ -87,18 +87,24 @@ const LeftMenu = () => {
 };
 
 const icons = [
-  "/assets/icons/twitter.svg",
-  "/assets/icons/discord.svg",
-  "/assets/icons/tele.svg",
-  "/assets/icons/medium.svg"
+  {
+    src: "/assets/icons/twitter.svg",
+    url: "https://twitter.com/StarVentureGame"
+  },
+  {
+    src: "/assets/icons/discord.svg",
+    url: "#"
+  },
+  { src: "/assets/icons/tele.svg", url: "https://t.me/StarVentureGlobal" },
+  { src: "/assets/icons/medium.svg", url: "https://t.me/starventure" }
 ];
 
 const RightMenu = () => (
   <Flex sx={wrapRightMenuStyle}>
-    {icons.map(src => (
-      <Box key={src} sx={iconStyle}>
-        <img src={src} alt="next" />
-      </Box>
+    {icons.map(({ src, url }) => (
+      <Link href={url} target="_blank" key={src} sx={iconStyle}>
+        <Image src={src} alt="next" />
+      </Link>
     ))}
   </Flex>
 );

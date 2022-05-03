@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import { Box, Flex, Grid, Image, Link } from "theme-ui";
-import { ModalContext } from "../../context/ModalContext";
+import { ModalContext } from "../../context/ModalProvider";
 import Title from "../Title/Title";
 import {
   btnStyle,

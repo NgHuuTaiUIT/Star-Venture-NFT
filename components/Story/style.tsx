@@ -12,6 +12,7 @@ export const containerStoryStyle: ThemeUIStyleObject = {
   maxWidth: 1140,
   pt: 100,
   px: [36, null, null],
+  background: "url(/assets/images/bg-story.png) no-repeat cover",
   "> img": { width: ["100%", null, null, "80%"], mt: [300, , , 0] }
 };
 

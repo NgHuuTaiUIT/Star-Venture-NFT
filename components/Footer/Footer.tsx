@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React from "react";
-import { Box, Flex } from "theme-ui";
+import { Box, Flex, Link } from "theme-ui";
 import {
   footerStyle,
   iconStyle,
@@ -14,7 +14,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <Flex sx={footerStyle}>
+    <Flex as="footer" sx={footerStyle}>
       <Box as="h2" sx={titleStyle}>
         star venture
       </Box>
@@ -30,18 +30,24 @@ const Footer = (props: Props) => {
 };
 
 const icons = [
-  "/assets/icons/twitter.svg",
-  "/assets/icons/discord.svg",
-  "/assets/icons/tele.svg",
-  "/assets/icons/medium.svg"
+  {
+    src: "/assets/icons/twitter.svg",
+    url: "https://twitter.com/StarVentureGame"
+  },
+  {
+    src: "/assets/icons/discord.svg",
+    url: "#"
+  },
+  { src: "/assets/icons/tele.svg", url: "https://t.me/StarVentureGlobal" },
+  { src: "/assets/icons/medium.svg", url: "https://t.me/starventure" }
 ];
 
 const Icons = () => (
   <Flex sx={iconWrapStyle}>
-    {icons.map(src => (
-      <Box key={src} sx={iconStyle}>
+    {icons.map(({ src, url }) => (
+      <Link href={url} target="_blank" key={src} sx={iconStyle}>
         <img src={src} alt="icon" />
-      </Box>
+      </Link>
     ))}
   </Flex>
 );

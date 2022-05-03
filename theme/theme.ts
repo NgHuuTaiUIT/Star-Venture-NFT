@@ -263,7 +263,7 @@ export const theme = makeTheme({
       ],
       backgroundPosition: "top,center",
       backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
+      backgroundSize: ["cover"],
       margin: 0,
       height: "100%",
       // WebkitFontSmoothing: "antialiased",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "theme-ui";
+import { Box, ThemeUIStyleObject } from "theme-ui";
 
 const Title = ({
   url,
@@ -7,14 +7,14 @@ const Title = ({
   height = 51,
   backgroundPosition = "center",
   minWidth,
-  sx
+  style
 }: {
   url: string;
   width?: number | string | any[];
   height?: number | string | any[];
   backgroundPosition?: string;
   minWidth?: number | string | any[];
-  sx?: any;
+  style?: ThemeUIStyleObject;
 }) => {
   return (
     <Box
@@ -28,7 +28,7 @@ const Title = ({
         backgroundSize: "contain",
         backgroundPosition,
         minWidth,
-        ...sx
+        ...style
       }}
       variant="layout.img"
     />

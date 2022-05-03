@@ -2,8 +2,17 @@
 
 import React from "react";
 import { Box, Flex, Image } from "theme-ui";
-import { Size, useWindowSize } from "../hooks/useWindowSize";
-import Title from "./Title";
+import { Size, useWindowSize } from "../../hooks/useWindowSize";
+import Title from "../Title/Title";
+import {
+  circleStyle,
+  containerStyle,
+  netStyle,
+  titleStyle,
+  widgetRoadmapItemStyle,
+  wrapRoadmapItemStyle,
+  wrapStyle
+} from "./style";
 
 const data = [
   {
@@ -35,29 +44,17 @@ const data = [
 const Roadmap = () => {
   const size: Size = useWindowSize();
   return (
-    <Box
-      as="section"
-      variant="layout.roadmap"
-      sx={{ position: "relative", mt: 65 }}>
-      <Flex
-        as="section"
-        variant="layout.section"
-        sx={{
-          // maxWidth: 1920,
-          minHeight: 819,
-          flexDirection: "column"
-        }}>
+    <Box as="section" sx={containerStyle}>
+      <Flex as="section" sx={wrapStyle}>
         <Box sx={{ mt: 0 }}>
-          <Box sx={{ my: 51 }}>
-            <Title url="/assets/images/roadmap.svg" width={379} />
+          <Box sx={{ my: ["2.5rem", , , 51] }}>
+            <Title
+              url="/assets/images/roadmap.svg"
+              width={379}
+              style={{ height: ["1.8rem"] }}
+            />
           </Box>
-          <Flex
-            sx={{
-              flexDirection: ["column", "column", "column", "row"],
-              maxWidth: [null, null, 1190],
-              margin: "auto",
-              justifyContent: "space-between"
-            }}>
+          <Flex sx={wrapRoadmapItemStyle}>
             {data.map((vl, idx) => (
               <RoadMapItem {...vl} key={idx} />
             ))}
@@ -76,12 +73,7 @@ const RoadMapItem: React.FC<{
   content: string;
 }> = ({ idxPhrase, title, content }) => {
   return (
-    <Box
-      sx={{
-        my: [40],
-        mx: [81, 81, null, 10],
-        maxWidth: [null, null, null, 250]
-      }}>
+    <Box sx={widgetRoadmapItemStyle}>
       <Box sx={{ mb: [30, 30, null, 0], ml: -25 }}>
         <Title
           url={`/assets/images/phrase-${idxPhrase}.svg`}
@@ -89,10 +81,7 @@ const RoadMapItem: React.FC<{
           height={[35, 35, null, 16]}
         />
       </Box>
-      <Box
-        as="h2"
-        variant="text.roadmap"
-        sx={{ minWidth: [null, null, null, 300] }}>
+      <Box as="h2" sx={titleStyle}>
         {title}
       </Box>
       <br />
@@ -103,30 +92,13 @@ const RoadMapItem: React.FC<{
   );
 };
 const Circle = () => (
-  <Box
-    sx={{
-      display: ["none", null, null, "block"],
-      position: "absolute",
-      bottom: "10%",
-      margin: "auto",
-      left: "50%",
-      transform: "translateX(-50%)",
-      zIndex: 1
-    }}>
+  <Box sx={circleStyle}>
     <img src="/assets/images/circles.svg" alt="" />
   </Box>
 );
 
 const Net = () => (
-  <Box
-    sx={{
-      display: ["none", null, null, "block"],
-      position: "absolute",
-      bottom: -140,
-      margin: "auto",
-      left: "50%",
-      transform: "translateX(-50%)"
-    }}>
+  <Box sx={netStyle}>
     <img src="/assets/images/net.svg" alt="" />
   </Box>
 );

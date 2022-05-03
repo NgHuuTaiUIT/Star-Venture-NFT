@@ -1,11 +1,10 @@
 /** @jsxImportSource theme-ui */
 import React from "react";
 import { start } from "repl";
-import { Box, Flex, Grid } from "theme-ui";
-import { Size, useWindowSize } from "../hooks/useWindowSize";
-import Title from "./Title";
-
-type Props = {};
+import { Box, Flex, Grid, Image } from "theme-ui";
+import { Size, useWindowSize } from "../../hooks/useWindowSize";
+import { descriptionStyle, widgetFeaturesStyle } from "./style";
+import Title from "../Title/Title";
 
 const data = [
   {
@@ -14,14 +13,14 @@ const data = [
     text: `Avatar holders can get early boarding to first game version "Boarding"`
   },
   {
-    idx: 3,
+    idx: 2,
     direction: "right",
-    text: `Stake avatars to get $STARV`
+    text: `Avatars with unique rarities hold different in-game bonuses`
   },
   {
-    idx: 2,
+    idx: 3,
     direction: "left",
-    text: `Avatars with unique rarities hold different in-game bonuses`
+    text: `Stake avatars to get $STARV`
   },
   {
     idx: 4,
@@ -30,11 +29,14 @@ const data = [
   }
 ];
 
-const Features = (props: Props) => {
+const Features = () => {
   return (
     <Box as="section" variant="layout.section" sx={{ textAlign: "center" }}>
-      <Box sx={{ py: 30 }}>
-        <Title url="/assets/images/features.svg" width={397} />
+      <Box sx={{ py: ["2rem", , , 30] }}>
+        <Title
+          url="/assets/images/features.svg"
+          style={{ height: ["1.8rem"] }}
+        />
       </Box>
       <Box variant="layout.features">
         {data.map((item, index) => {
@@ -59,23 +61,12 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
         <Flex
           sx={{
             flexDirection: direction === "right" && "row-reverse",
-            pt: 40,
-            minHeight: 120,
-            alignItems: "start",
-            textAlign: "start",
-            gap: 20
+            ...widgetFeaturesStyle
           }}>
-          <img src={`/assets/images/0${idx}.svg`} alt="" />
+          <Image src={`/assets/images/0${idx}.svg`} alt="" />
           <Flex sx={{ flexDirection: "column" }}>
-            <img src={`/assets/images/vector-${direction}.png`} alt="" />
-            <Box
-              as="p"
-              sx={{
-                variant: "text.p",
-                maxWidth: 420,
-                minWidth: 400,
-                px: 10
-              }}>
+            <Image src={`/assets/images/vector-${direction}.png`} alt="" />
+            <Box as="p" sx={descriptionStyle}>
               {text}
             </Box>
           </Flex>
@@ -83,27 +74,22 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ idx, direction, text }) => {
       ) : (
         <Flex
           sx={{
+            ...widgetFeaturesStyle,
             pt: 45,
-            minHeight: 120,
-            alignItems: "start",
-            textAlign: "start",
-            gap: 20,
             flexDirection: "column"
           }}>
-          <img
+          <Image
             src={`/assets/images/0${idx}.svg`}
             alt=""
-            sx={{ ml: 50, mb: 10, height: [48, null, null, 32] }}
+            sx={{ ml: 50, mb: 10, height: ["2.5rem", null, null, 32] }}
           />
           <Flex sx={{ flexDirection: "column", width: "100%" }}>
-            <img src={`/assets/images/vector-left.png`} alt="" />
+            <Image src={`/assets/images/vector-left.png`} alt="" />
             <Box
               as="p"
               sx={{
-                variant: "text.p",
-                maxWidth: 420,
+                ...descriptionStyle,
                 minWidth: "100%",
-                px: 10,
                 pl: 50
               }}>
               {text}

@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 export const ModalContext = createContext<any>({});
 
-export const ModalProvider = ({ children }: { children: any }) => {
+export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
     image: "",

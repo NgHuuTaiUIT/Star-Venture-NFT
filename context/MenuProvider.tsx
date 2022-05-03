@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 export const MenuContext = createContext<any>({});
 
-export const MenuProvider = ({ children }: { children: any }) => {
+export const MenuProvider = ({ children }: { children: ReactNode }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {

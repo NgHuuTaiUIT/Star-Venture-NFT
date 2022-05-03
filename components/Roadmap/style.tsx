@@ -3,11 +3,11 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const containerStyle: ThemeUIStyleObject = {
   variant: "layout.roadmap",
   position: "relative",
-  minWidth: "100vw"
+  maxWidth: "95%"
 };
 
 export const wrapStyle: ThemeUIStyleObject = {
-  maxWidth: "container90",
+  maxWidth: 1260,
   minHeight: 819,
   flexDirection: "column",
   m: "0 auto"
@@ -23,8 +23,8 @@ export const wrapRoadmapItemStyle: ThemeUIStyleObject = {
 export const widgetRoadmapItemStyle: ThemeUIStyleObject = {
   my: [22],
   mx: [10],
-  maxWidth: [null, null, null, 250],
-  mr: [0, , "2.8rem"]
+  maxWidth: [null, null, null, 300]
+  // mr: [0, , "2.8rem"]
 };
 
 export const titleStyle: ThemeUIStyleObject = {
@@ -45,8 +45,15 @@ export const circleStyle: ThemeUIStyleObject = {
 export const netStyle: ThemeUIStyleObject = {
   display: ["none", null, null, "block"],
   position: "absolute",
-  bottom: -140,
+  bottom: -250,
   margin: "auto",
   left: "50%",
-  transform: "translateX(-50%)"
+  transform: "translateX(-50%)",
+  height: "100%",
+  width: "100%"
+};
+
+export const svgStyle: ThemeUIStyleObject = {
+  width: 0,
+  height: 0
 };

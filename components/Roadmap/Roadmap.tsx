@@ -1,10 +1,14 @@
 /** @jsxImportSource theme-ui */
 
-import React from "react";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useRef } from "react";
 import { Box, Flex, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
+const Net = React.lazy(() => import("./Net")); // Lazy-loaded
+
 import {
   circleStyle,
   containerStyle,
@@ -42,31 +46,56 @@ const data = [
   }
 ];
 
-const Roadmap = () => {
+const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
   return (
-    <Section optLg={[1, 1, 1, 1]}>
-      <Box sx={containerStyle}>
-        <Flex sx={wrapStyle}>
-          <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
-            <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
-              <Title
-                title="Roadmap"
-                letterSpacing={[10, 10]}
-                fontSize={[36, 48]}
-              />
+    <section ref={compRef}>
+      <Section styles={{ mt: ["4rem", , "5rem"] }}>
+        <Box sx={containerStyle}>
+          <Flex sx={wrapStyle}>
+            <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
+              <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
+                <Title
+                  title="Roadmap"
+                  letterSpacing={[10, 10]}
+                  fontSize={[36, 48]}
+                />
+              </Box>
+              <Flex sx={wrapRoadmapItemStyle}>
+                {data.map((vl, idx) => (
+                  <RoadMapItem {...vl} key={idx} />
+                ))}
+              </Flex>
             </Box>
-            <Flex sx={wrapRoadmapItemStyle}>
-              {data.map((vl, idx) => (
-                <RoadMapItem {...vl} key={idx} />
-              ))}
-            </Flex>
-          </Box>
-        </Flex>
-        <Circle />
-        <Net />
-      </Box>
-    </Section>
+          </Flex>
+          <Circle />
+          <Suspense fallback={"...."}>
+            <Box sx={netStyle}>
+              <Canvas
+                id="app"
+                style={{
+                  width: "1920px",
+                  height: "800px",
+                  margin: "auto",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
+                  maskImage:
+                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
+                }}
+                camera={{
+                  fov: 45,
+                  position: [-0.5, 0.5, 1],
+                  near: 0.1,
+                  far: 100,
+                  aspect: 0.5
+                }}>
+                <Net />
+              </Canvas>
+            </Box>
+          </Suspense>
+        </Box>
+      </Section>
+    </section>
   );
 };
 
@@ -130,15 +159,31 @@ const RoadMapItem: React.FC<{
   );
 };
 const Circle = () => (
-  <Box sx={circleStyle}>
-    <img src="/assets/images/circles.svg" alt="" />
-  </Box>
+  <>
+    <Box sx={circleStyle}>
+      <img src="/assets/images/circles.svg" alt="" />
+    </Box>
+  </>
 );
 
-const Net = () => (
-  <Box sx={netStyle}>
-    <img src="/assets/images/net.svg" alt="" />
-  </Box>
-);
+// const Net = () => {
+//   const size: Size = useWindowSize();
+
+//   return (
+//     <Box sx={netStyle}>
+//       <Canvas
+//         id="app"
+//         style={{
+//           position: "fixed",
+//           top: "0",
+//           left: "0",
+//           width: "100vw",
+//           height: "100vh"
+//         }}>
+//         <Net />
+//       </Canvas>
+//     </Box>
+//   );
+// };
 
 export default Roadmap;

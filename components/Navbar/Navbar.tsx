@@ -1,8 +1,9 @@
 /** @jsxImportSource theme-ui */
 import disableScroll from "disable-scroll";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box, Flex, Image, Link, NavLink } from "theme-ui";
 import { MenuContext } from "../../context/MenuProvider";
+import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
 import {
@@ -27,6 +28,7 @@ const menus: string[] = ["Trailer", "Feature", "Collection", "Roadmap", "Team"];
 const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
   const { width } = useWindowSize();
+
   useEffect(() => {
     if (width < 980) {
       showMenu ? disableScroll.on() : disableScroll.off();
@@ -35,6 +37,7 @@ const Navbar = () => {
       closeMenu();
     }
   }, [width]);
+
   return (
     <Box
       as="header"
@@ -42,7 +45,7 @@ const Navbar = () => {
         position: ["sticky"],
         width: "100vw",
         top: 0,
-        zIndex: 1
+        zIndex: 2
       }}>
       <Box
         as="a"
@@ -57,8 +60,7 @@ const Navbar = () => {
       <Flex
         sx={{
           ...containerNavbarStyle,
-          display: width >= 980 ? "block" : showMenu ? "block" : "none",
-          height: ["100vh", "auto"]
+          display: width >= 1024 ? "block" : showMenu ? "block" : "none"
         }}>
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />
@@ -71,7 +73,14 @@ const Navbar = () => {
 };
 
 const LeftMenu = () => {
-  const [active, setActive] = useState(0);
+  // const [active, setActive] = useState(0);
+
+  const scrollContext = useContext(ScrollToSectionContext);
+
+  const { sectionActive, setSectionActive } = scrollContext;
+
+  const refs = Object.values(scrollContext);
+
   return (
     <Flex sx={wrapLeftMenuStyle}>
       {menus.map((menu, idx) => (
@@ -81,11 +90,15 @@ const LeftMenu = () => {
           p={2}
           sx={{
             ...linkStyle,
-            fontWeight: active === idx ? "500" : 200,
-            color: active === idx ? "secondary" : "primary"
+            fontWeight: sectionActive === idx ? "500" : 200,
+            color: sectionActive === idx ? "secondary" : "primary"
+          }}
+          onClick={() => {
+            scrollContext.scrollEffect(refs[idx]);
+            setSectionActive(idx);
           }}>
           {menu}
-          {active == idx && <Line />}
+          {sectionActive == idx && <Line />}
         </NavLink>
       ))}
     </Flex>

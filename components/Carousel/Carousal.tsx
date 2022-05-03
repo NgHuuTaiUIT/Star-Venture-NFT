@@ -9,7 +9,7 @@ import React, {
 import { Container, ContainerRelativo } from "./style";
 
 interface CaroselParams {
-  children: any;
+  children: React.ReactNode;
   max_width?: number;
 }
 
@@ -69,14 +69,14 @@ const Carosel: React.FC<CaroselParams> = ({
     <ContainerRelativo max={max_width || stateCarosel?.max_width_carousel}>
       <Container ref={Carousel}>
         {children}
-        <div className="buttons">
+        {/* <div className="buttons">
           <button onClick={handleCarouselAction} id="prev" className="prev">
             prev
           </button>
           <button onClick={handleCarouselAction} id="next" className="next">
             next
           </button>
-        </div>
+        </div> */}
       </Container>
     </ContainerRelativo>
   );

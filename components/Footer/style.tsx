@@ -1,4 +1,10 @@
-import { ThemeUIStyleObject } from "theme-ui";
+import { ThemeUICSSObject, ThemeUIStyleObject } from "theme-ui";
+
+export const footerContainer: ThemeUICSSObject = {
+  width: "100%",
+  minHeight: "3rem",
+  mb: 0
+};
 
 export const footerStyle: ThemeUIStyleObject = {
   maxWidth: ["calc(100vw - 40px)", , , 500],

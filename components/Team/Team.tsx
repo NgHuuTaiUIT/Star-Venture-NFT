@@ -14,6 +14,8 @@ import {
   nameCardBoxHoverStyle,
   nameCardBoxStyle
 } from "./style";
+import { useSpring, animated as a, config } from "react-spring";
+import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 
 const data = [
   {
@@ -54,23 +56,34 @@ const data = [
   }
 ];
 
-const Team = () => {
+const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
+  const { showTeam } = useContext(ScrollToSectionContext);
+
+  const teamSpringProps = useSpring({
+    opacity: showTeam ? 1 : -2,
+    config: config.molasses
+  });
+
   return (
-    <Section>
-      <Flex as="section" sx={containerTeamStyle}>
-        <Box
-          sx={{
-            mt: [30, , 10]
-          }}>
-          <Title title="Team" letterSpacing={[10, 10]} fontSize={[36, 48]} />
-        </Box>
-        <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
-          {data.map(vl => (
-            <NameCard {...vl} key={vl.name} />
-          ))}
-        </Grid>
-      </Flex>
-    </Section>
+    <section ref={compRef}>
+      <Section styles={{ mt: "5rem" }}>
+        <Flex as="section" sx={containerTeamStyle}>
+          <Box
+            sx={{
+              mt: [30, , 10]
+            }}>
+            <Title title="Team" letterSpacing={[10, 10]} fontSize={[36, 48]} />
+          </Box>
+          <a.div style={teamSpringProps}>
+            <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>
+              {data.map(vl => (
+                <NameCard {...vl} key={vl.name} />
+              ))}
+            </Grid>
+          </a.div>
+        </Flex>
+      </Section>
+    </section>
   );
 };
 

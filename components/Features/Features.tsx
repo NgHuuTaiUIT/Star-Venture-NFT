@@ -1,12 +1,22 @@
 /** @jsxImportSource theme-ui */
 import React from "react";
 import { start } from "repl";
-import { Box, Flex, Grid, Image, Text } from "theme-ui";
+import { Box, Flex, Grid, Image, Text, ThemeUICSSObject } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { descriptionStyle, widgetFeaturesStyle } from "./style";
 import Title from "../Title/Title";
 import Section from "../Section/Section";
+import { useSpring, animated as a, config } from "react-spring";
 
+import {
+  MutableRefObject,
+  Suspense,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
+import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 const data = [
   {
     idx: 1,
@@ -34,24 +44,61 @@ const data = [
   }
 ];
 
-const Features = () => {
+const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
+  const { showFeature } = useContext(ScrollToSectionContext);
+
+  const featureItemLeftProps = useSpring({
+    overflow: "hidden",
+    opacity: showFeature ? 1 : 0,
+    transform: showFeature ? "translateX(0%)" : "translateX(-100%)",
+    config: config.molasses,
+    delay: 200
+  });
+
+  const featureItemRightProps = useSpring({
+    overflow: "hidden",
+    opacity: showFeature ? 1 : 0,
+    transform: showFeature ? "translateX(0%)" : "translateX(100%)",
+    config: config.molasses,
+    delay: 200
+  });
+
   return (
-    <Section>
-      <Box sx={{ textAlign: "center" }}>
-        <Box sx={{ mb: ["3.5rem"] }}>
-          <Title
-            title="Features"
-            letterSpacing={[10, 10]}
-            fontSize={[36, 48]}
-          />
+    <section ref={compRef}>
+      <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
+        <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ mb: ["3.5rem"] }}>
+            <Title
+              title="Features"
+              letterSpacing={[10, 10]}
+              fontSize={[36, 48]}
+            />
+          </Box>
+          <Box
+            variant="layout.features"
+            sx={{ maxWidth: "container90", mx: "auto", overflow: "hidden" }}>
+            {data.map((item, index) => {
+              return (
+                <a.div
+                  key={index}
+                  style={
+                    index % 2 == 0
+                      ? { ...featureItemLeftProps }
+                      : { ...featureItemRightProps }
+                  }>
+                  <FeatureItem
+                    {...item}
+                    style={
+                      index % 2 !== 0 ? { justifyContent: "flex-end" } : null
+                    }
+                  />
+                </a.div>
+              );
+            })}
+          </Box>
         </Box>
-        <Box variant="layout.features">
-          {data.map((item, index) => {
-            return <FeatureItem key={index} {...item} />;
-          })}
-        </Box>
-      </Box>
-    </Section>
+      </Section>
+    </section>
   );
 };
 
@@ -74,13 +121,15 @@ type FeatureItemProps = {
   direction: string;
   text: string;
   triangles?: string;
+  style?: ThemeUICSSObject | null;
 };
 
 const FeatureItem: React.FC<FeatureItemProps> = ({
   idx,
   direction,
   text,
-  triangles = ""
+  triangles = "",
+  style
 }) => {
   const size: Size = useWindowSize();
   return (
@@ -90,7 +139,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           sx={{
             flexDirection: direction === "right" && "row-reverse",
             ...widgetFeaturesStyle,
-            px: [0, , "2rem"]
+            px: [0, , "1rem"],
+            ...style
           }}>
           <Image src={`/assets/images/0${idx}.svg`} alt="" />
           <Flex sx={{ flexDirection: "column", flexWrap: "nowrap" }}>
@@ -98,7 +148,12 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
               <Triangles triangles={triangles} />
               <Image src={`/assets/images/vector-${direction}.png`} alt="" />
             </Box>
-            <Box as="p" sx={descriptionStyle}>
+            <Box
+              as="p"
+              sx={{
+                ...descriptionStyle,
+                pl: idx % 2 !== 0 ? "1.5rem" : "0rem"
+              }}>
               {text}
             </Box>
           </Flex>

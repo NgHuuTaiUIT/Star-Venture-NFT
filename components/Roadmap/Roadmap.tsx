@@ -48,7 +48,6 @@ const data = [
 
 const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
-  const canvasRef = useRef();
   return (
     <section ref={compRef}>
       <Section styles={{ mt: ["4rem", , "5rem"] }}>
@@ -73,14 +72,13 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           <Suspense fallback={"...."}>
             <Box sx={netStyle}>
               <Canvas
-                ref={canvasRef}
                 id="app"
                 style={{
                   width: "1920px",
                   height: "800px",
                   margin: "auto",
                   "-webkit-mask-image":
-                    " radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
+                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
                   maskImage:
                     "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
                 }}

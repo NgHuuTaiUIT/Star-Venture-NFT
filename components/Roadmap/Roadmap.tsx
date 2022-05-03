@@ -77,7 +77,7 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
                   width: "1920px",
                   height: "800px",
                   margin: "auto",
-                  "-webkit-mask-image":
+                  WebkitMaskImage:
                     "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
                   maskImage:
                     "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"

@@ -6,6 +6,8 @@ import { MenuContext } from "../../context/MenuProvider";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
+import { Discord, Medium, Tele, Twitter } from "../SVG/Icon";
+
 import {
   btnMenuMobileStyle,
   containerNavbarStyle,
@@ -105,22 +107,35 @@ const LeftMenu = () => {
 
 const icons = [
   {
-    src: "/assets/icons/twitter.svg",
+    // src: "/assets/icons/twitter.svg",
+    src: <Twitter />,
+
     url: "https://twitter.com/StarVentureGame"
   },
   {
-    src: "/assets/icons/discord.svg",
+    // src: "/assets/icons/discord.svg",
+    src: <Discord />,
     url: "#"
   },
-  { src: "/assets/icons/tele.svg", url: "https://t.me/StarVentureGlobal" },
-  { src: "/assets/icons/medium.svg", url: "https://t.me/starventure" }
+  {
+    //  src: "/assets/icons/tele.svg"
+    src: <Tele />,
+    url: "https://t.me/StarVentureGlobal"
+  },
+  {
+    // src: "/assets/icons/medium.svg",
+    src: <Medium />,
+
+    url: "https://t.me/starventure"
+  }
 ];
 
 const RightMenu = () => (
   <Flex sx={wrapRightMenuStyle}>
     {icons.map(({ src, url }) => (
-      <Link href={url} target="_blank" key={src} sx={iconStyle}>
-        <Image src={src} alt="next" />
+      <Link href={url} target="_blank" key={url} sx={iconStyle}>
+        {/* <Image src={src} alt="next" /> */}
+        {src}
       </Link>
     ))}
   </Flex>

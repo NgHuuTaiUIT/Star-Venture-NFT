@@ -35,18 +35,20 @@ const data = [
 const Roadmap = () => {
   const size: Size = useWindowSize();
   return (
-    <Box as="section" variant="layout.roadmap" sx={{ position: "relative" }}>
+    <Box
+      as="section"
+      variant="layout.roadmap"
+      sx={{ position: "relative", mt: 65 }}>
       <Flex
         as="section"
         variant="layout.section"
         sx={{
-          maxWidth: 1920,
-          height: 819,
-          flexDirection: "column",
-          mt: 100
+          // maxWidth: 1920,
+          minHeight: 819,
+          flexDirection: "column"
         }}>
-        <Box sx={{ mt: 52 }}>
-          <Box sx={{ mb: 62 }}>
+        <Box sx={{ mt: 0 }}>
+          <Box sx={{ my: 51 }}>
             <Title url="/assets/images/roadmap.svg" width={379} />
           </Box>
           <Flex
@@ -76,7 +78,7 @@ const RoadMapItem: React.FC<{
   return (
     <Box
       sx={{
-        mt: [90],
+        my: [40],
         mx: [81, 81, null, 10],
         maxWidth: [null, null, null, 250]
       }}>
@@ -103,9 +105,9 @@ const RoadMapItem: React.FC<{
 const Circle = () => (
   <Box
     sx={{
-      display: ["block", "none"],
+      display: ["none", null, null, "block"],
       position: "absolute",
-      bottom: 0,
+      bottom: "10%",
       margin: "auto",
       left: "50%",
       transform: "translateX(-50%)",
@@ -118,9 +120,9 @@ const Circle = () => (
 const Net = () => (
   <Box
     sx={{
-      display: ["block", "none"],
+      display: ["none", null, null, "block"],
       position: "absolute",
-      bottom: -200,
+      bottom: -140,
       margin: "auto",
       left: "50%",
       transform: "translateX(-50%)"

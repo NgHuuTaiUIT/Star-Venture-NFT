@@ -82,15 +82,14 @@ export const theme = makeTheme({
       }
     },
     card: {
-      minWidth: 290,
-
-      "@media(max-width: 980px)": {
-        minWidth: "30%"
-      },
-      "@media(max-width: 680px)": {
-        minWidth: "63%",
-        mx: 0
-      }
+      minWidth: [580, 580, 580, 290, 290]
+      // "@media(max-width: 980px)": {
+      //   minWidth: "30%"
+      // },
+      // "@media only screen and (max-width: 768px)": {
+      //   minWidth: "63%",
+      //   mx: 0
+      // }
     },
     header: {
       color: "#02073E",
@@ -106,6 +105,21 @@ export const theme = makeTheme({
     },
     footer: {
       backgroundColor: "background_secondary"
+    }
+  },
+  popup: {
+    xl: {
+      background: "url(/assets/images/Popup.svg) no-repeat",
+      minWidth: [957],
+      minHeight: [573]
+    },
+    md: {
+      background: "url(/assets/images/Popup.svg) no-repeat",
+      backgroundSize: "contain",
+      backgroundColor: "transparent",
+      maxWidth: [685],
+      minHeight: [419],
+      m: "0 auto"
     }
   },
   text: {
@@ -231,7 +245,7 @@ export const theme = makeTheme({
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      fontSize: ["18px", "32px", "18px"],
+      fontSize: ["32px", "32px", "32px", "18px"],
       bg: "background",
       backgroundImage: "url(/assets/images/bg.png)",
       backgroundPosition: "top,center",

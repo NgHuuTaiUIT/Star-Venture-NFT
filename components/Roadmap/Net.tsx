@@ -134,7 +134,7 @@ varying float vWave;
 uniform sampler2D uTexture;
 
 void main() {
-  float wave = vWave * 0.15;
+  float wave = vWave * 0.015;
   float r = texture2D(uTexture, vUv).r;
   float g = texture2D(uTexture, vUv).g;
   float b = texture2D(uTexture, vUv + wave).b;
@@ -145,7 +145,7 @@ void main() {
 import { netStyle } from "./style";
 import { MutableRefObject, RefObject, useRef } from "react";
 const Net = () => {
-  const colorMap = useLoader(TextureLoader, "/assets/images/net.svg");
+  const colorMap = useLoader(TextureLoader, "/assets/images/net.png");
   colorMap.repeat.set(0.5, 0.5);
   const ref = useRef<any>(null);
   const sceneRef = useRef<any>(null);
@@ -159,14 +159,18 @@ const Net = () => {
     const t = state.clock.getElapsedTime();
     const vlRef = getValueRef(ref);
     vlRef.material.uniforms.uTime.value = t;
-    vlRef.scale.x = 12;
-    vlRef.scale.y = 6;
-    vlRef.scale.z = 2;
+    vlRef.scale.x = 1;
+    vlRef.scale.y = 1;
+    vlRef.scale.z = 0.5;
   });
   return (
-    <scene ref={sceneRef} scale={[1, 1, 1]}>
-      <mesh ref={ref} rotation={[0.3, 0, 0]}>
-        <planeGeometry args={[1, 0.6, 16, 32]} />
+    <scene
+      ref={sceneRef}
+      scale={[2, 1, 1]}
+      rotation={[0.3, -0.2, 0]}
+      position={[0, 0.1, 0]}>
+      <mesh ref={ref} rotation={[0, 0, 0]} position={[0, 0, 0]}>
+        <planeGeometry args={[1, 0.6, 32, 32]} />
         <shaderMaterial
           args={[
             {

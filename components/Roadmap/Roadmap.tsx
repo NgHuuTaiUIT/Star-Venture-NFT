@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
 
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 import { Box, Flex, Image } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import Section from "../Section/Section";
@@ -47,6 +48,7 @@ const data = [
 
 const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
+  const canvasRef = useRef();
   return (
     <section ref={compRef}>
       <Section styles={{ mt: ["4rem", , "5rem"] }}>
@@ -70,7 +72,25 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           <Circle />
           <Suspense fallback={"...."}>
             <Box sx={netStyle}>
-              <Canvas id="app" style={{ width: "100vw" }}>
+              <Canvas
+                ref={canvasRef}
+                id="app"
+                style={{
+                  width: "1920px",
+                  height: "800px",
+                  margin: "auto",
+                  "-webkit-mask-image":
+                    " radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
+                  maskImage:
+                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
+                }}
+                camera={{
+                  fov: 45,
+                  position: [-0.5, 0.5, 1],
+                  near: 0.1,
+                  far: 100,
+                  aspect: 0.5
+                }}>
                 <Net />
               </Canvas>
             </Box>

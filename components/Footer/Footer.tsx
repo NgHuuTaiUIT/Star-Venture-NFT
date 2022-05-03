@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Flex, Link } from "theme-ui";
+import Section from "../Section/Section";
 import {
   footerStyle,
   iconStyle,
@@ -14,18 +15,20 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <Flex as="footer" sx={footerStyle}>
-      <Box as="h2" sx={titleStyle}>
-        star venture
-      </Box>
-      <Box sx={lineStyle} />
-      <p sx={{ m: "10px 20px 0px" }}>White paper</p>
-      <h4 sx={{ m: "5px" }}>Follow us on social media</h4>
-      <Icons />
-      <p sx={{ color: "secondary", fontSize: "smaller", mb: 50 }}>
-        ©2021 Star Venture, All Rights Reserved
-      </p>
-    </Flex>
+    <Section optLg={[0, 0, 1, 0]}>
+      <Flex as="footer" sx={footerStyle}>
+        <Box as="h2" sx={titleStyle}>
+          star venture
+        </Box>
+        <Box sx={lineStyle} />
+        <p sx={{ m: "16px 25px 0px" }}>White paper</p>
+        <h4 sx={{ m: "3px" }}>Follow us on social media</h4>
+        <Icons />
+        <p sx={{ color: "secondary", fontSize: "smaller", mb: 50 }}>
+          ©2021 Star Venture, All Rights Reserved
+        </p>
+      </Flex>
+    </Section>
   );
 };
 

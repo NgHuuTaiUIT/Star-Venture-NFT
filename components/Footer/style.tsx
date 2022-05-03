@@ -3,9 +3,9 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const footerStyle: ThemeUIStyleObject = {
   maxWidth: ["calc(100vw - 40px)", , , 500],
   m: "auto",
-  mt: -25,
+  // mt: "100%",
   flexDirection: ["column"],
-  gap: [20, , , 10],
+  gap: [15, , , 10],
   textAlign: "center"
 };
 
@@ -13,17 +13,20 @@ export const titleStyle: ThemeUIStyleObject = {
   fontFamily: "roadmap",
   letterSpacing: 1.5,
   fontWeight: 500,
-  fontSize: [56, , , 28]
+  fontSize: [28]
 };
 
 export const lineStyle: ThemeUIStyleObject = {
   background: "#464D94",
   height: 2,
+  mt: -10,
   minWidth: ["100%", , , "80%"]
 };
 
 export const iconWrapStyle: ThemeUIStyleObject = {
-  justifyContent: "space-evenly",
+  maxWidth: ["97%"],
+  justifyContent: ["space-evenly", , "center"],
+  gap: [null, , "1.5rem"],
   alignItems: "center",
   height: "100%"
 };

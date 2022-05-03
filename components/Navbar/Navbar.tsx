@@ -28,7 +28,7 @@ const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
   const { width } = useWindowSize();
   useEffect(() => {
-    if (width < 1200) {
+    if (width < 980) {
       showMenu ? disableScroll.on() : disableScroll.off();
     } else {
       disableScroll.off();
@@ -36,7 +36,14 @@ const Navbar = () => {
     }
   }, [width]);
   return (
-    <Box as="header">
+    <Box
+      as="header"
+      sx={{
+        position: ["sticky"],
+        width: "100vw",
+        top: 0,
+        zIndex: 1
+      }}>
       <Box
         as="a"
         sx={{
@@ -50,9 +57,8 @@ const Navbar = () => {
       <Flex
         sx={{
           ...containerNavbarStyle,
-          opacity: width >= 1200 ? 1 : showMenu ? 1 : 0,
-          visibility:
-            width >= 1200 ? "visible" : showMenu ? "visible" : "hidden"
+          display: width >= 980 ? "block" : showMenu ? "block" : "none",
+          height: ["100vh", "auto"]
         }}>
         <Flex as="nav" sx={wrapNavbarStyle}>
           <LeftMenu />

@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const ModalContext = createContext<any>({});
 
 export const ModalProvider = ({ children }: { children: any }) => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
     image: "",
     name: "",

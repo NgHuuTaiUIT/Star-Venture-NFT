@@ -5,12 +5,12 @@ export default function Document() {
   return (
     <Html>
       <Head />
-      <meta name="viewport" content="user-scalable=no, shrink-to-fit=no"></meta>
+      {/* <meta name="viewport" content="user-scalable=no, shrink-to-fit=no"></meta> */}
 
-      {/* <meta
+      <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-      /> */}
+      />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link

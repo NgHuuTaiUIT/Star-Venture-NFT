@@ -1,19 +1,21 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const containerStoryStyle: ThemeUIStyleObject = {
-  variant: "layout.section",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  gap: "1rem",
   mt: `0 !important`,
   margin: "auto",
   textAlign: "center",
-  maxWidth: 1140,
-  pt: 100,
-  px: [36, null, null],
+  maxWidth: "100%",
+  pt: ["calc(40% + 9rem)", , "calc(20% + 1.5rem)"],
   background: "url(/assets/images/bg-story.png) no-repeat cover",
-  "> img": { width: ["100%", null, null, "80%"], mt: [300, , , 0] }
+  "> img": {
+    width: ["100%", , "45%"],
+    mt: [0],
+    position: "absolute",
+    top: ["9.5rem", , "10%"]
+  }
 };
 
 export const boxStoryStyle: ThemeUIStyleObject = {
@@ -24,18 +26,20 @@ export const boxStoryStyle: ThemeUIStyleObject = {
   minHeight: 300,
   color: "#fff",
   textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
-  mt: -100,
-  gap: ["2rem", , , 0]
+  mt: [0, , -80],
+  gap: ["3rem", , , 0],
+  maxWidth: ["90%", , "70%"]
 };
 
 export const buttonStyle: ThemeUIStyleObject = {
-  background: "url(/assets/images/btn.png)",
   variant: "backgrounds.full",
-  width: ["85%", , , 392],
-  height: [200, , , 83],
+  backgroundImage: "url(/assets/images/btn.png)",
+  width: ["90%", , , 392],
+  height: [100],
   color: "white",
-  fontSize: ["1.5rem", , , 20],
+  fontSize: ["1rem", , , 20],
   transition: "color 0.3s linear",
+  py: 10,
   ":hover": {
     color: "#428EFF"
   }
@@ -44,5 +48,5 @@ export const buttonStyle: ThemeUIStyleObject = {
 export const textStoryStyle: ThemeUIStyleObject = {
   flex: "0 0 100%",
   transition: "all 0.3s",
-  lineHeight: 2
+  lineHeight: [1.7, , , 1.8]
 };

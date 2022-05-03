@@ -35,11 +35,12 @@ export const theme = makeTheme({
     caps: "0.2em",
     heading: "-0.5px"
   },
-  // space: [0, 4, 8, 16, 32, 64],
+  space: [0, 4, 8, 16, 32, 64],
   sizes: {
     container90: ["1190px"],
     container40: ["1140px"]
   },
+  // sizes: [14, 16, 20, 24, 32, 48, 64],
   // variants can use custom, user-defined names
   layout: {
     container: {
@@ -51,22 +52,24 @@ export const theme = makeTheme({
       backgroundSize: "contain"
     },
     section: {
-      py: 25,
-      px: [16, null, null, null],
-      maxWidth: "container90",
+      maxWidth: "100vw",
       margin: "auto",
-      my: ["4rem", , , 50],
+      mb: ["4rem", , "5rem"],
       width: ["100%"],
-      lineHeight: [1.5]
+      lineHeight: [1.5],
+      "> * ": {
+        maxWidth: "1190px !important",
+        mx: "auto !important"
+      }
     },
     features: {
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
-      gap: ["1rem", , , 0],
-      "@media only screen and (max-width: 1200px)": {
+      gap: ["2rem"],
+      "@media only screen and (max-width: 1000px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
-        width: "calc(100% - 10px)",
-        margin: "auto"
+        width: "calc(100% - 1rem)",
+        margin: "2.8rem auto"
       }
     },
     collections: {
@@ -80,14 +83,7 @@ export const theme = makeTheme({
       }
     },
     card: {
-      minWidth: [580, 580, 580, 290, 290]
-      // "@media(max-width: 980px)": {
-      //   minWidth: "30%"
-      // },
-      // "@media only screen and (max-width: 768px)": {
-      //   minWidth: "63%",
-      //   mx: 0
-      // }
+      minWidth: [290, 290, 290, 290, 290]
     },
     header: {
       color: "#02073E",
@@ -130,11 +126,12 @@ export const theme = makeTheme({
       color: "heading"
     },
     p: {
-      fontSize: ["1.3rem", , , "1rem"]
+      fontSize: ["1rem"]
     },
     roadmap: {
       fontFamily: "roadmap",
-      fontSize: [60, null, null, 30],
+      fontSize: [30],
+      lineHeight: 1,
       whiteSpace: "pre-line"
     },
     heroPrimary: {
@@ -210,7 +207,8 @@ export const theme = makeTheme({
     full: {
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
-      backgroundPosition: "center"
+      backgroundPosition: "center",
+      backgroundColor: "transparent"
     }
   },
   // variants for buttons
@@ -250,24 +248,22 @@ export const theme = makeTheme({
   styles: {
     // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
+      position: "relative",
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "lighter",
-      fontSize: ["32px", "32px", "32px", "18px"],
-      // fontSize: ["18px"],
-      bg: "background",
-      backgroundImage: [
-        "url(/assets/images/bg-mb.png)",
-        ,
-        ,
-        "url(/assets/images/bg.png)"
-      ],
-      backgroundPosition: "top,center",
+      userSelect: "none",
+      backgroundColor: "#12192C;",
+      maxWidth: "1920px",
+      width: "100%",
+      margin: "0 auto",
+      fontSize: ["18px"],
+      backgroundImage: ["url(/assets/images/bg.png)"],
       backgroundRepeat: "no-repeat",
-      backgroundSize: ["cover"],
-      margin: 0,
+      backgroundPositionX: "30%",
+      backgroundPositionY: "top",
       height: "100%",
-      // WebkitFontSmoothing: "antialiased",
+      overflowX: "hidden",
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"
       },

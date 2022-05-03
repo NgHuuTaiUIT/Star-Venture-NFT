@@ -2,27 +2,28 @@ import { ThemeUIStyleObject } from "theme-ui";
 
 export const wrapButton: ThemeUIStyleObject = {
   display: "flex",
-  justifyContent: ["center", , , "start"],
+  justifyContent: ["center", , , "end"],
   flexWrap: "nowrap",
   alignItems: "center",
-  flex: "0 0 25%",
+  flex: "0 0 18%",
   width: ["100%", , , "85%"],
   m: "auto"
 };
 
 export const btnConnectStyle: ThemeUIStyleObject = {
-  width: ["100%", , , 200],
+  width: ["100%"],
   background: "secondary",
-  py: [52, , , 1],
-  mt: [80, , , 0],
+  mt: [40, , , 0],
   ml: [0, , , 25],
   fontFamily: "Ubuntu",
-  fontSize: ["1.8rem", , , "1rem"],
-  fontWeight: "500",
+  fontSize: ["1.2rem", , , "1rem"],
+  fontWeight: "400",
   borderRadius: 10,
   alignItems: "center",
   justifyContent: "center",
+  p: [0],
   "> img": {
-    minHeight: ["2rem", , , "1rem"]
-  }
+    minHeight: ["1rem"]
+  },
+  "> button": {}
 };

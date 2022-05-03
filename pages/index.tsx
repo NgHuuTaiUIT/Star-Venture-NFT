@@ -34,7 +34,8 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Next.js Theme UI</title>
+        <title>Star Venture - Ever Expanding Space Journey</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
       </Head>
       <Story />
       <Suspense fallback={"Loadding..."}>

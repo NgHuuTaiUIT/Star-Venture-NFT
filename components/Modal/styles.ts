@@ -14,10 +14,13 @@ export const containerStyle: ThemeUIStyleObject = {
   backgroundRepeat: "no-repeat",
   backgroundSize: ["contain", , , "contain"],
   backgroundColor: "transparent",
-  width: ["80%", "60%", , 685],
-  minHeight: ["65%", , , 419],
-  minWidth: [685],
-  height: "fit-content",
+  // width: ["80%", "60%", , 685],
+  // minHeight: ["65%", , , 419],
+  width: "384px",
+  height: "677px",
+
+  // minWidth: [685],
+  // height: "fit-content",
   m: "0 auto",
   top: "50%",
   left: "50%",
@@ -50,27 +53,30 @@ export const closeButtonStyle: ThemeUIStyleObject = {
 export const modalContentStyle: ThemeUIStyleObject = {
   borderRadius: "3",
   display: "flex",
-  justifyContent: ["start", , , "space-between"],
+  justifyContent: ["center", , , "space-between"],
   alignItems: ["center", , , "start"],
   flexDirection: ["column", , , "row"],
-  maxWidth: ["90%", , , "90%"],
-  mx: "auto",
-  my: [200, 150, , 0],
-  gap: [70, 40],
+  maxWidth: ["80%"],
+  m: "auto",
+  // py: ["20%"],
+  // my: [200, 150, , 0],
+  // gap: [70, 40],
   "> img": {
-    flex: "0 0 33.33%",
-    height: ["100%", , , "auto"],
-    minWidth: [360, , , 0],
+    maxWidth: ["60%", , , "90%"],
+    flex: "0 0 20%",
+    // height: ["100%", , , "auto"],
+    // minWidth: [360, , , 0],
     objectFit: "cover",
-    borderTopLeftRadius: "3",
-    borderBottomLeftRadius: "3",
-    maxWidth: ["90%", , , "100%"],
-    my: [100, , 0, 0]
+    borderTopLeftRadius: 3,
+    borderBottomLeftRadius: 3
+    // my: [100, , 0, 0]
   }
 };
 
-export const textModalContentStyle: ThemeUIStyleObject = {
-  fontSize: [42, 32, , 18],
+export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
+  flex: "0 0 60%",
+  // fontSize: [42, 32, , 18],
+  fontSize: [18],
   "> h2": {
     lineHeight: [2, , , 1],
     textAlign: ["center", , , "start"],
@@ -83,19 +89,19 @@ export const textModalContentStyle: ThemeUIStyleObject = {
     fontSize: "0.8em",
     lineHeight: [2, , , 3],
     mb: [80, , 0, 0]
+  },
+  "> span": {
+    letterSpacing: "2px",
+    display: "-webkit-box",
+    WebkitLineClamp: [12, , , 8],
+    "-webkit-box-orient": "vertical",
+    overflowX: "hidden",
+    overflowY: ["auto"],
+    wordBreak: "break-word",
+    // lineHeight: ["2.5rem", "1.5rem", , "1.5rem"],
+    lineHeight: ["0.7rem"],
+    maxHeight: [, "8rem", , , "14rem"],
+    mt: [60, , 0, 0],
+    whiteSpace: "pre-line"
   }
-};
-
-export const textStyle: ThemeUIStyleObject = {
-  letterSpacing: "2px",
-  display: "-webkit-box",
-  WebkitLineClamp: [8, , , 8],
-  "-webkit-box-orient": "vertical",
-  overflowX: "hidden",
-  overflowY: ["auto"],
-  wordBreak: "break-word",
-  lineHeight: ["2.5rem", "1.5rem", , "1.5rem"],
-  maxHeight: [, "7.8rem", , , "14rem"],
-  mt: [60, , 0, 0],
-  whiteSpace: "pre-line"
 };

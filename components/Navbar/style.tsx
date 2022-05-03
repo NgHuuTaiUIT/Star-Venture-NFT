@@ -19,7 +19,7 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   position: "fixed",
   width: "100%",
   height: ["100%", , , "auto"],
-  py: ["20%", , , 0],
+  // py: ["20%", , , 0],
   background: [
     "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-mb.png)",
     ,
@@ -41,11 +41,11 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
 };
 
 export const wrapNavbarStyle: ThemeUIStyleObject = {
-  height: ["100%", , , "auto"],
+  height: ["80%", , , "auto"],
   flexDirection: ["column", "column", , "row"],
   pt: 14,
   borderRadius: 1,
-  mx: "auto",
+  m: "auto",
   maxWidth: "80%",
   justifyContent: ["center", , , "space-between"],
   alignItems: "center",

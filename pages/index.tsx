@@ -18,9 +18,11 @@ import Navbar from "../components/Navbar/Navbar";
 import Roadmap from "../components/Roadmap/Roadmap";
 import Story from "../components/Story/Story";
 import Team from "../components/Team/Team";
-import Trailer from "../components/Trailer/Trailer";
 import { ScrollToSectionContext } from "../context/ScrollToSectionProvider";
 import { useSpring, animated as a } from "react-spring";
+import dynamic from "next/dynamic";
+
+const Trailer = dynamic(() => import("../components/Trailer/Trailer"));
 
 export default function Page() {
   const {
@@ -35,7 +37,7 @@ export default function Page() {
     <>
       <Head>
         <title>Star Venture - Ever Expanding Space Journey</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.webp" />
       </Head>
       <Story />
       <Suspense fallback={"Loadding..."}>

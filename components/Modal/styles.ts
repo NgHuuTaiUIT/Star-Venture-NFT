@@ -61,7 +61,8 @@ export const modalContentStyle: ThemeUIStyleObject = {
   maxWidth: ["100%", , "90%"],
   height: [HEIGHT - TOP_HEIGHT, , "70%"],
   gap: 30,
-  m: "auto",
+  my: "auto",
+  mx: ["auto", , 50],
   mt: [96, , "10%"],
   pb: [67, , 0],
 

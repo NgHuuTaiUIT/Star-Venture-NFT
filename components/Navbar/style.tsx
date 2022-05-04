@@ -20,7 +20,7 @@ export const containerNavbarStyle: ThemeUIStyleObject = {
   width: "100%",
   height: ["100vh", "100vh", , "auto"],
   background: [
-    "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-modal-menu.png)",
+    "linear-gradient(180deg, #12192C 0%, rgba(18, 25, 44, 0) 100%),url(/assets/images/bg-modal-menu.webp)",
     ,
     ,
     "linear-gradient(0deg, rgba(18,25,44,0) 0%, rgba(18,25,44,1) 100%)"

@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React, { useContext } from "react";
-import { Box, Flex, Grid, Image, Link } from "theme-ui";
+import { Box, Flex, Grid, Link } from "theme-ui";
 import { ModalContext } from "../../context/ModalProvider";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
@@ -16,10 +16,11 @@ import {
 } from "./style";
 import { useSpring, animated as a, config } from "react-spring";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
+import Image from "next/image";
 
 const data = [
   {
-    image: "/assets/images/larry-nguyen.png",
+    image: "/assets/images/larry-nguyen.webp",
     name: "Larry Nguyen",
     position: "CEO",
     content: `Larry has spent the last decade making games, high-digital productions in gaming and ad fields in big corps, including FPT, VCCORP and VNG.
@@ -31,7 +32,7 @@ const data = [
     .`
   },
   {
-    image: "/assets/images/ethan-dang.png",
+    image: "/assets/images/ethan-dang.webp",
     name: "Ethan Dang",
     position: "CTO",
     content: `Ethan is a veteran software engineer and entrepreneur who has 10+ years experience working in the field for famous Tech companies such as VNG, Garena, Shopee, Viettel, ZenDesk... to name a few. Ethan founded and act as CTO for Turbudd, a digital travel platform and Vừa Đủ, a cross-platform software consulting company.
@@ -40,7 +41,7 @@ const data = [
     `
   },
   {
-    image: "/assets/images/choz-vu.png",
+    image: "/assets/images/choz-vu.webp",
     name: "Choz Vu",
     position: "CMO",
     content: `Choz Vu is a successful entrepreneur of many projects, with over 10 years of experience in the e-commerce industry, working in the field for famous companies such as VCCorp, Cen Group, eDoctor, EWAY, AdFlex ...
@@ -49,7 +50,7 @@ const data = [
     `
   },
   {
-    image: "/assets/images/bach-zip.png",
+    image: "/assets/images/bach-zip.webp",
     name: "Bách Zim",
     position: "Art Director",
     content: `Former Zitga Studio Lead artist. Bách is experienced in Sci-fi & Fantasy game artworks and concepts. Used to be the mind behind many art concepts that millions loved from Garena - Arena of Valor and Mobile Legend Bang Bang.`
@@ -112,7 +113,13 @@ const NameCard: React.FC<{
       }}>
       <Flex sx={nameCardBoxStyle}>
         <Box sx={{ position: "relative" }}>
-          <Image src={image} alt="" sx={imageStyle} />
+          <Image
+            src={image}
+            alt="team"
+            sx={imageStyle}
+            width={140}
+            height={140}
+          />
           <Flex id="member-detail" sx={nameCardBoxHoverStyle}>
             <Link as="a" sx={btnStyle} onClick={setDataModal}>
               VIEW DETAIL

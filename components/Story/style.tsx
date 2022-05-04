@@ -8,8 +8,8 @@ export const containerStoryStyle: ThemeUIStyleObject = {
   margin: "auto",
   textAlign: "center",
   maxWidth: "100%",
-  pt: ["calc(40% + 7rem)", , "13.7rem"],
-  background: "url(/assets/images/bg-story.png) no-repeat cover",
+  pt: [175, , "0"],
+  background: "url(/assets/images/bg-story.webp) no-repeat cover",
 
   "> img": {
     width: ["100%", , "47rem"],
@@ -28,14 +28,14 @@ export const boxStoryStyle: ThemeUIStyleObject = {
   minHeight: 285,
   color: "#fff",
   textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
-  mt: [0, , 80],
+  mt: [0, , "-4rem"],
   gap: ["3rem", , , 0],
   maxWidth: ["90%", , "820px"]
 };
 
 export const buttonStyle: ThemeUIStyleObject = {
   variant: "backgrounds.full",
-  backgroundImage: "url(/assets/images/btn.png)",
+  backgroundImage: "url(/assets/images/btn.webp)",
   width: ["90%", , , 392],
   height: [100],
   color: "white",

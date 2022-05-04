@@ -28,8 +28,7 @@ export const nameCardBoxStyle: ThemeUIStyleObject = {
 
 export const imageStyle: ThemeUIStyleObject = {
   width: [140, null, null, 140],
-  height: "auto",
-  borderRadius: 3
+  height: "auto"
 };
 
 export const nameCardBoxHoverStyle: ThemeUIStyleObject = {

@@ -1,7 +1,7 @@
 import { url } from "inspector";
 import mitt from "next/dist/shared/lib/mitt";
 import React, { useContext, useEffect } from "react";
-import { Box, Card, Flex, Grid, Image } from "theme-ui";
+import { Box, Card, Flex, Grid } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import Carousel from "../Carousel/Carousal";
 import Section from "../Section/Section";
@@ -9,13 +9,14 @@ import Title from "../Title/Title";
 import { collectionCardStyle, collectionStyle } from "./style";
 import { useSpring, animated as a, config } from "react-spring";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
+import Image from "next/image";
 
 const data = [
-  "/assets/images/nft-1.png",
-  "/assets/images/nft-2.png",
-  "/assets/images/nft-3.png",
-  "/assets/images/nft-4.png",
-  "/assets/images/nft-5.png"
+  "/assets/images/nft-1.webp",
+  "/assets/images/nft-2.webp",
+  "/assets/images/nft-3.webp",
+  "/assets/images/nft-4.webp",
+  "/assets/images/nft-5.webp"
 ];
 
 const Collections = ({
@@ -60,13 +61,13 @@ const Collections = ({
             {size && size.width > 1200 ? (
               <Box>
                 <Flex sx={{ justifyContent: "space-between", mt: 74 }}>
-                  <CollectionCard url="/assets/images/nft-1.png" />
-                  <CollectionCard url="/assets/images/nft-2.png" />
-                  <CollectionCard url="/assets/images/nft-3.png" />
+                  <CollectionCard url="/assets/images/nft-1.webp" />
+                  <CollectionCard url="/assets/images/nft-2.webp" />
+                  <CollectionCard url="/assets/images/nft-3.webp" />
                 </Flex>
                 <Flex sx={{ justifyContent: "space-evenly", mt: 74 }}>
-                  <CollectionCard url="/assets/images/nft-4.png" />
-                  <CollectionCard url="/assets/images/nft-5.png" />
+                  <CollectionCard url="/assets/images/nft-4.webp" />
+                  <CollectionCard url="/assets/images/nft-5.webp" />
                 </Flex>
               </Box>
             ) : (
@@ -88,7 +89,7 @@ const Collections = ({
 const CollectionCard: React.FC<{ url: string }> = ({ url }) => {
   return (
     <Card sx={collectionCardStyle}>
-      <Image src={url} alt="collection card" />
+      <Image src={url} alt="collection card" width={270} height={352} />
     </Card>
   );
 };

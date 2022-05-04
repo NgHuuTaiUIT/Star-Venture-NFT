@@ -56,7 +56,7 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
         styles={{
           mt: ["4rem", , "5rem"],
           background:
-            "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 100%),linear-gradient(90deg, rgba(18, 25, 44, 0) 6.01%,  #12192C 94%);",
+            "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 40%),linear-gradient(90deg, rgba(18, 25, 44, 0) 60.01%,  #12192C 94%);",
           position: "relative",
           zIndex: 1
         }}>
@@ -191,7 +191,7 @@ const Circle = () => {
           sx={{
             ...circleStyle,
             background:
-              "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 20%),linear-gradient(90deg, rgba(18, 25, 44, 0) 70%,  #12192C 100%)",
+              "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 15%),linear-gradient(90deg, rgba(18, 25, 44, 0) 80%,  #12192C 95%)",
             width: "100%",
             height: "100%",
             bottom: 0,

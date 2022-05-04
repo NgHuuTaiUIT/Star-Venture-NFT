@@ -76,6 +76,7 @@ export const linkStyle: ThemeUIStyleObject = {
   width: ["100%", , , 120],
   color: "primary",
   fontWeight: 400,
+  cursor: "pointer",
   ":hover": {
     fontWeight: 400
   }

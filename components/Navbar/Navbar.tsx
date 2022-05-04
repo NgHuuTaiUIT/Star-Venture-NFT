@@ -86,12 +86,10 @@ const LeftMenu = () => {
       {menus.map((menu, idx) => (
         <NavLink
           key={menu}
-          href="#!"
           p={2}
           sx={{
             ...linkStyle,
-            fontWeight: sectionActive === idx ? "500" : 200,
-            color: sectionActive === idx ? "secondary" : "primary"
+            color: sectionActive === idx && "secondary"
           }}
           onClick={() => {
             scrollContext.scrollEffect(refs[idx]);

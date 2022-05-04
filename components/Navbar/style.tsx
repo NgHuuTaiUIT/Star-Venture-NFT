@@ -72,13 +72,19 @@ export const linkStyle: ThemeUIStyleObject = {
   height: 50,
   position: "relative",
   textAlign: "center",
-  transition: "font-weight,color 0.5s",
-  width: ["100%", , , 120]
+  transition: "font-weight,color 0.2s linear",
+  width: ["100%", , , 120],
+  color: "primary",
+  fontWeight: 400,
+  ":hover": {
+    fontWeight: 400
+  }
 };
 
 export const iconStyle: ThemeUIStyleObject = {
   maxHeight: ["100%", , , 50],
   mx: [16],
+
   "> img": {
     minWidth: [40, , , 20],
     objectPosition: "center",

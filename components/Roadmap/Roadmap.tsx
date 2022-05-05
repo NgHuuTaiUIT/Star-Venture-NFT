@@ -1,14 +1,15 @@
 /** @jsxImportSource theme-ui */
 
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import React, { Suspense, useRef } from "react";
-import { Box, Flex, Image } from "theme-ui";
+import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
+import { animated as a, config, useSpring } from "react-spring";
+import { Box, Flex } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
+import { draw, setup } from "../../p5/base.p5";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
-import { useSpring, animated as a, config, easings } from "react-spring";
 
+const Sketch = dynamic(import("react-p5"), { ssr: false });
 const Net = React.lazy(() => import("./Net")); // Lazy-loaded
 
 import {
@@ -55,12 +56,12 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
       <Section
         styles={{
           mt: ["4rem", , "5rem"],
-          background:
-            "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 40%),linear-gradient(90deg, rgba(18, 25, 44, 0) 60.01%,  #12192C 94%);",
           position: "relative",
-          zIndex: 1
+          zIndex: 0
         }}>
         <Box sx={containerStyle}>
+          <LinearBg top={0} left={0} />
+          <LinearBg rotation={-180} right={0} />
           <Flex sx={wrapStyle}>
             <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
               <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
@@ -80,26 +81,9 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           <Circle />
           <Suspense fallback={"...."}>
             <Box sx={netStyle}>
-              <Canvas
-                id="app"
-                style={{
-                  width: "1920px",
-                  height: "800px",
-                  margin: "auto",
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
-                  maskImage:
-                    "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
-                }}
-                camera={{
-                  fov: 45,
-                  position: [-0.5, 0.5, 1],
-                  near: 0.1,
-                  far: 100,
-                  aspect: 0.5
-                }}>
-                <Net />
-              </Canvas>
+              <div className="my-canvas" id="myCanvas">
+                <Sketch setup={setup} draw={draw} />
+              </div>
             </Box>
           </Suspense>
         </Box>
@@ -222,4 +206,35 @@ const Circle = () => {
   );
 };
 
+const LinearBg = ({
+  rotation = 0,
+  top,
+  left,
+  right,
+  bottom
+}: {
+  rotation?: string | number;
+  top?: string | number;
+  left?: string | number;
+  right?: string | number;
+  bottom?: string | number;
+}) => (
+  <Box
+    sx={{
+      position: "absolute",
+      height: "100%",
+      width: "30%",
+      top,
+      left,
+      right,
+      bottom,
+      background:
+        "linear-gradient(90deg, #12192C 6.01%, rgba(18, 25, 44, 0) 100%)",
+      // "linear-gradient(90deg, #0f1c2d 8%, rgba(15, 28, 45, 0.6) 42%, rgba(15, 28, 45, 0) 100%)",
+      mixBlendMode: "normal",
+      transform: `rotate(${rotation}deg)`,
+      zIndex: 1
+    }}
+  />
+);
 export default Roadmap;

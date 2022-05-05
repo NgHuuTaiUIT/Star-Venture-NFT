@@ -3,7 +3,7 @@ import { ThemeUIStyleObject } from "theme-ui";
 export const containerStyle: ThemeUIStyleObject = {
   variant: "layout.roadmap",
   position: "relative",
-  maxWidth: "95%",
+  maxWidth: "100%",
   overflow: "hidden"
 };
 
@@ -11,7 +11,9 @@ export const wrapStyle: ThemeUIStyleObject = {
   maxWidth: 1260,
   minHeight: 819,
   flexDirection: "column",
-  m: "0 auto"
+  m: "0 auto",
+  position: "relative",
+  zIndex: 1
 };
 
 export const wrapRoadmapItemStyle: ThemeUIStyleObject = {
@@ -46,12 +48,19 @@ export const circleStyle: ThemeUIStyleObject = {
 export const netStyle: ThemeUIStyleObject = {
   display: ["none", null, null, "block"],
   position: "absolute",
-  bottom: -250,
+  bottom: "-10%",
   margin: "auto",
   left: "50%",
   transform: "translateX(-50%)",
   height: "100%",
-  width: "100%"
+  width: "100%",
+  zIndex: 0,
+  canvas: {
+    webkitMaskImage:
+      "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
+    maskImage:
+      "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
+  }
 };
 
 export const svgStyle: ThemeUIStyleObject = {

@@ -252,7 +252,7 @@ export const theme = makeTheme({
       lineHeight: "body",
       fontWeight: "lighter",
       userSelect: "none",
-      backgroundColor: "#12192C;",
+      backgroundColor: "#12192C",
       maxWidth: "1920px",
       width: "100%",
       margin: "0 auto",

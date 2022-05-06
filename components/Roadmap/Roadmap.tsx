@@ -66,11 +66,22 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             "100vw !important"
           ]
         }}>
+        <LinearBackground
+          top={"10%"}
+          style={{
+            width: "100%",
+            height: 500,
+            zIndex: -1,
+            display: ["block", , , "none"]
+          }}
+          rotation={-180}
+        />
         <Box sx={containerStyle}>
           {/* <LinearBackground
             top={0}
             style={{ width: "100%", height: "805px", zIndex: -1 }}
           /> */}
+
           <LinearBg top={0} left={0} style={{ display: ["none", , "block"] }} />
           <LinearBg
             rotation={-180}

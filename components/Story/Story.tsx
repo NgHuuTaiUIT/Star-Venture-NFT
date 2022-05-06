@@ -11,6 +11,7 @@ import {
 } from "./style";
 import { useSpring, animated as a, config } from "react-spring";
 import Image from "next/image";
+import { LinearBackground } from "../LinearBackground/LinearBackground";
 
 type Props = {};
 
@@ -24,7 +25,17 @@ const Story = (props: Props) => {
   });
 
   return (
-    <Section styles={{ mb: ["3rem"] }}>
+    <Section styles={{ mb: ["3rem"], position: "relative" }}>
+      <LinearBackground
+        style={{
+          width: "100%",
+          height: 500,
+          zIndex: -1,
+          display: ["block", , , "none"]
+        }}
+        rotation={0}
+        bottom={"-5%"}
+      />
       <a.div style={storySpringProps}>
         <Flex sx={containerStoryStyle}>
           <Image

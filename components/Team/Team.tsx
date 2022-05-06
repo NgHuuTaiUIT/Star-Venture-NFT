@@ -75,7 +75,7 @@ const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           maxWidth: ["100vw !important"]
         }}>
         <LinearBackground
-          top={"-45%"}
+          bottom={"70%"}
           style={{
             width: "100%",
             height: "1158px",

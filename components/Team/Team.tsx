@@ -75,7 +75,7 @@ const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           maxWidth: ["100vw !important"]
         }}>
         <LinearBackground
-          bottom={"70%"}
+          bottom={"75%"}
           style={{
             width: "100%",
             height: "1158px",
@@ -99,7 +99,12 @@ const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             sx={{
               mt: [30, , 10]
             }}>
-            <Title title="Team" letterSpacing={[10, 10]} fontSize={[36, 48]} />
+            <Title
+              title="Team"
+              letterSpacing={[10, 10]}
+              fontSize={[36, 48]}
+              stroke="white"
+            />
           </Box>
           <a.div style={teamSpringProps}>
             <Grid columns={[1, null, null, 4]} sx={gridTeamStyle}>

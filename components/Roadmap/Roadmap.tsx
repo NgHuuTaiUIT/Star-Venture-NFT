@@ -53,7 +53,17 @@ const data = [
 const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   const size: Size = useWindowSize();
   return (
-    <section ref={compRef}>
+    <section ref={compRef} sx={{ position: "relative" }}>
+      <LinearBackground
+        top={"10%"}
+        style={{
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+          display: ["block", , , "none"]
+        }}
+        rotation={-180}
+      />
       <Section
         styles={{
           mt: ["4rem", , "5rem"],
@@ -66,27 +76,21 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             "100vw !important"
           ]
         }}>
-        <LinearBackground
-          top={"10%"}
-          style={{
-            width: "100%",
-            height: 500,
-            zIndex: -1,
-            display: ["block", , , "none"]
-          }}
-          rotation={-180}
-        />
         <Box sx={containerStyle}>
           {/* <LinearBackground
             top={0}
             style={{ width: "100%", height: "805px", zIndex: -1 }}
           /> */}
 
-          <LinearBg top={0} left={0} style={{ display: ["none", , "block"] }} />
+          <LinearBg
+            top={0}
+            left={0}
+            style={{ display: ["none", , , "block"] }}
+          />
           <LinearBg
             rotation={-180}
             right={0}
-            style={{ display: ["none", , "block"] }}
+            style={{ display: ["none", , , "block"] }}
           />
           <Flex sx={wrapStyle}>
             <Box sx={{ mt: ["1rem", , "4.3rem"] }}>

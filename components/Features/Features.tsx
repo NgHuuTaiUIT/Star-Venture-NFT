@@ -70,6 +70,16 @@ const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
       sx={{
         position: "relative"
       }}>
+      <LinearBackground
+        style={{
+          width: "100%",
+          height: 200,
+          zIndex: -1,
+          display: ["block", , , "none"]
+        }}
+        rotation={0}
+        top={"-10%"}
+      />
       <Section
         styles={{
           mt: [0, , "6.8rem"],

@@ -85,7 +85,7 @@ const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           rotation={-180}
         />
         <LinearBackground
-          bottom={-100}
+          bottom={"-14%"}
           style={{
             width: "100%",
             height: "800px",

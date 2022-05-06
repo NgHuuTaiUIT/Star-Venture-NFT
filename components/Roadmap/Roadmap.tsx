@@ -59,7 +59,12 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           mt: ["4rem", , "5rem"],
           position: "relative",
           zIndex: 0,
-          maxWidth: "100vw !important"
+          maxWidth: [
+            "100vw !important",
+            ,
+            "90vw !important",
+            "100vw !important"
+          ]
         }}>
         <Box sx={containerStyle}>
           {/* <LinearBackground

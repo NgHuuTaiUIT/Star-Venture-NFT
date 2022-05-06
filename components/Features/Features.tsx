@@ -17,6 +17,7 @@ import {
   useState
 } from "react";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
+import { LinearBackground } from "../LinearBackground/LinearBackground";
 const data = [
   {
     idx: 1,
@@ -64,8 +65,16 @@ const Features = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
   });
 
   return (
-    <section ref={compRef}>
-      <Section styles={{ mt: [0, , "6.8rem"], mb: ["3rem", , "4rem"] }}>
+    <section
+      ref={compRef}
+      sx={{
+        position: "relative"
+      }}>
+      <Section
+        styles={{
+          mt: [0, , "6.8rem"],
+          mb: ["3rem", , "4rem"]
+        }}>
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mb: ["3.5rem"] }}>
             <Title
@@ -134,7 +143,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   const size: Size = useWindowSize();
   return (
     <>
-      {size && size?.width > 1000 ? (
+      {size && size?.width > 1024 ? (
         <Flex
           sx={{
             flexDirection: direction === "right" && "row-reverse",

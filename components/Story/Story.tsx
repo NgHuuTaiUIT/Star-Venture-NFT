@@ -24,7 +24,7 @@ const Story = (props: Props) => {
   });
 
   return (
-    <Section>
+    <Section styles={{ mb: ["3rem"] }}>
       <a.div style={storySpringProps}>
         <Flex sx={containerStoryStyle}>
           <Image

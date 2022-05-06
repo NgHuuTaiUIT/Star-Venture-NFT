@@ -3,9 +3,10 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { animated as a, config, useSpring } from "react-spring";
-import { Box, Flex } from "theme-ui";
+import { Box, Flex, ThemeUIStyleObject } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
 import { draw, setup } from "../../p5/base.p5";
+import { LinearBackground } from "../LinearBackground/LinearBackground";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
 
@@ -57,11 +58,20 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
         styles={{
           mt: ["4rem", , "5rem"],
           position: "relative",
-          zIndex: 0
+          zIndex: 0,
+          maxWidth: "100vw !important"
         }}>
         <Box sx={containerStyle}>
-          <LinearBg top={0} left={0} />
-          <LinearBg rotation={-180} right={0} />
+          {/* <LinearBackground
+            top={0}
+            style={{ width: "100%", height: "805px", zIndex: -1 }}
+          /> */}
+          <LinearBg top={0} left={0} style={{ display: ["none", , "block"] }} />
+          <LinearBg
+            rotation={-180}
+            right={0}
+            style={{ display: ["none", , "block"] }}
+          />
           <Flex sx={wrapStyle}>
             <Box sx={{ mt: ["1rem", , "4.3rem"] }}>
               <Box sx={{ mb: ["1.3rem", , "3rem"] }}>
@@ -211,13 +221,15 @@ const LinearBg = ({
   top,
   left,
   right,
-  bottom
+  bottom,
+  style
 }: {
   rotation?: string | number;
   top?: string | number;
   left?: string | number;
   right?: string | number;
   bottom?: string | number;
+  style?: ThemeUIStyleObject;
 }) => (
   <Box
     sx={{
@@ -233,7 +245,8 @@ const LinearBg = ({
       // "linear-gradient(90deg, #0f1c2d 8%, rgba(15, 28, 45, 0.6) 42%, rgba(15, 28, 45, 0) 100%)",
       mixBlendMode: "normal",
       transform: `rotate(${rotation}deg)`,
-      zIndex: 1
+      zIndex: 1,
+      ...style
     }}
   />
 );

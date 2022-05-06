@@ -17,6 +17,7 @@ import {
 import { useSpring, animated as a, config } from "react-spring";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 import Image from "next/image";
+import { LinearBackground } from "../LinearBackground/LinearBackground";
 
 const data = [
   {
@@ -67,7 +68,32 @@ const Team = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
 
   return (
     <section ref={compRef}>
-      <Section styles={{ mt: "5rem" }}>
+      <Section
+        styles={{
+          mt: "5rem",
+          position: "relative",
+          maxWidth: ["100vw !important"]
+        }}>
+        <LinearBackground
+          top={"-45%"}
+          style={{
+            width: "100%",
+            height: "1158px",
+            zIndex: -1,
+            display: ["block", , , "none"]
+          }}
+          rotation={-180}
+        />
+        <LinearBackground
+          bottom={-100}
+          style={{
+            width: "100%",
+            height: "800px",
+            zIndex: -1,
+            display: ["block", , , "none"]
+          }}
+          rotation={0}
+        />
         <Flex as="section" sx={containerTeamStyle}>
           <Box
             sx={{

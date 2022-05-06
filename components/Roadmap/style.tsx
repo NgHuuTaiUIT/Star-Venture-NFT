@@ -13,7 +13,7 @@ export const wrapStyle: ThemeUIStyleObject = {
   flexDirection: "column",
   m: "0 auto",
   position: "relative",
-  zIndex: 1
+  zIndex: 2
 };
 
 export const wrapRoadmapItemStyle: ThemeUIStyleObject = {
@@ -31,7 +31,8 @@ export const widgetRoadmapItemStyle: ThemeUIStyleObject = {
 };
 
 export const titleStyle: ThemeUIStyleObject = {
-  variant: "text.roadmap"
+  variant: "text.roadmap",
+  fontWeight: 400
   // minWidth: [null, null, null, 300]
 };
 

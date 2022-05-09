@@ -1,9 +1,12 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import ReactPlayer from "react-player/lazy";
+// import ReactPlayer from "react-player/lazy";
 import { Box } from "theme-ui";
 import { LinearBackground } from "../LinearBackground/LinearBackground";
 import { containerTrailerStyle, wrapTrailerStyle } from "./style";
-
+const ReactPlayer = dynamic(import("react-player/youtube"), {
+  ssr: false
+});
 const Trailer = ({
   url,
   compRef
@@ -25,7 +28,14 @@ const Trailer = ({
           top={"20%"}
         />
         <Box sx={wrapTrailerStyle}>
-          <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+          <ReactPlayer
+            url={url}
+            width="100%"
+            height="100%"
+            controls={true}
+            playing={true}
+            muted={true}
+          />
         </Box>
       </Box>
     </section>

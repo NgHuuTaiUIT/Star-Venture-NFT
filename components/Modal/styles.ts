@@ -38,6 +38,8 @@ export const backgroundStyle: ThemeUIStyleObject = {
   zIndex: 99999,
   overflowX: "hidden",
   overflowY: "auto"
+  // maxWidth: 1920,
+  // left: 0
 };
 
 export const closeButtonStyle: ThemeUIStyleObject = {
@@ -94,7 +96,7 @@ export const wrapInfoModalContentStyle: ThemeUIStyleObject = {
     letterSpacing: "1px",
     display: "-webkit-box",
     // WebkitLineClamp: [6, , , 12],
-    "-webkit-box-orient": "vertical",
+    WebkitBoxOrient: "vertical",
     wordBreak: "break-word",
     lineHeight: ["27px"],
     minHeight: [0, , "12rem"],

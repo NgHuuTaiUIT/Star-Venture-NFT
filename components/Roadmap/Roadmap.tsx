@@ -1,17 +1,13 @@
 /** @jsxImportSource theme-ui */
 
-import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { animated as a, config, useSpring } from "react-spring";
 import { Box, Flex, ThemeUIStyleObject } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
-import { draw, setup } from "../../p5/base.p5";
 import { LinearBackground } from "../LinearBackground/LinearBackground";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
-
-const Sketch = dynamic(import("react-p5"), { ssr: false });
-const Net = React.lazy(() => import("./Net")); // Lazy-loaded
+import { NetV2 } from "./NetV2";
 
 import {
   circleStyle,
@@ -109,13 +105,7 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
             </Box>
           </Flex>
           <Circle />
-          <Suspense fallback={"...."}>
-            <Box sx={netStyle}>
-              <div className="my-canvas" id="myCanvas">
-                <Sketch setup={setup} draw={draw} />
-              </div>
-            </Box>
-          </Suspense>
+          <NetV2 />
         </Box>
       </Section>
     </section>

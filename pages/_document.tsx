@@ -26,7 +26,7 @@ export default function Document() {
         rel="preload"
         href="/fonts/PilotCommand/PilotCommand-qZWJ0.woff"
         as="font"
-        crossOrigin=""
+        crossOrigin="true"
       />
       <link
         rel="preload"

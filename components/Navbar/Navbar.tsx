@@ -45,7 +45,7 @@ const Navbar = () => {
       as="header"
       sx={{
         position: ["sticky"],
-        width: "100vw",
+        width: "100%",
         top: 0,
         zIndex: 2
       }}>

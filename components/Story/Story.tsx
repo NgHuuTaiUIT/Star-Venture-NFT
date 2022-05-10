@@ -34,7 +34,7 @@ const Story = (props: Props) => {
           display: ["block", , , "none"]
         }}
         rotation={0}
-        bottom={"-5%"}
+        bottom={"-10%"}
       />
       <Section styles={{ mb: ["3rem"], position: "relative" }}>
         <a.div style={storySpringProps}>

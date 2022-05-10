@@ -25,7 +25,7 @@ const Trailer = ({
             display: ["block", , , "none"]
           }}
           rotation={0}
-          top={"20%"}
+          top={"25%"}
         />
         <Box sx={wrapTrailerStyle}>
           <ReactPlayer

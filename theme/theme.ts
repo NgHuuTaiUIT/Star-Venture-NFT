@@ -268,7 +268,7 @@ export const theme = makeTheme({
       backgroundPositionY: "4%,-150px,1200px,3500px",
       height: "100%",
       overflowX: "hidden",
-      backgroundSize: [1920],
+      backgroundSize: ["auto", , , 1920],
 
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"

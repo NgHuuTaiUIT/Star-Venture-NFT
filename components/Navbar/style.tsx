@@ -52,7 +52,9 @@ export const wrapLeftMenuStyle: ThemeUIStyleObject = {
   flexDirection: ["column", "column", , "row"],
   height: "100%",
   justifyContent: ["space-between", , , "start"],
-  ml: [24, , 0]
+  ml: [24, , 0],
+  position: "relative",
+  minWidth: [0, , , 600]
 };
 
 export const wrapRightMenuStyle: ThemeUIStyleObject = {
@@ -86,10 +88,12 @@ export const iconStyle: ThemeUIStyleObject = {
   maxHeight: ["100%", , , 50],
   mx: [16],
 
-  "> img": {
-    minWidth: [40, , , 20],
+  "> svg": {
+    // minWidth: [40, , , 20],
     objectPosition: "center",
-    objectFit: "fill"
+    objectFit: "fill",
+    width: [40, , , 20],
+    height: [32, , , 16]
   }
   // transform: ["scale(5)", , "scale(3)", "scale(1)"]
 };
@@ -100,8 +104,9 @@ export const lineStyle: ThemeUIStyleObject = {
   backgroundSize: "cover",
   bottom: ["-5%"],
   height: [2],
-  left: "50%",
+  // left: "50%",
   position: "absolute",
   transform: "translateX(-50%)",
-  width: ["15rem", , , "100%"]
+  width: ["15rem", , , 124],
+  transition: "left 0.5s linear"
 };

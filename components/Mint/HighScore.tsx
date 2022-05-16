@@ -147,6 +147,7 @@ const Row = ({
   let numberWallet = handleHighLight();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     numberWallet = handleHighLight();
   }, [vlSearch]);
 

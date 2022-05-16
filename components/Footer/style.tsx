@@ -42,5 +42,16 @@ export const iconStyle: ThemeUIStyleObject = {
   mx: 16,
   "> img": {
     height: "100%"
+  },
+  ":hover": {
+    "> img": {
+      height: "100%",
+      color: "red"
+    }
   }
+};
+
+export const svgStyle: ThemeUIStyleObject = {
+  height: 32,
+  width: 40
 };

@@ -3,7 +3,7 @@ import mitt from "next/dist/shared/lib/mitt";
 import React, { useContext, useEffect } from "react";
 import { Box, Card, Flex, Grid } from "theme-ui";
 import { Size, useWindowSize } from "../../hooks/useWindowSize";
-import Carousel from "../Carousel/Carousal";
+import Carousel from "../Carousel/Carousel";
 import Section from "../Section/Section";
 import Title from "../Title/Title";
 import { collectionCardStyle, collectionStyle } from "./style";

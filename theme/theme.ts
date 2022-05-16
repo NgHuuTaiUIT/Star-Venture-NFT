@@ -263,12 +263,12 @@ export const theme = makeTheme({
         "url(/assets/images/bg.webp)"
       ],
       backgroundRepeat: "no-repeat",
-      backgroundPositionX: ["30%,30%,22%,30%", , , "100%"],
+      backgroundPositionX: ["30%,30%,22%,30%", , , "auto"],
       // backgroundPositionY: ["0%", "4%"],
       backgroundPositionY: "4%,-150px,1200px,3500px",
       height: "100%",
       overflowX: "hidden",
-      backgroundSize: ["auto", , , 1920],
+      backgroundSize: ["auto", , , 1960],
 
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"

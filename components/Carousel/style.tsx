@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ContainerRelativo = styled.div<{ max?: number }>`
+export const ContainerRelative = styled.div<{ max?: number }>`
   position: relative;
   max-width: ${({ max }) => `${max}px`};
   width: 100%;

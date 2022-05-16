@@ -51,26 +51,45 @@ export const ScrollToSectionProvider = ({
         return valueRef;
       };
 
+      if (
+        getBoundingClientRectRef(trailerOnClickRef)?.top <=
+        getBoundingClientRectRef(trailerOnClickRef)?.height
+      ) {
+        setSectionActive(0);
+      }
+
       if (getBoundingClientRectRef(featureOnClickRef)?.top <= window.scrollY) {
         setShowFeature(true);
+        setSectionActive(1);
       }
-      if (getBoundingClientRectRef(roadmapOnClickRef)?.top <= window.scrollY) {
-        setShowRoadmap(true);
-      }
+
       if (
-        getBoundingClientRectRef(collectionOnClickRef)?.top -
-          getBoundingClientRectRef(collectionOnClickRef)?.height / 2 <=
-        0
+        getBoundingClientRectRef(collectionOnClickRef)?.top <=
+        getBoundingClientRectRef(collectionOnClickRef)?.height / 2
       ) {
         setShowCollection(true);
+        setSectionActive(2);
       }
+
+      if (getBoundingClientRectRef(roadmapOnClickRef)?.top <= 500) {
+        console.log(
+          "roadmap",
+          getBoundingClientRectRef(roadmapOnClickRef)?.top
+        );
+        console.log("window", window.scrollY);
+
+        setShowRoadmap(true);
+        setSectionActive(3);
+      }
+
       if (
-        getBoundingClientRectRef(teamOnClickRef)?.top -
-          (HEIGHT_HEADER +
-            getBoundingClientRectRef(teamOnClickRef)?.height / 2) <=
-        0
+        getBoundingClientRectRef(teamOnClickRef)?.top <=
+        (size.width >= 1024
+          ? getBoundingClientRectRef(teamOnClickRef)?.height
+          : 500)
       ) {
         setShowTeam(true);
+        setSectionActive(4);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });

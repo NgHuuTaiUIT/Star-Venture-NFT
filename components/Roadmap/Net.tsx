@@ -164,29 +164,48 @@ const Net = () => {
     vlRef.scale.z = 0.3;
   });
   return (
-    <scene
-      ref={sceneRef}
-      scale={[2, 1, 1]}
-      rotation={[0.3, -0.2, 0]}
-      position={[0, 0.1, 0]}>
-      <mesh ref={ref} rotation={[0, 0, 0]} position={[0, 0, 0]}>
-        <planeGeometry args={[1, 0.6, 32, 32]} />
-        <shaderMaterial
-          args={[
-            {
-              uniforms: {
-                uTime: { value: 0.0 },
-                uTexture: {
-                  value: colorMap
+    <Canvas
+      id="app"
+      style={{
+        width: "1920px",
+        height: "800px",
+        margin: "auto",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
+        maskImage:
+          "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
+      }}
+      camera={{
+        fov: 45,
+        position: [-0.5, 0.5, 1],
+        near: 0.1,
+        far: 100,
+        aspect: 0.5
+      }}>
+      <scene
+        ref={sceneRef}
+        scale={[2, 1, 1]}
+        rotation={[0.3, -0.2, 0]}
+        position={[0, 0.1, 0]}>
+        <mesh ref={ref} rotation={[0, 0, 0]} position={[0, 0, 0]}>
+          <planeGeometry args={[1, 0.6, 32, 32]} />
+          <shaderMaterial
+            args={[
+              {
+                uniforms: {
+                  uTime: { value: 0.0 },
+                  uTexture: {
+                    value: colorMap
+                  }
                 }
               }
-            }
-          ]}
-          vertexShader={vertext}
-          fragmentShader={fragment}
-        />
-      </mesh>
-    </scene>
+            ]}
+            vertexShader={vertext}
+            fragmentShader={fragment}
+          />
+        </mesh>
+      </scene>
+    </Canvas>
   );
 };
 export default Net;

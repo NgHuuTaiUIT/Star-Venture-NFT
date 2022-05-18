@@ -76,7 +76,7 @@ export const theme = makeTheme({
       gridTemplateRows: "1fr 1fr"
     },
     roadmap: {
-      backgroundImage: "url(/assets/images/bg-roadmap.png)",
+      backgroundImage: "url(/assets/images/bg-roadmap.webp)",
       "@media only screen and (max-width: 1200px)": {
         backgroundImage: "none"
       }
@@ -257,7 +257,7 @@ export const theme = makeTheme({
       width: "100%",
       margin: "0 auto",
       fontSize: ["18px"],
-      backgroundImage: ["url(/assets/images/bg.png)"],
+      backgroundImage: ["url(/assets/images/bg.webp)"],
       backgroundRepeat: "no-repeat",
       backgroundPositionX: "30%",
       backgroundPositionY: "4%",

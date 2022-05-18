@@ -1,15 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React, { ReactNode, useContext } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  Heading,
-  Image,
-  Text,
-  ThemeUIStyleObject
-} from "theme-ui";
+import { Box, Button, Card, Heading, Text, ThemeUIStyleObject } from "theme-ui";
 import { ModalContext } from "../../context/ModalProvider";
 import {
   backgroundStyle,
@@ -19,6 +11,7 @@ import {
   wrapInfoModalContentStyle
 } from "./styles";
 import { useSpring, animated as a, config, useTrail } from "react-spring";
+import Image from "next/image";
 
 type ModalProps = {
   showModal: boolean;
@@ -89,7 +82,18 @@ export const ModalContent: React.FC<ModalContentProps> = ({
   content
 }) => (
   <Card sx={modalContentStyle}>
-    <Image src={image} alt="portrait" />
+    {image && (
+      <Box
+        sx={{
+          width: 180,
+          height: 180,
+          position: "relative",
+          flexBasis: 180,
+          minWidth: 180
+        }}>
+        <Image src={image} layout="fill" alt="portrait" />
+      </Box>
+    )}
     <Box sx={wrapInfoModalContentStyle}>
       <Heading as="h2">{name}</Heading>
       <Heading as="h4">{position}</Heading>

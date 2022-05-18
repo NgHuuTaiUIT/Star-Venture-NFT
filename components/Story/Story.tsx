@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import React, { useState } from "react";
-import { Box, Button, Flex, Image } from "theme-ui";
+import { Box, Button, Flex } from "theme-ui";
 import Section from "../Section/Section";
 import {
   boxStoryStyle,
@@ -10,6 +10,7 @@ import {
   textStoryStyle
 } from "./style";
 import { useSpring, animated as a, config } from "react-spring";
+import Image from "next/image";
 
 type Props = {};
 
@@ -26,7 +27,12 @@ const Story = (props: Props) => {
     <Section>
       <a.div style={storySpringProps}>
         <Flex sx={containerStoryStyle}>
-          <Image src="/assets/images/logo_star_venture_1.png" alt="logo" />
+          <Image
+            src="/assets/images/logo_star_venture_1.webp"
+            alt="logo"
+            width={855}
+            height={367}
+          />
           <Box sx={boxStoryStyle}>
             <Flex sx={{ overflow: "hidden" }}>
               <Box

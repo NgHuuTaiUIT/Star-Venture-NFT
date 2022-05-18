@@ -146,7 +146,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           <Flex sx={{ flexDirection: "column", flexWrap: "nowrap" }}>
             <Box sx={{ position: "relative" }}>
               <Triangles triangles={triangles} />
-              <Image src={`/assets/images/vector-${direction}.png`} alt="" />
+              <Image src={`/assets/images/vector-${direction}.webp`} alt="" />
             </Box>
             <Box
               as="p"
@@ -174,7 +174,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
             }}
           />
           <Flex sx={{ flexDirection: "column", width: "100%" }}>
-            <Image src={`/assets/images/vector-left.png`} alt="" />
+            <Image src={`/assets/images/vector-left.webp`} alt="" />
             <Box
               as="p"
               sx={{

@@ -1,4 +1,4 @@
-import React, { LegacyRef, RefObject } from "react";
+import React from "react";
 import ReactPlayer from "react-player/lazy";
 import { Box } from "theme-ui";
 import { containerTrailerStyle, wrapTrailerStyle } from "./style";

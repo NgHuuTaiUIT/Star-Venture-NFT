@@ -134,7 +134,7 @@ varying float vWave;
 uniform sampler2D uTexture;
 
 void main() {
-  float wave = vWave * 0.015;
+  float wave = vWave * 0.00015;
   float r = texture2D(uTexture, vUv).r;
   float g = texture2D(uTexture, vUv).g;
   float b = texture2D(uTexture, vUv + wave).b;
@@ -161,7 +161,7 @@ const Net = () => {
     vlRef.material.uniforms.uTime.value = t;
     vlRef.scale.x = 1;
     vlRef.scale.y = 1;
-    vlRef.scale.z = 0.5;
+    vlRef.scale.z = 0.3;
   });
   return (
     <scene

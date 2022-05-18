@@ -25,7 +25,7 @@ export const boxStoryStyle: ThemeUIStyleObject = {
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
-  minHeight: 285,
+  // minHeight: 285,
   color: "#fff",
   textShadow: "1px 1px 3px rgb(0 0 0 / 20%)",
   mt: [0, , "-4rem"],

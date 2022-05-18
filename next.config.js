@@ -16,3 +16,67 @@ module.exports = withMDX({
     return config;
   }
 });
+
+const securityHeaders = [
+  {
+    key: "X-XSS-Protection",
+    value: "1; mode=block"
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN"
+  },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff"
+  },
+  {
+    key: "Referrer-Policy",
+    value: "unsafe-url"
+  }
+];
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: "/:path*",
+        headers: securityHeaders
+      }
+    ];
+  }
+};
+
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "https://www.youtube.com/:path*"
+      }
+    ];
+  }
+};
+
+module.exports = {
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      "/": { page: "/" }
+    };
+  }
+};
+
+module.exports = {
+  images: {
+    loader: "akamai",
+    path: ""
+  }
+};

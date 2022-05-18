@@ -6,7 +6,7 @@ import { MenuContext } from "../../context/MenuProvider";
 import { ScrollToSectionContext } from "../../context/ScrollToSectionProvider";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import CustomWalletMultiButton from "../CustomWalletMultiButton/WalletMultiButton";
-import { Discord, Medium, Tele, Twitter } from "../SVG/Icon";
+import { Discord, Medium, Telegram, Twitter } from "../SVG/Icon";
 
 import {
   btnMenuMobileStyle,
@@ -21,7 +21,7 @@ import {
 const uris: string[] = [
   "/assets/icons/twitter.svg",
   "/assets/icons/discord.svg",
-  "/assets/icons/tele.svg",
+  "/assets/icons/telegram.svg",
   "/assets/icons/medium.svg"
 ];
 
@@ -31,21 +31,21 @@ const Navbar = () => {
   const { showMenu, openMenu, closeMenu } = useContext(MenuContext);
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    if (width < 980) {
-      showMenu ? disableScroll.on() : disableScroll.off();
-    } else {
-      disableScroll.off();
-      closeMenu();
-    }
-  }, [width]);
+  // useEffect(() => {
+  //   if (width < 980) {
+  //     showMenu ? disableScroll.on() : disableScroll.off();
+  //   } else {
+  //     disableScroll.off();
+  //     closeMenu();
+  //   }
+  // }, [closeMenu, showMenu, width]);
 
   return (
     <Box
       as="header"
       sx={{
         position: ["sticky"],
-        width: "100vw",
+        width: "100%",
         top: 0,
         zIndex: 2
       }}>
@@ -98,9 +98,16 @@ const LeftMenu = () => {
             setSectionActive(idx);
           }}>
           {menu}
-          {sectionActive == idx && <Line />}
+          {sectionActive == idx && (
+            <Box sx={{ display: ["block", , , "none"] }}>
+              <Line />
+            </Box>
+          )}
         </NavLink>
       ))}
+      <Box sx={{ display: ["none", , , "block"] }}>
+        <Line activeIndex={Number.parseInt(sectionActive)} />
+      </Box>
     </Flex>
   );
 };
@@ -118,8 +125,8 @@ const icons = [
     url: "#"
   },
   {
-    //  src: "/assets/icons/tele.svg"
-    src: <Tele />,
+    //  src: "/assets/icons/telegram.svg"
+    src: <Telegram />,
     url: "https://t.me/StarVentureGlobal"
   },
   {
@@ -141,10 +148,17 @@ const RightMenu = () => (
   </Flex>
 );
 
-const Line = () => (
-  <Box sx={lineStyle}>
-    {/* <Image src="/assets/images/line.svg" alt="next" /> */}
-  </Box>
+const Line = ({ activeIndex }: { activeIndex?: number }): JSX.Element => (
+  <>
+    <Box
+      sx={{
+        ...lineStyle,
+        left: `calc(60px + ${activeIndex && activeIndex * 120}px)`,
+        display: ["none", , , "block"]
+      }}
+    />
+    <Box sx={{ ...lineStyle, left: "50%", display: ["block", , , "none"] }} />
+  </>
 );
 
 export default Navbar;

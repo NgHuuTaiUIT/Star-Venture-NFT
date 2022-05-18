@@ -1,4 +1,3 @@
-import { backgroundStyle } from "./../components/Modal/styles";
 import { makeTheme } from "@theme-ui/css/utils";
 export const theme = makeTheme({
   config: {
@@ -52,7 +51,7 @@ export const theme = makeTheme({
       backgroundSize: "contain"
     },
     section: {
-      maxWidth: "100vw",
+      maxWidth: ["100vw", "90vw", , , "100vw"],
       margin: "auto",
       mb: ["4rem"],
       width: ["100%"],
@@ -65,7 +64,7 @@ export const theme = makeTheme({
       display: "grid",
       gridTemplateColumns: "repeat(2, 1fr)",
       gap: ["2rem"],
-      "@media only screen and (max-width: 1000px)": {
+      "@media only screen and (max-width: 1024px)": {
         gridTemplateColumns: "repeat(1, 1fr)",
         width: "calc(100% - 1rem)",
         margin: "2.8rem auto"
@@ -252,17 +251,24 @@ export const theme = makeTheme({
       lineHeight: "body",
       fontWeight: "lighter",
       userSelect: "none",
-      backgroundColor: "#12192C;",
+      backgroundColor: "#12192C",
       maxWidth: "1920px",
       width: "100%",
       margin: "0 auto",
       fontSize: ["18px"],
-      backgroundImage: ["url(/assets/images/bg.webp)"],
+      backgroundImage: [
+        "url(/assets/images/bg-story.png),url(/assets/images/bf-2.png),url(/assets/images/bg-3.png),url(/assets/images/bg-4.png)",
+        ,
+        ,
+        "url(/assets/images/bg.webp)"
+      ],
       backgroundRepeat: "no-repeat",
-      backgroundPositionX: "30%",
-      backgroundPositionY: "4%",
+      backgroundPositionX: ["30%,30%,22%,30%", , , "auto"],
+      // backgroundPositionY: ["0%", "4%"],
+      backgroundPositionY: "4%,-150px,1200px,3500px",
       height: "100%",
       overflowX: "hidden",
+      backgroundSize: ["auto", , , 1960],
 
       "@media(max-width: 479px)": {
         WebkitTextSizeAdjust: "100%"

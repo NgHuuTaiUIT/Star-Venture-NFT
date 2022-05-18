@@ -1,6 +1,7 @@
+/** @jsxImportSource theme-ui */
+
 import dynamic from "next/dynamic";
 import React from "react";
-// import ReactPlayer from "react-player/lazy";
 import { Box } from "theme-ui";
 import { LinearBackground } from "../LinearBackground/LinearBackground";
 import { containerTrailerStyle, wrapTrailerStyle } from "./style";
@@ -15,7 +16,7 @@ const Trailer = ({
   compRef: React.RefObject<HTMLElement>;
 }) => {
   return (
-    <section ref={compRef}>
+    <section ref={compRef} sx={{ position: "relative", zIndex: -1 }}>
       <Box sx={containerTrailerStyle} as="section">
         <LinearBackground
           style={{

@@ -61,6 +61,11 @@ export const netStyle: ThemeUIStyleObject = {
       "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)",
     maskImage:
       "radial-gradient(ellipse 40% 88% at 50% 50%, black 23%, transparent 75%)"
+  },
+  "> .react-p5": {
+    left: "50%",
+    position: "absolute",
+    transform: "translateX(-50%)"
   }
 };
 

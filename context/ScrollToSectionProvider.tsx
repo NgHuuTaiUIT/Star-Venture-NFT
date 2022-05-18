@@ -36,13 +36,10 @@ export const ScrollToSectionProvider = ({
     targetRef &&
       targetRef?.current?.scrollIntoView({
         behavior: "smooth",
-        block: size.width >= 1024 ? "center" : "start"
+        block: size.width >= 1024 ? "center" : "start",
+        inline: "nearest"
       });
   };
-
-  const [currentOffSetY, setCurrentOffSetY] = useState(0);
-
-  const HEIGHT_HEADER = 90 + 65;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,8 +54,11 @@ export const ScrollToSectionProvider = ({
       ) {
         setSectionActive(0);
       }
-
-      if (getBoundingClientRectRef(featureOnClickRef)?.top <= window.scrollY) {
+      console.log(getBoundingClientRectRef(featureOnClickRef)?.top);
+      if (
+        getBoundingClientRectRef(featureOnClickRef)?.top <
+        getBoundingClientRectRef(trailerOnClickRef)?.height
+      ) {
         setShowFeature(true);
         setSectionActive(1);
       }

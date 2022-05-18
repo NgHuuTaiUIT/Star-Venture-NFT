@@ -151,6 +151,38 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   style
 }) => {
   const size: Size = useWindowSize();
+  const numberLeftSpringProps = useSpring({
+    overflow: "hidden",
+    from: {
+      opacity: 0,
+      transform: "translateX(-100%)",
+      minWidth: 82,
+      height: 32
+    },
+    to: {
+      opacity: 1,
+      transform: "translateX(0%)"
+    },
+    config: config.molasses,
+    delay: 1500
+  });
+
+  const numberRightSpringProps = useSpring({
+    overflow: "hidden",
+    from: {
+      opacity: 0,
+      transform: "translateX(100%)",
+      minWidth: 82,
+      height: 32
+    },
+    to: {
+      opacity: 1,
+      transform: "translateX(0%)"
+    },
+    config: config.molasses,
+    delay: 1500
+  });
+
   return (
     <>
       {size && size?.width > 1024 ? (
@@ -161,11 +193,24 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
             px: [0, , "1rem"],
             ...style
           }}>
-          <Image src={`/assets/images/0${idx}.svg`} alt="" />
+          <a.div
+            style={
+              idx % 2 != 0 ? numberLeftSpringProps : numberRightSpringProps
+            }>
+            <Image
+              src={`/assets/images/0${idx}.svg`}
+              alt=""
+              sx={{ objectFit: "cover" }}
+            />
+          </a.div>
           <Flex sx={{ flexDirection: "column", flexWrap: "nowrap" }}>
             <Box sx={{ position: "relative" }}>
               <Triangles triangles={triangles} />
-              <Image src={`/assets/images/vector-${direction}.webp`} alt="" />
+              <Image
+                src={`/assets/images/vector-${direction}.webp`}
+                alt=""
+                sx={{ height: 32 }}
+              />
             </Box>
             <Box
               as="p"
@@ -181,7 +226,6 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
         <Flex
           sx={{
             ...widgetFeaturesStyle,
-            // pt: "2.8rem",
             flexDirection: "column"
           }}>
           <Image

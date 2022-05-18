@@ -76,7 +76,7 @@ export const theme = makeTheme({
     },
     roadmap: {
       backgroundImage: "url(/assets/images/bg-roadmap.webp)",
-      "@media only screen and (max-width: 1200px)": {
+      "@media only screen and (max-width: 1024px)": {
         backgroundImage: "none"
       }
     },
@@ -265,7 +265,7 @@ export const theme = makeTheme({
       backgroundRepeat: "no-repeat",
       backgroundPositionX: ["30%,30%,22%,30%", , , "auto"],
       // backgroundPositionY: ["0%", "4%"],
-      backgroundPositionY: "4%,-150px,1200px,3500px",
+      backgroundPositionY: ["0%,-150px,1200px,3500px", , , "4%"],
       height: "100%",
       overflowX: "hidden",
       backgroundSize: ["auto", , , 1960],

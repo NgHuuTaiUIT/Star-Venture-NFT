@@ -73,11 +73,6 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
           ]
         }}>
         <Box sx={containerStyle}>
-          {/* <LinearBackground
-            top={0}
-            style={{ width: "100%", height: "805px", zIndex: -1 }}
-          /> */}
-
           <LinearBg
             top={0}
             left={0}
@@ -104,8 +99,8 @@ const Roadmap = ({ compRef }: { compRef: React.RefObject<HTMLElement> }) => {
               </Flex>
             </Box>
           </Flex>
-          <Circle />
           <NetV2 />
+          <Circle />
         </Box>
       </Section>
     </section>
@@ -189,7 +184,7 @@ const Circle = () => {
           height: 250,
           position: "absolute",
           bottom: "10%",
-          zIndex: 1
+          zIndex: 0
         }}>
         <Box
           sx={{
